@@ -97,3 +97,10 @@ p {
   color: #000;
   transform: translateY(-1px);
 }
+footer a {
+  color: #a44564;
+  transition: 0.3s ease;
+}
+footer a:hover {
+  color: #f7c6d9;
+}
