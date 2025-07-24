@@ -4,7 +4,20 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Isabella AI Solutions - AI-Powered Tools & Web Solutions</title>
-    <link rel="stylesheet" href="style.css">
+
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="Isabella AI Solutions crafts custom AI-powered tools and web solutions for businesses. Specializing in Python, JavaScript, and creative tech to build intelligent, efficient applications.">
+    <meta name="keywords" content="Isabella AI Solutions, AI developer, full-stack developer, web solutions, creative technologist, Python, JavaScript, React, portfolio, custom AI tools">
+    <meta name="author" content="Isabella AI Solutions">
+
+    <!-- Open Graph Meta Tags (for social sharing) -->
+    <meta property="og:title" content="Isabella AI Solutions - AI-Powered Tools & Web Solutions">
+    <meta property="og:description" content="Crafting custom AI-powered tools and web solutions for businesses.">
+    <meta property="og:image" content="images/isabellalogo.png"> 
+    <meta property="og:url" content="your-website-url/index.html">
+    <meta property="og:type" content="website">
+
+    <link rel="stylesheet" href="dist/output.css">
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -22,18 +35,18 @@
         <div class="relative z-10 flex flex-col min-h-screen px-4 sm:px-6 lg:px-8">
             <header class="py-6">
                 <nav class="w-full max-w-7xl mx-auto flex justify-between items-center">
-                    <a href="#home" class="text-xl font-bold flex items-center gap-2">
+                    <a href="index.html" class="text-xl font-bold flex items-center gap-2">
                         <svg width="24" height="24" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M50 0L100 28.87V86.6L50 115.47L0 86.6V28.87L50 0Z" fill="url(#paint0_linear_101_2)"/>
-                            <defs><linearGradient id="paint0_linear_101_2" x1="0" y1="0" x2="100" y2="100" gradientUnits="userSpaceOnUse"><stop stop-color="#a855f7"/><stop offset="1" stop-color="#f97316"/></linearGradient></defs>
+                            <path d="M50 0L100 28.87V86.6L50 115.47L0 86.6V28.87L50 0Z" fill="url(#paint0_linear_101_3)"/>
+                            <defs><linearGradient id="paint0_linear_101_3" x1="0" y1="0" x2="100" y2="100" gradientUnits="userSpaceOnUse"><stop stop-color="#a855f7"/><stop offset="1" stop-color="#f97316"/></linearGradient></defs>
                         </svg>
                         Isabella AI Solutions
                     </a>
                     <div class="hidden md:flex items-center gap-2 border border-gray-700 bg-black/30 backdrop-blur-sm rounded-full px-3 py-2">
-                        <a href="#home" class="px-4 py-1 rounded-full hover:bg-gray-700 transition-colors duration-300">Home</a>
+                        <a href="index.html" class="px-4 py-1 rounded-full bg-gray-700/50">Home</a>
                         <a href="#projects" class="px-4 py-1 rounded-full hover:bg-gray-700 transition-colors duration-300">Projects</a>
                         <a href="#about" class="px-4 py-1 rounded-full hover:bg-gray-700 transition-colors duration-300">About</a>
-                        <a href="#contact" class="px-4 py-1 rounded-full bg-gray-700/50">Contact</a>
+                        <a href="#contact" class="px-4 py-1 rounded-full hover:bg-gray-700 transition-colors duration-300">Contact</a>
                     </div>
                     <a href="#contact" class="hidden md:flex items-center gap-2 bg-gray-100 text-gray-900 font-semibold px-5 py-2.5 rounded-full hover:bg-gray-300 transition-colors duration-300">
                         <span>Hire Me</span>
@@ -58,6 +71,24 @@
                     </div>
                 </div>
             </main>
+        </div>
+    </div>
+
+    <!-- Tech Stack Section -->
+    <div class="tech-stack-container">
+        <div class="tech-stack-glass-bar">
+            <span class="tech-item">HTML</span><span class="tech-separator">*</span>
+            <span class="tech-item">CSS</span><span class="tech-separator">*</span>
+            <span class="tech-item">Tailwind CSS</span><span class="tech-separator">*</span>
+            <span class="tech-item">JavaScript</span><span class="tech-separator">*</span>
+            <span class="tech-item">React</span><span class="tech-separator">*</span>
+            <span class="tech-item">Node.js</span><span class="tech-separator">*</span>
+            <span class="tech-item">Python</span><span class="tech-separator">*</span>
+            <span class="tech-item">SQL</span><span class="tech-separator">*</span>
+            <span class="tech-item">APIs</span><span class="tech-separator">*</span>
+            <span class="tech-item">Docker</span><span class="tech-separator">*</span>
+            <span class="tech-item">AWS</span><span class="tech-separator">*</span>
+            <span class="tech-item">AI Models</span>
         </div>
     </div>
 
@@ -103,12 +134,13 @@
         <div class="container mx-auto px-4 sm:px-6 lg:px-8">
             <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
                 <div class="about-image-container">
-                    <img src="images/your-photo.png" alt="Isabella, AI Developer" class="rounded-full">
+                    <img src="images/isabellalogo.png" alt="Isabella AI Solutions Logo" class="rounded-full p-4">
                 </div>
                 <div>
                     <h2 class="text-3xl md:text-4xl font-bold tracking-tight mb-6">From Idea to Launch<span class="gradient-text">*</span></h2>
                     <p class="text-lg text-gray-300 mb-4">My approach blends creative design, solid code, and AI expertise to deliver solutions that stand out. I help businesses unlock the power of AI and automation, even if they’re starting from scratch.</p>
-                    <p class="text-lg text-gray-300">Whether you need a modern website, an AI assistant, or a custom tool, I build it from the ground up, ensuring it's not only functional but also intuitive and efficient.</p>
+                    <p class="text-lg text-gray-300 mb-4">Whether you need a modern website, an AI assistant, or a custom tool, I build it from the ground up, ensuring it's not only functional but also intuitive and efficient.</p>
+                    <a href="about.html" class="font-semibold text-lg text-purple-400 hover:text-purple-300 transition-colors">Learn more about my story &rarr;</a>
                 </div>
             </div>
         </div>
@@ -129,7 +161,12 @@
             <div class="flex space-x-6">
                 <a href="https://github.com/bellecoding" target="_blank" class="text-gray-400 hover:text-white transition-colors"><i data-lucide="github" class="w-6 h-6"></i></a>
                 <a href="#" target="_blank" class="text-gray-400 hover:text-white transition-colors"><i data-lucide="linkedin" class="w-6 h-6"></i></a>
-                <a href="#" target="_blank" class="text-gray-400 hover:text-white transition-colors"><i data-lucide="twitter" class="w-6 h-6"></i></a>
+                <a href="#" target="_blank" class="text-gray-400 hover:text-white transition-colors"><i data-lucide="instagram" class="w-6 h-6"></i></a>
+                <a href="#" target="_blank" class="text-gray-400 hover:text-white transition-colors">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="currentColor" viewBox="0 0 16 16">
+                        <path d="M12.93,3.952h-2.438c-0.314,0-0.568,0.256-0.568,0.568v5.483c0,0.314,0.254,0.568,0.568,0.568h2.438c0.312,0,0.568-0.254,0.568-0.568V4.52C13.498,4.208,13.242,3.952,12.93,3.952z M5.682,3.952H3.244c-0.314,0-0.568,0.256-0.568,0.568v8.489c0,0.312,0.254,0.568,0.568,0.568h2.438c0.312,0,0.568-0.256,0.568-0.568V4.52C6.25,4.208,5.994,3.952,5.682,3.952z M9.318,8.527H6.88c-0.312,0-0.568,0.256-0.568,0.568v3.942c0,0.312,0.256,0.568,0.568,0.568h2.438c0.312,0,0.568-0.256,0.568-0.568V9.095C9.886,8.783,9.63,8.527,9.318,8.527z"/>
+                    </svg>
+                </a>
             </div>
         </div>
     </footer>

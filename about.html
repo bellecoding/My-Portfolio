@@ -1,57 +1,102 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>About Belle</title>
-    <meta name="description" content="About Belle, a front-end developer based in Germany. Learn more about her passion, skills, and projects." />
-    <meta name="author" content="Belle Coding" />
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Me - Isabella AI Solutions</title>
+    <link rel="stylesheet" href="dist/output.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body class="text-gray-200">
 
-    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;600;800&display=swap" rel="stylesheet" />
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
-    <link rel="stylesheet" href="style.css" />
-    <link rel="icon" href="favicon.ico" />
-  </head>
+    <div class="relative w-full overflow-hidden">
+        <div class="absolute inset-0 grid-background z-0"></div>
+        
+        <div class="relative z-10 flex flex-col min-h-screen px-4 sm:px-6 lg:px-8">
+            <header class="py-6">
+                <nav class="w-full max-w-7xl mx-auto flex justify-between items-center">
+                    <a href="index.html" class="text-xl font-bold flex items-center gap-2">
+                        <svg width="24" height="24" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M50 0L100 28.87V86.6L50 115.47L0 86.6V28.87L50 0Z" fill="url(#paint0_linear_101_3)"/>
+                            <defs><linearGradient id="paint0_linear_101_3" x1="0" y1="0" x2="100" y2="100" gradientUnits="userSpaceOnUse"><stop stop-color="#a855f7"/><stop offset="1" stop-color="#f97316"/></linearGradient></defs>
+                        </svg>
+                        Isabella AI Solutions
+                    </a>
+                    <div class="hidden md:flex items-center gap-2 border border-gray-700 bg-black/30 backdrop-blur-sm rounded-full px-3 py-2">
+                        <a href="index.html" class="px-4 py-1 rounded-full hover:bg-gray-700 transition-colors duration-300">Home</a>
+                        <a href="index.html#projects" class="px-4 py-1 rounded-full hover:bg-gray-700 transition-colors duration-300">Projects</a>
+                        <a href="about.html" class="px-4 py-1 rounded-full bg-gray-700/50">About</a>
+                        <a href="index.html#contact" class="px-4 py-1 rounded-full hover:bg-gray-700 transition-colors duration-300">Contact</a>
+                    </div>
+                    <a href="index.html#contact" class="hidden md:flex items-center gap-2 bg-gray-100 text-gray-900 font-semibold px-5 py-2.5 rounded-full hover:bg-gray-300 transition-colors duration-300">
+                        <span>Hire Me</span>
+                        <i data-lucide="arrow-right" class="w-4 h-4"></i>
+                    </a>
+                    <button class="md:hidden focus:outline-none p-2 rounded-full hover:bg-gray-800">
+                        <i data-lucide="menu" class="w-6 h-6"></i>
+                    </button>
+                </nav>
+            </header>
 
-  <body>
-    <nav class="navbar navbar-light bg-light fixed-top shadow-sm">
-      <div class="container">
-        <a class="navbar-brand fw-bold" href="index.html">← Back to homepage</a>
-      </div>
-    </nav>
+            <main class="flex-grow py-20 sm:py-32">
+                <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+                    <div class="max-w-4xl mx-auto">
+                        <div class="text-center mb-16">
+                            <h1 class="text-4xl md:text-6xl font-bold tracking-tighter mb-4">About Me<span class="gradient-text">*</span></h1>
+                            <p class="text-lg text-gray-400">Developer, Creator, and Cat Enthusiast.</p>
+                        </div>
 
-    <div class="container container-section mt-5 pt-5">
-      <h1 class="text-center">About me</h1>
-      <h3 class="text-center text-muted">Front-end developer from Germany</h3>
-
-      <div class="row mt-4">
-        <div class="col-md-6">
-          <p>
-            I’m Belle, a developer passionate about beautiful, clean, and responsive design. I love working with HTML,
-            CSS, JavaScript, and AI tools. My favorite part is turning ideas into polished experiences that work across
-            all devices.
-            <br /><br />
-            When I’m not coding, you’ll find me gaming, exploring new apps, or building cool projects that solve real
-            problems.
-          </p>
+                        <div class="grid grid-cols-1 md:grid-cols-3 gap-12 items-start">
+                            <div class="md:col-span-1">
+                                <div class="about-image-container sticky top-24">
+                                    <img src="images/your-photo.png" alt="Isabella" class="rounded-full">
+                                </div>
+                            </div>
+                            <div class="md:col-span-2 space-y-12 text-lg text-gray-300">
+                                <div>
+                                    <h2 class="text-2xl font-bold mb-4">My Story</h2>
+                                    <p class="mb-4">I started coding out of curiosity — fascinated by how websites and apps were built. What began as simple HTML and CSS experiments quickly turned into a deep passion for development. Over time, I expanded into JavaScript and Python, eventually discovering the powerful potential of AI.</p>
+                                    <p>Now, I create AI-powered tools and web solutions that help businesses work smarter. From intelligent assistants to web scrapers and custom dashboards, I love turning complex problems into elegant, functional results.</p>
+                                </div>
+                                <div>
+                                    <h2 class="text-2xl font-bold mb-4">My Philosophy</h2>
+                                    <p class="mb-4">When I build something, I care about three things: clean code, seamless experience, and practical impact. Whether it’s a full-stack web app, an AI assistant, or a background automation script, I focus on solving real problems — not just writing code that runs.</p>
+                                    <p class="mb-4">Good design isn’t just visual — it’s about how intuitive something feels, how fast it responds, and how clearly it helps people get things done. I value systems that are efficient under the hood and effortless to use (when there’s a UI). My goal is always the same: create tools that save time, reduce friction, and actually make a difference.</p>
+                                </div>
+                                <div>
+                                    <h2 class="text-2xl font-bold mb-4">When I’m Not Coding...</h2>
+                                    <p class="mb-4">I’m usually gaming, drawing, or playing with my two cats (and yes — I talk to them like coworkers). I also love creating cozy desk setups and exploring new tools that help me work more efficiently.</p>
+                                    <p>Fun fact? I speak multiple languages and currently live in Germany — but I bring a bit of Brazilian creativity into everything I do 💜</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </main>
         </div>
-        <div class="col-md-6">
-          <p>
-            I’ve completed multiple SheCodes projects where I focused on UX, responsive layout, API integration, and
-            creative problem-solving. I aim to keep learning, building, and helping others through technology.
-            <br /><br />
-            Thanks for visiting my portfolio!
-          </p>
-        </div>
-      </div>
 
-      <div id="contact" class="text-center mt-5">
-        <h2>📮 Contact me</h2>
-        <a href="mailto:belle@gmail.com" class="email-link">belle@gmail.com</a>
-      </div>
+        <footer class="bg-[#161616] border-t border-gray-800 relative z-10">
+            <div class="container mx-auto px-4 sm:px-6 lg:px-8 py-8 flex flex-col sm:flex-row justify-between items-center">
+                <div class="text-gray-400 mb-4 sm:mb-0">&copy; 2024 Isabella AI Solutions. All rights reserved.</div>
+                <div class="flex space-x-6">
+                    <a href="https://github.com/bellecoding" target="_blank" class="text-gray-400 hover:text-white transition-colors"><i data-lucide="github" class="w-6 h-6"></i></a>
+                    <a href="#" target="_blank" class="text-gray-400 hover:text-white transition-colors"><i data-lucide="linkedin" class="w-6 h-6"></i></a>
+                    <a href="#" target="_blank" class="text-gray-400 hover:text-white transition-colors"><i data-lucide="instagram" class="w-6 h-6"></i></a>
+                    <a href="#" target="_blank" class="text-gray-400 hover:text-white transition-colors">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="currentColor" viewBox="0 0 16 16">
+                            <path d="M12.93,3.952h-2.438c-0.314,0-0.568,0.256-0.568,0.568v5.483c0,0.314,0.254,0.568,0.568,0.568h2.438c0.312,0,0.568-0.254,0.568-0.568V4.52C13.498,4.208,13.242,3.952,12.93,3.952z M5.682,3.952H3.244c-0.314,0-0.568,0.256-0.568,0.568v8.489c0,0.312,0.254,0.568,0.568,0.568h2.438c0.312,0,0.568-0.256,0.568-0.568V4.52C6.25,4.208,5.994,3.952,5.682,3.952z M9.318,8.527H6.88c-0.312,0-0.568,0.256-0.568,0.568v3.942c0,0.312,0.256,0.568,0.568,0.568h2.438c0.312,0,0.568-0.256,0.568-0.568V9.095C9.886,8.783,9.63,8.527,9.318,8.527z"/>
+                        </svg>
+                    </a>
+                </div>
+            </div>
+        </footer>
     </div>
-
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-  </body>
+    <script>
+        lucide.createIcons();
+    </script>
+</body>
 </html>
