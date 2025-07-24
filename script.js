@@ -1,13 +1,10 @@
 document.addEventListener("DOMContentLoaded", () => {
-
   lucide.createIcons();
-
 
   const openModalBtn = document.getElementById("open-ai-modal-btn");
   const closeModalBtn = document.getElementById("close-ai-modal-btn");
   const modal = document.getElementById("ai-modal");
   const modalContent = document.getElementById("ai-modal-content");
-
 
   if (openModalBtn && closeModalBtn && modal && modalContent) {
     const generateIdeaBtn = document.getElementById("generate-idea-btn");
@@ -20,7 +17,6 @@ document.addEventListener("DOMContentLoaded", () => {
       "ai-generated-content"
     );
 
-  
     const openModal = () => {
       modal.classList.remove("hidden");
       setTimeout(() => {
@@ -29,13 +25,11 @@ document.addEventListener("DOMContentLoaded", () => {
       }, 10);
     };
 
-    
     const closeModal = () => {
       modalContent.classList.add("opacity-0", "scale-95");
       modal.classList.add("opacity-0");
       setTimeout(() => {
         modal.classList.add("hidden");
-   
         formContainer.classList.remove("hidden");
         resultsContainer.classList.add("hidden");
         generatedContentContainer.innerHTML = "";
@@ -45,18 +39,15 @@ document.addEventListener("DOMContentLoaded", () => {
 
     openModalBtn.addEventListener("click", openModal);
     closeModalBtn.addEventListener("click", closeModal);
-  
     modal.addEventListener("click", (e) => {
       if (e.target === modal) {
         closeModal();
       }
     });
 
-
     generateIdeaBtn.addEventListener("click", async () => {
       const userInput = problemInput.value.trim();
       if (!userInput) {
-    
         const tempAlert = document.createElement("div");
         tempAlert.textContent = "Please describe your problem or idea first.";
         tempAlert.style.cssText =
@@ -98,7 +89,7 @@ document.addEventListener("DOMContentLoaded", () => {
         },
       };
 
-      const apiKey = ""; 
+      const apiKey = "";
       const apiUrl = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key=${apiKey}`;
 
       try {
@@ -129,7 +120,6 @@ document.addEventListener("DOMContentLoaded", () => {
       }
     });
 
-   
     function renderGeneratedIdea(idea) {
       const featuresHtml = idea.keyFeatures
         .map(
@@ -151,10 +141,8 @@ document.addEventListener("DOMContentLoaded", () => {
                     <button id="start-over-btn" class="mt-6 w-full bg-gray-700 text-white font-semibold py-2 px-4 rounded-full hover:bg-gray-600">Try Another Idea</button>
                 </div>
             `;
-  
       lucide.createIcons();
 
-      
       document
         .getElementById("start-over-btn")
         .addEventListener("click", () => {
