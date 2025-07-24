@@ -3,51 +3,39 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Belle - AI-Focused Developer & Creative Tech Builder</title>
-    
-    
-    <link rel="stylesheet" href="src/style.css">
-
+    <title>Isabella AI Solutions - AI-Powered Tools & Web Solutions</title>
+    <link rel="stylesheet" href="style.css">
     <script src="https://cdn.tailwindcss.com"></script>
-    
-   
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-    
-    
     <script src="https://unpkg.com/lucide@latest"></script>
 </head>
 <body class="text-gray-200">
 
     <div class="relative min-h-screen w-full overflow-hidden">
-        
         <div class="absolute inset-0 grid-background z-0"></div>
-
-        
         <div class="absolute top-[20%] left-[10%] sparkle" style="animation-delay: 1s;"></div>
         <div class="absolute top-[50%] right-[15%] sparkle" style="animation-delay: 0s;"></div>
         <div class="absolute bottom-[25%] left-[25%] sparkle" style="animation-delay: 3s;"></div>
 
-       
         <div class="relative z-10 flex flex-col min-h-screen px-4 sm:px-6 lg:px-8">
-        
-          
             <header class="py-6">
                 <nav class="w-full max-w-7xl mx-auto flex justify-between items-center">
-                    <a href="#" class="text-2xl font-bold flex items-center gap-2">
+                    <a href="#home" class="text-xl font-bold flex items-center gap-2">
                         <svg width="24" height="24" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path d="M50 0L100 28.87V86.6L50 115.47L0 86.6V28.87L50 0Z" fill="url(#paint0_linear_101_2)"/>
                             <defs><linearGradient id="paint0_linear_101_2" x1="0" y1="0" x2="100" y2="100" gradientUnits="userSpaceOnUse"><stop stop-color="#a855f7"/><stop offset="1" stop-color="#f97316"/></linearGradient></defs>
                         </svg>
-                        Belle
+                        Isabella AI Solutions
                     </a>
                     <div class="hidden md:flex items-center gap-2 border border-gray-700 bg-black/30 backdrop-blur-sm rounded-full px-3 py-2">
                         <a href="#home" class="px-4 py-1 rounded-full hover:bg-gray-700 transition-colors duration-300">Home</a>
                         <a href="#projects" class="px-4 py-1 rounded-full hover:bg-gray-700 transition-colors duration-300">Projects</a>
+                        <a href="#about" class="px-4 py-1 rounded-full hover:bg-gray-700 transition-colors duration-300">About</a>
                         <a href="#contact" class="px-4 py-1 rounded-full bg-gray-700/50">Contact</a>
                     </div>
-                    <a href="#" class="hidden md:flex items-center gap-2 bg-gray-100 text-gray-900 font-semibold px-5 py-2.5 rounded-full hover:bg-gray-300 transition-colors duration-300">
+                    <a href="#contact" class="hidden md:flex items-center gap-2 bg-gray-100 text-gray-900 font-semibold px-5 py-2.5 rounded-full hover:bg-gray-300 transition-colors duration-300">
                         <span>Hire Me</span>
                         <i data-lucide="arrow-right" class="w-4 h-4"></i>
                     </a>
@@ -57,25 +45,13 @@
                 </nav>
             </header>
 
-         
             <main id="home" class="flex-grow flex items-center justify-center text-center">
                 <div class="fade-in">
-                    <h1 class="text-4xl md:text-6xl lg:text-7xl font-bold tracking-tighter mb-4">
-                        AI-Driven Developer
-                    </h1>
-                    <h2 class="text-2xl md:text-3xl lg:text-4xl font-semibold text-gray-400 mb-8">
-                        Websites, Apps, and Smart Tools.
-                    </h2>
-                    <p class="max-w-2xl mx-auto text-lg text-gray-300 mb-10">
-                        I'm an AI-focused developer building intelligent solutions. I blend creative UI/UX with robust code to make technology smarter and more intuitive. See my AI in action below.
-                    </p>
+                    <h1 class="text-4xl md:text-6xl lg:text-7xl font-bold tracking-tighter mb-4">AI-powered tools and web solutions crafted for your business.</h1>
+                    <p class="max-w-2xl mx-auto text-lg text-gray-300 mb-10">I blend creative design, robust code, and AI expertise to deliver intelligent solutions that help businesses grow and operate more efficiently.</p>
                     <div class="flex flex-wrap justify-center items-center gap-4">
-                        <a href="#contact" class="bg-gradient-to-r from-purple-600 to-orange-500 text-white font-semibold py-3 px-6 rounded-full shadow-lg hover:opacity-90 transition-opacity duration-300">
-                            Get In Touch
-                        </a>
-                        <a href="#projects" class="bg-gray-800/50 border border-gray-700 text-white font-semibold py-3 px-6 rounded-full shadow-lg hover:bg-gray-700 transition-colors duration-300">
-                            View Projects
-                        </a>
+                        <a href="#contact" class="bg-gradient-to-r from-purple-600 to-orange-500 text-white font-semibold py-3 px-6 rounded-full shadow-lg hover:opacity-90 transition-opacity duration-300">Get In Touch</a>
+                        <a href="#projects" class="bg-gray-800/50 border border-gray-700 text-white font-semibold py-3 px-6 rounded-full shadow-lg hover:bg-gray-700 transition-colors duration-300">View Projects</a>
                         <button id="open-ai-modal-btn" class="bg-gray-100 text-gray-900 font-semibold py-3 px-6 rounded-full shadow-lg hover:bg-gray-300 transition-colors duration-300 flex items-center gap-2">
                             <span>✨ AI Project Spark</span>
                         </button>
@@ -85,81 +61,78 @@
         </div>
     </div>
 
-   
     <section id="projects" class="py-20 sm:py-32 bg-[#111111]">
         <div class="container mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-12">
-                <h2 class="text-3xl md:text-4xl font-bold tracking-tight inline-flex items-center gap-3">
-                    Featured Projects
-                    <span class="gradient-text text-4xl">*</span>
-                </h2>
+                <h2 class="text-3xl md:text-4xl font-bold tracking-tight inline-flex items-center gap-3">Featured Projects<span class="gradient-text text-4xl">*</span></h2>
                 <p class="mt-4 text-lg text-gray-400 max-w-2xl mx-auto">Here are a few examples of my work, blending design with AI and web technologies.</p>
             </div>
-
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                
-                <div class="project-card">
-                    <div class="h-48 bg-gradient-to-br from-purple-500 to-indigo-600 flex items-center justify-center rounded-t-xl">
-                        <i data-lucide="brain-circuit" class="w-16 h-16 text-white/50"></i>
-                    </div>
-                    <div class="p-6">
-                        <h3 class="text-xl font-bold mb-2">AI Poem Generator</h3>
-                        <p class="text-gray-400 mb-4">Playful app using AI to generate creative poems. Enter a topic and get unique results.</p>
-                        <div class="flex flex-wrap gap-2 mb-4">
-                            <span class="tech-tag">AI</span>
-                            <span class="tech-tag">API</span>
-                            <span class="tech-tag">JavaScript</span>
-                        </div>
-                        <a href="https://shecodesprojectai.netlify.app/" target="_blank" class="project-button">
-                            <span>Launch AI App</span>
-                            <i data-lucide="arrow-right" class="w-4 h-4"></i>
-                        </a>
+                <div class="project-card flex flex-col">
+                    <div class="h-48 rounded-t-xl overflow-hidden"><img src="images/ScraperDiagram.drawio.png" alt="E-Commerce Price Scraper Project" class="w-full h-full object-cover"></div>
+                    <div class="p-6 flex flex-col flex-grow">
+                        <h3 class="text-xl font-bold mb-2">E-Commerce Price Scraper</h3>
+                        <p class="text-gray-400 mb-4">An automated web scraping tool built with Python to collect product prices from over 250 URLs across nine European countries.</p>
+                        <div class="flex flex-wrap gap-2 mb-4"><span class="tech-tag">Python</span><span class="tech-tag">Selenium</span><span class="tech-tag">Pandas</span></div>
+                        <a href="https://github.com/bellecoding/Automated-Price-Scraper" target="_blank" class="project-button mt-auto"><span>View on GitHub</span><i data-lucide="arrow-right" class="w-4 h-4"></i></a>
                     </div>
                 </div>
-
-               
-                <div class="project-card">
-                    <div class="h-48 bg-gradient-to-br from-orange-500 to-yellow-500 flex items-center justify-center rounded-t-xl">
-                         <i data-lucide="cloud-sun" class="w-16 h-16 text-white/50"></i>
-                    </div>
-                    <div class="p-6">
+                <div class="project-card flex flex-col">
+                    <div class="h-48 rounded-t-xl overflow-hidden"><img src="images/weatherapp.png" alt="Weather App Project" class="w-full h-full object-cover"></div>
+                    <div class="p-6 flex flex-col flex-grow">
                         <h3 class="text-xl font-bold mb-2">Weather App</h3>
                         <p class="text-gray-400 mb-4">Beautiful weather app using real API data. Responsive, fast, and accurate.</p>
-                         <div class="flex flex-wrap gap-2 mb-4">
-                            <span class="tech-tag">API</span>
-                            <span class="tech-tag">React</span>
-                            <span class="tech-tag">Responsive</span>
-                        </div>
-                        <a href="https://isabellasweatherapp.netlify.app/" target="_blank" class="project-button">
-                            <span>Launch Weather App</span>
-                            <i data-lucide="arrow-right" class="w-4 h-4"></i>
-                        </a>
+                        <div class="flex flex-wrap gap-2 mb-4"><span class="tech-tag">API</span><span class="tech-tag">React</span><span class="tech-tag">Responsive</span></div>
+                        <a href="https://isabellasweatherapp.netlify.app/" target="_blank" class="project-button mt-auto"><span>Launch Weather App</span><i data-lucide="arrow-right" class="w-4 h-4"></i></a>
                     </div>
                 </div>
-
-             
-                <div class="project-card">
-                    <div class="h-48 bg-gradient-to-br from-teal-500 to-cyan-500 flex items-center justify-center rounded-t-xl">
-                        <i data-lucide="globe-2" class="w-16 h-16 text-white/50"></i>
-                    </div>
-                    <div class="p-6">
+                <div class="project-card flex flex-col">
+                    <div class="h-48 rounded-t-xl overflow-hidden"><img src="images/clock.png" alt="World Clock App Project" class="w-full h-full object-cover"></div>
+                    <div class="p-6 flex flex-col flex-grow">
                         <h3 class="text-xl font-bold mb-2">World Clock App</h3>
                         <p class="text-gray-400 mb-4">Live world clock for major cities. Fully responsive and informative.</p>
-                         <div class="flex flex-wrap gap-2 mb-4">
-                            <span class="tech-tag">JavaScript</span>
-                            <span class="tech-tag">API</span>
-                            <span class="tech-tag">HTML/CSS</span>
-                        </div>
-                        <a href="https://worldclockprojectbyisa.netlify.app/" target="_blank" class="project-button">
-                            <span>Launch Clock App</span>
-                            <i data-lucide="arrow-right" class="w-4 h-4"></i>
-                        </a>
+                        <div class="flex flex-wrap gap-2 mb-4"><span class="tech-tag">JavaScript</span><span class="tech-tag">API</span><span class="tech-tag">HTML/CSS</span></div>
+                        <a href="https://worldclockprojectbyisa.netlify.app/" target="_blank" class="project-button mt-auto"><span>Launch Clock App</span><i data-lucide="arrow-right" class="w-4 h-4"></i></a>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
+    <section id="about" class="py-20 sm:py-32 bg-[#161616] border-t border-b border-gray-800">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+                <div class="about-image-container">
+                    <img src="images/your-photo.png" alt="Isabella, AI Developer" class="rounded-full">
+                </div>
+                <div>
+                    <h2 class="text-3xl md:text-4xl font-bold tracking-tight mb-6">From Idea to Launch<span class="gradient-text">*</span></h2>
+                    <p class="text-lg text-gray-300 mb-4">My approach blends creative design, solid code, and AI expertise to deliver solutions that stand out. I help businesses unlock the power of AI and automation, even if they’re starting from scratch.</p>
+                    <p class="text-lg text-gray-300">Whether you need a modern website, an AI assistant, or a custom tool, I build it from the ground up, ensuring it's not only functional but also intuitive and efficient.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="py-20 sm:py-32 text-center bg-[#111111]">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-4xl md:text-5xl font-bold tracking-tight">Have a project idea?</h2>
+            <h3 class="text-4xl md:text-5xl font-bold tracking-tight gradient-text mb-8">Let’s bring it to life.</h3>
+            <p class="max-w-xl mx-auto text-lg text-gray-400 mb-10">I'm currently available for freelance work. If you're looking for a developer to build a custom AI solution or website, I'd love to hear from you.</p>
+            <a href="mailto:your-email@example.com" class="bg-gradient-to-r from-purple-600 to-orange-500 text-white font-semibold py-4 px-8 rounded-full shadow-lg hover:opacity-90 transition-opacity duration-300 text-lg">Contact Me Today</a>
+        </div>
+    </section>
+
+    <footer class="bg-[#161616] border-t border-gray-800">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8 py-8 flex flex-col sm:flex-row justify-between items-center">
+            <div class="text-gray-400 mb-4 sm:mb-0">&copy; 2024 Isabella AI Solutions. All rights reserved.</div>
+            <div class="flex space-x-6">
+                <a href="https://github.com/bellecoding" target="_blank" class="text-gray-400 hover:text-white transition-colors"><i data-lucide="github" class="w-6 h-6"></i></a>
+                <a href="#" target="_blank" class="text-gray-400 hover:text-white transition-colors"><i data-lucide="linkedin" class="w-6 h-6"></i></a>
+                <a href="#" target="_blank" class="text-gray-400 hover:text-white transition-colors"><i data-lucide="twitter" class="w-6 h-6"></i></a>
+            </div>
+        </div>
+    </footer>
 
     <div id="ai-modal" class="modal-backdrop fixed inset-0 bg-black bg-opacity-70 z-50 flex items-center justify-center p-4 hidden opacity-0">
         <div id="ai-modal-content" class="modal-content bg-[#161616] border border-gray-700 rounded-2xl shadow-2xl w-full max-w-2xl max-h-[90vh] flex flex-col transform scale-95 opacity-0">
@@ -171,6 +144,6 @@
         </div>
     </div>
 
-    <script src="src/script.js" defer></script>
+    <script src="script.js" defer></script>
 </body>
 </html>

@@ -1,3 +1,6 @@
+html {
+    scroll-behavior: smooth;
+}
 
 body {
     font-family: 'Inter', sans-serif;
@@ -8,10 +11,9 @@ body {
     background-image:
         linear-gradient(to right, rgba(255, 255, 255, 0.05) 1px, transparent 1px),
         linear-gradient(to bottom, rgba(255, 255, 255, 0.05) 1px, transparent 1px);
-    background-size: 4rem 4rem; /* Size of the grid squares */
+    background-size: 4rem 4rem;
     background-position: center center;
 }
-
 
 .sparkle {
     position: absolute;
@@ -28,7 +30,6 @@ body {
     50% { transform: scale(1.2); opacity: 1; }
 }
 
-
 .gradient-text {
     background: linear-gradient(90deg, #a855f7, #f97316);
     -webkit-background-clip: text;
@@ -37,7 +38,6 @@ body {
     text-fill-color: transparent;
 }
 
-
 .fade-in {
     animation: fadeIn 1.5s ease-out forwards;
     opacity: 0;
@@ -45,7 +45,6 @@ body {
 @keyframes fadeIn {
     to { opacity: 1; }
 }
-
 
 .modal-backdrop {
     transition: opacity 0.3s ease-in-out;
@@ -67,7 +66,6 @@ body {
     100% { transform: rotate(360deg); }
 }
 
-
 .project-card {
     @apply bg-[#161616] border border-gray-800 rounded-xl overflow-hidden transition-all duration-300;
 }
@@ -81,4 +79,23 @@ body {
 
 .project-button {
     @apply inline-flex items-center justify-center gap-2 w-full text-center font-semibold bg-gray-800/50 border border-gray-700 text-white py-2.5 px-5 rounded-full hover:bg-gray-700 transition-colors duration-300;
+}
+
+.about-image-container {
+    position: relative;
+    padding: 1rem;
+}
+
+.about-image-container::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border-radius: 9999px;
+    padding: 2px; 
+    background: linear-gradient(45deg, #a855f7, #f97316); 
+    -webkit-mask: 
+        linear-gradient(#fff 0 0) content-box, 
+        linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+          mask-composite: exclude; 
 }
