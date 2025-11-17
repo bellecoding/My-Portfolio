@@ -5,107 +5,148 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>About Me - Isabella AI Solutions</title>
     
-    
+    <!-- Meta Tags -->
     <meta name="description" content="Learn more about Isabella, the AI-focused developer and creative tech builder behind Isabella AI Solutions. Discover her story, development philosophy, and passion for creating smart, elegant web solutions.">
     <meta name="keywords" content="Isabella AI Solutions, AI developer, full-stack developer, web solutions, creative technologist, Python, JavaScript, React, portfolio, about me">
     <meta name="author" content="Isabella AI Solutions">
 
     <meta property="og:title" content="About Me | Isabella AI Solutions">
     <meta property="og:description" content="Discover the story and philosophy behind Isabella AI Solutions.">
-    <meta property="og:image" content="images/isabellalogo.png"> 
+    <meta property="og:image" content="isabellalogo.png"> <!-- Updated path -->
     <meta property="og:url" content="your-website-url/about.html">
     <meta property="og:type" content="website">
 
-    <link rel="stylesheet" href="/output.css">
+    <!-- Styles & Fonts -->
+    <link rel="stylesheet" href="output.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-    <script src="https://unpkg.com/lucide@latest"></script>
+    
+    <!-- Scripts -->
+    <script src="https://unpkg.com/lucide-react@0.292.0/dist/umd/lucide.min.js"></script>
+
+    <!-- Custom CSS from style.css -->
+    <style>
+        html { scroll-behavior: smooth; }
+        body { font-family: 'Inter', sans-serif; background-color: #111111; }
+        .grid-background {
+            background-image:
+                linear-gradient(to right, rgba(255, 255, 255, 0.05) 1px, transparent 1px),
+                linear-gradient(to bottom, rgba(255, 255, 255, 0.05) 1px, transparent 1px);
+            background-size: 4rem 4rem;
+            background-position: center center;
+        }
+        .gradient-text {
+            background: linear-gradient(90deg, #a855f7, #f97316);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        .glassmorphic-card {
+            background: rgba(22, 22, 22, 0.5);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 1rem;
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+        }
+    </style>
 </head>
-<body class="text-gray-200">
+<body class="text-gray-300">
 
-    <div class="relative w-full overflow-hidden">
-        <div class="absolute inset-0 grid-background z-0"></div>
+    <!-- Header -->
+    <header class="fixed top-0 left-0 right-0 z-50">
+        <div class="container mx-auto px-6 py-4">
+            <nav class="flex justify-between items-center glassmorphic-card px-6 py-3 rounded-full shadow-lg">
+                <a href="index.html" class="flex items-center gap-2">
+                    <img src="isabellalogo.png" alt="Isabella AI Solutions Logo" class="w-8 h-8 rounded-full"> <!-- Updated path -->
+                    <span class="font-bold text-lg text-white hidden sm:block">Isabella AI Solutions</span>
+                </a>
+                <div class="flex items-center gap-6">
+                    <a href="index.html" class="text-gray-300 hover:text-white transition-colors">Home</a>
+                    <a href="about.html" class="text-gray-300 hover:text-white transition-colors">About</a>
+                    <a href="projects.html" class="text-gray-300 hover:text-white transition-colors">Projects</a> <!-- New Link -->
+                    <a href="index.html#contact" class="text-gray-300 hover:text-white transition-colors">Contact</a>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="grid-background relative overflow-hidden pt-32 pb-20">
         
-        <div class="relative z-10 flex flex-col min-h-screen px-4 sm:px-6 lg:px-8">
-            <header class="py-6">
-                <nav class="w-full max-w-7xl mx-auto flex justify-between items-center">
-                    <a href="index.html" class="text-xl font-bold flex items-center gap-2">
-                        <svg width="24" height="24" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M50 0L100 28.87V86.6L50 115.47L0 86.6V28.87L50 0Z" fill="url(#paint0_linear_101_3)"/>
-                            <defs><linearGradient id="paint0_linear_101_3" x1="0" y1="0" x2="100" y2="100" gradientUnits="userSpaceOnUse"><stop stop-color="#a855f7"/><stop offset="1" stop-color="#f97316"/></linearGradient></defs>
-                        </svg>
-                        Isabella AI Solutions
-                    </a>
-                    <div class="hidden md:flex items-center gap-2 border border-gray-700 bg-black/30 backdrop-blur-sm rounded-full px-3 py-2">
-                        <a href="index.html" class="px-4 py-1 rounded-full hover:bg-gray-700 transition-colors duration-300">Home</a>
-                        <a href="index.html#projects" class="px-4 py-1 rounded-full hover:bg-gray-700 transition-colors duration-300">Projects</a>
-                        <a href="about.html" class="px-4 py-1 rounded-full bg-gray-700/50">About</a>
-                        <a href="index.html#contact" class="px-4 py-1 rounded-full hover:bg-gray-700 transition-colors duration-300">Contact</a>
+        <div class="container mx-auto px-6 z-10 relative">
+            <div class="glassmorphic-card p-8 md:p-12 max-w-4xl mx-auto">
+                <h1 class="text-4xl md:text-5xl font-bold text-white text-center mb-6">
+                    About <span class="gradient-text">Me</span>
+                </h1>
+                
+                <div class="flex flex-col md:flex-row items-center gap-8 md:gap-12 mb-12">
+                    <div class="md:w-1/3 text-center">
+                        <img src="isabellalogo.png" alt="Profile" class="rounded-full w-48 h-48 md:w-64 md:h-64 mx-auto border-4 border-purple-500 shadow-lg object-cover"> <!-- Updated path -->
                     </div>
-                    <a href="index.html#contact" class="hidden md:flex items-center gap-2 bg-gray-100 text-gray-900 font-semibold px-5 py-2.5 rounded-full hover:bg-gray-300 transition-colors duration-300">
-                        <span>Hire Me</span>
-                        <i data-lucide="arrow-right" class="w-4 h-4"></i>
-                    </a>
-                    <button class="md:hidden focus:outline-none p-2 rounded-full hover:bg-gray-800">
-                        <i data-lucide="menu" class="w-6 h-6"></i>
-                    </button>
-                </nav>
-            </header>
-
-            <main class="flex-grow py-20 sm:py-32">
-                <div class="container mx-auto px-4 sm:px-6 lg:px-8">
-                    <div class="max-w-4xl mx-auto">
-                        <div class="text-center mb-16">
-                            <h1 class="text-4xl md:text-6xl font-bold tracking-tighter mb-4">About Me<span class="gradient-text">*</span></h1>
-                            <p class="text-lg text-gray-400">Developer, Creator, and Cat Enthusiast.</p>
-                        </div>
-
-                        <div class="grid grid-cols-1 md:grid-cols-3 gap-12 items-start">
-                            <div class="md:col-span-1">
-                                <div class="about-image-container sticky top-24">
-                                    <img src="images/your-photo.png" alt="Isabella" class="rounded-full">
-                                </div>
-                            </div>
-                            <div class="md:col-span-2 space-y-12 text-lg text-gray-300">
-                                <div>
-                                    <h2 class="text-2xl font-bold mb-4">My Story</h2>
-                                    <p class="mb-4">I started coding out of curiosity — fascinated by how websites and apps were built. What began as simple HTML and CSS experiments quickly turned into a deep passion for development. Over time, I expanded into JavaScript and Python, eventually discovering the powerful potential of AI.</p>
-                                    <p>Now, I create AI-powered tools and web solutions that help businesses work smarter. From intelligent assistants to web scrapers and custom dashboards, I love turning complex problems into elegant, functional results.</p>
-                                </div>
-                                <div>
-                                    <h2 class="text-2xl font-bold mb-4">My Philosophy</h2>
-                                    <p class="mb-4">When I build something, I care about three things: clean code, seamless experience, and practical impact. Whether it’s a full-stack web app, an AI assistant, or a background automation script, I focus on solving real problems — not just writing code that runs.</p>
-                                    <p class="mb-4">Good design isn’t just visual — it’s about how intuitive something feels, how fast it responds, and how clearly it helps people get things done. I value systems that are efficient under the hood and effortless to use (when there’s a UI). My goal is always the same: create tools that save time, reduce friction, and actually make a difference.</p>
-                                </div>
-                                <div>
-                                    <h2 class="text-2xl font-bold mb-4">When I’m Not Coding...</h2>
-                                    <p class="mb-4">I’m usually gaming, drawing, or playing with my two cats (and yes — I talk to them like coworkers). I also love creating cozy desk setups and exploring new tools that help me work more efficiently.</p>
-                                    <p>Fun fact? I speak multiple languages and currently live in Germany — but I bring a bit of Brazilian creativity into everything I do 💜</p>
-                                </div>
-                            </div>
-                        </div>
+                    <div class="md:w-2/3">
+                        <h2 class="text-2xl font-semibold text-white mb-4">Hi, I'm Isabella.</h2>
+                        <p class="text-lg text-gray-300 mb-4">
+                            I'm a creative technologist and AI developer with a passion for building applications that are not just functional, but also smart, intuitive, and beautiful.
+                        </p>
+                        <p class="text-gray-400">
+                            My journey in tech started with a curiosity for how things work, and it's evolved into a career dedicated to using code to solve complex problems. Whether it's developing a custom AI-powered tool for a business or crafting a pixel-perfect front-end experience, I thrive on the challenge of bringing ideas to life.
+                        </p>
                     </div>
                 </div>
-            </main>
+
+                <div class_="space-y-8">
+                    <div>
+                        <h3 class="text-2xl font-semibold text-white mb-4 border-b border-gray-700 pb-2">My Philosophy</h3>
+                        <p class="text-gray-400">
+                            I believe in a human-centric approach to technology. The best tools are the ones that feel like an extension of ourselves—effortless and empowering. My development philosophy is centered around:
+                        </p>
+                        <ul class="list-disc list-inside text-gray-300 mt-4 space-y-2">
+                            <li><strong class="text-white">Clean & Scalable Code:</strong> Writing code that is maintainable and ready to grow with your needs.</li>
+                            <li><strong class="text-white">Design-Driven Development:</strong> Ensuring that the final product is not only powerful but also a joy to use.</li>
+                            <li><strong class="text-white">AI Integration:</strong> Leveraging the power of artificial intelligence to create smarter, more efficient, and personalized user experiences.</li>
+                        </ul>
+                    </div>
+
+                    <div>
+                        <h3 class="text-2xl font-semibold text-white mb-4 mt-8 border-b border-gray-700 pb-2">Let's Connect</h3>
+                        <p class="text-gray-400 mb-6">
+                            I'm always open to new challenges and collaborations. If you have an idea you'd like to discuss or just want to chat about tech, feel free to reach out!
+                        </p>
+                        <a href="index.html#contact" class="bg-gradient-to-r from-purple-600 to-orange-500 text-white font-semibold py-3 px-8 rounded-full shadow-lg hover:opacity-90 transition-opacity duration-300">
+                            Get in Touch
+                        </a>
+                    </div>
+                </div>
+
+            </div>
         </div>
 
-        <footer class="bg-[#161616] border-t border-gray-800 relative z-10">
-            <div class="container mx-auto px-4 sm:px-6 lg:px-8 py-8 flex flex-col sm:flex-row justify-between items-center">
-                <div class="text-gray-400 mb-4 sm:mb-0">&copy; 2024 Isabella AI Solutions. All rights reserved.</div>
-                <div class="flex space-x-6">
-                    <a href="https://github.com/bellecoding" target="_blank" class="text-gray-400 hover:text-white transition-colors"><i data-lucide="github" class="w-6 h-6"></i></a>
-                    <a href="#" target="_blank" class="text-gray-400 hover:text-white transition-colors"><i data-lucide="linkedin" class="w-6 h-6"></i></a>
-                    <a href="#" target="_blank" class="text-gray-400 hover:text-white transition-colors"><i data-lucide="instagram" class="w-6 h-6"></i></a>
-                    <a href="#" target="_blank" class="text-gray-400 hover:text-white transition-colors">
-                        <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="currentColor" viewBox="0 0 16 16">
-                            <path d="M12.93,3.952h-2.438c-0.314,0-0.568,0.256-0.568,0.568v5.483c0,0.314,0.254,0.568,0.568,0.568h2.438c0.312,0,0.568-0.254,0.568-0.568V4.52C13.498,4.208,13.242,3.952,12.93,3.952z M5.682,3.952H3.244c-0.314,0-0.568,0.256-0.568,0.568v8.489c0,0.312,0.254,0.568,0.568,0.568h2.438c0.312,0,0.568-0.256,0.568-0.568V4.52C6.25,4.208,5.994,3.952,5.682,3.952z M9.318,8.527H6.88c-0.312,0-0.568,0.256-0.568,0.568v3.942c0,0.312,0.256,0.568,0.568,0.568h2.438c0.312,0,0.568-0.256,0.568-0.568V9.095C9.886,8.783,9.63,8.527,9.318,8.527z"/>
-                        </svg>
-                    </a>
-                </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-[#161616] py-12 relative z-10">
+        <div class="container mx-auto px-6 text-center text-gray-400">
+            <div class="flex justify-center items-center gap-2 mb-6">
+                <img src="isabellalogo.png" alt="Isabella AI Solutions Logo" class="w-8 h-8 rounded-full"> <!-- Updated path -->
+                <span class="font-bold text-lg text-white">Isabella AI Solutions</span>
             </div>
-        </footer>
-    </div>
+            <div class="flex justify-center space-x-6 mb-6">
+                <a href="https://github.com/bellecoding" target="_blank" class="text-gray-400 hover:text-white transition-colors"><i data-lucide="github" class="w-6 h-6"></i></a>
+                <a href="#" target="_blank" class="text-gray-400 hover:text-white transition-colors"><i data-lucide="linkedin" class="w-6 h-6"></i></a>
+                <a href="#" target="_blank" class="text-gray-400 hover:text-white transition-colors"><i data-lucide="instagram" class="w-6 h-6"></i></a>
+                <a href="#" target="_blank" class="text-gray-400 hover:text-white transition-colors">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="currentColor" viewBox="0 0 16 16">
+                        <path d="M12.93,3.952h-2.438c-0.314,0-0.568,0.256-0.568,0.568v5.483c0,0.314,0.254,0.568,0.568,0.568h2.438c0.312,0,0.568-0.254,0.568-0.568V4.52C13.498,4.208,13.242,3.952,12.93,3.952 M10.203,8.385v0.844h1.884V8.385H10.203z M10.203,6.864v0.844h1.884V6.864H10.203z M10.203,5.342v0.844h1.884V5.342H10.203z M3.896,10.158H2.438c-0.314,0-0.568-0.254-0.568-0.568V4.52c0-0.312,0.254-0.568,0.568-0.568h1.458c1.07,0,1.938,0.868,1.938,1.938v2.33C5.833,9.29,4.965,10.158,3.896,10.158 M3.604,5.342H3.062v0.844h0.541c0.15,0,0.271-0.121,0.271-0.271v-0.302C3.875,5.464,3.754,5.342,3.604,5.342 M3.604,6.864H3.062v0.844h0.541c0.15,0,0.271-0.121,0.271-0.271v-0.302C3.875,6.985,3.754,6.864,3.604,6.864 M3.604,8.385H3.062v0.844h0.541c0.15,0,0.271-0.121,0.271-0.271v-0.302C3.875,8.506,3.754,8.385,3.604,8.385"></path>
+                        <path d="M16,8.194c0,4.411-3.589,8-8,8s-8-3.589-8-8c0-4.411,3.589-8,8-8S16,3.783,16,8.194 M8,1.194c-3.866,0-7,3.134-7,7c0,3.866,3.134,7,7,7s7-3.134,7-7C15,4.328,11.866,1.194,8,1.194"></path>
+                    </svg>
+                </a>
+            </div>
+            <p>&copy; 2024 Isabella AI Solutions. All Rights Reserved.</p>
+        </div>
+    </footer>
+    
+    <!-- Script -->
     <script>
         lucide.createIcons();
     </script>

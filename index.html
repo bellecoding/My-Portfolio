@@ -4,176 +4,701 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Isabella AI Solutions - AI-Powered Tools & Web Solutions</title>
+    
+    <!-- SEO and Metadata -->
     <meta name="description" content="Isabella AI Solutions crafts custom AI-powered tools and web solutions for businesses. Specializing in Python, JavaScript, and creative tech to build intelligent, efficient applications.">
     <meta name="keywords" content="Isabella AI Solutions, AI developer, full-stack developer, web solutions, creative technologist, Python, JavaScript, React, portfolio, custom AI tools">
     <meta name="author" content="Isabella AI Solutions">
+
     <meta property="og:title" content="Isabella AI Solutions - AI-Powered Tools & Web Solutions">
     <meta property="og:description" content="Crafting custom AI-powered tools and web solutions for businesses.">
-    <meta property="og:image" content="images/isabellalogo.png"> 
+    <!-- Using a placeholder for the image URL since the original path 'images/isabellalogo.png' is external -->
+    <meta property="og:image" content="https://placehold.co/1200x630/000/white?text=Isabella+AI+Solutions"> 
     <meta property="og:url" content="your-website-url/index.html">
     <meta property="og:type" content="website">
-    <link rel="stylesheet" href="/output.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Custom Styles (for animations, gradients, etc.) -->
+    <style>
+        html {
+            scroll-behavior: smooth;
+        }
+        
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #111111;
+        }
+
+        /* Hero section grid background effect */
+        .grid-background {
+            background-image:
+                linear-gradient(to right, rgba(255, 255, 255, 0.05) 1px, transparent 1px),
+                linear-gradient(to bottom, rgba(255, 255, 255, 0.05) 1px, transparent 1px);
+            background-size: 4rem 4rem;
+            background-position: center center;
+        }
+
+        /* Sparkle animation for the hero section */
+        .sparkle {
+            position: absolute;
+            width: 8px;
+            height: 8px;
+            background-color: white;
+            border-radius: 50%;
+            box-shadow: 0 0 12px 3px rgba(255, 255, 255, 0.7);
+            animation: twinkle 4s infinite ease-in-out;
+        }
+
+        @keyframes twinkle {
+            0%, 100% { transform: scale(0.8); opacity: 0.7; }
+            50% { transform: scale(1.2); opacity: 1; }
+        }
+
+        /* Gradient text effect for headings */
+        .gradient-text {
+            background: linear-gradient(90deg, #a855f7, #f97316); /* Purple to Orange */
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            color: transparent;
+        }
+
+        /* Project Card Hover Effect */
+        .project-card {
+            transition-property: all;
+            transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+            transition-duration: 300ms;
+            border-color: rgba(31, 41, 55, 1); /* Dark border for subtle depth */
+        }
+        .project-card:hover {
+            transform: translateY(-0.5rem);
+            box-shadow: 0 25px 50px -12px rgba(168, 85, 247, 0.1);
+            border-color: rgba(107, 33, 168, 0.5); /* Lighter, purple-tinted border on hover */
+        }
+
+        /* Technology Stack Icons */
+        .tech-icon-container {
+            display: inline-block;
+            transition: transform 0.3s ease-in-out;
+        }
+
+        .tech-icon-container:hover {
+            transform: scale(1.1);
+        }
+
+        /* Custom loader for the AI modal */
+        .loader {
+            border: 4px solid #374151;
+            border-top: 4px solid #a855f7; /* Purple color */
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+            animation: spin 1s linear infinite;
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        /* Modal backdrop for blur effect */
+        .modal-backdrop {
+            background-color: rgba(17, 17, 17, 0.8);
+            backdrop-filter: blur(8px);
+        }
+    </style>
+
+    <!-- Lucide Icons for aesthetic appeal -->
+    <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
+    
+    <!-- Tone.js for subtle sound effects (optional) -->
+    <script src="https://unpkg.com/tone@14.9.14/build/Tone.js"></script>
 </head>
-<body class="text-gray-200">
 
-    <div class="relative min-h-screen w-full overflow-hidden">
-        <div class="absolute inset-0 grid-background z-0"></div>
-        <div class="absolute top-[20%] left-[10%] sparkle" style="animation-delay: 1s;"></div>
-        <div class="absolute top-[50%] right-[15%] sparkle" style="animation-delay: 0s;"></div>
-        <div class="absolute bottom-[25%] left-[25%] sparkle" style="animation-delay: 3s;"></div>
+<body class="text-gray-100 overflow-x-hidden">
+    <!-- Navigation Bar -->
+    <header class="sticky top-0 z-50 bg-[#111111]/95 backdrop-blur-sm border-b border-gray-800/50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex justify-between items-center">
+            <!-- Logo/Brand Name -->
+            <a href="index.html" class="text-2xl font-bold gradient-text">Isabella AI Solutions</a>
 
-        <div class="relative z-10 flex flex-col min-h-screen px-4 sm:px-6 lg:px-8">
-            <header class="py-6">
-                <nav class="w-full max-w-7xl mx-auto flex justify-between items-center">
-                    <a href="index.html" class="text-xl font-bold flex items-center gap-2">
-                        <svg width="24" height="24" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M50 0L100 28.87V86.6L50 115.47L0 86.6V28.87L50 0Z" fill="url(#paint0_linear_101_3)"/>
-                            <defs><linearGradient id="paint0_linear_101_3" x1="0" y1="0" x2="100" y2="100" gradientUnits="userSpaceOnUse"><stop stop-color="#a855f7"/><stop offset="1" stop-color="#f97316"/></linearGradient></defs>
-                        </svg>
-                        Isabella AI Solutions
+            <!-- Desktop Navigation Links -->
+            <nav class="hidden md:flex space-x-8">
+                <a href="#about" class="text-gray-300 hover:text-white transition-colors font-medium">About</a>
+                <a href="#services" class="text-gray-300 hover:text-white transition-colors font-medium">Services</a>
+                <a href="#portfolio" class="text-gray-300 hover:text-white transition-colors font-medium">Portfolio</a>
+                <a href="#contact" class="text-gray-300 hover:text-white transition-colors font-medium">Contact</a>
+            </nav>
+
+            <!-- Mobile Menu Button -->
+            <button id="mobile-menu-btn" class="md:hidden text-gray-300 hover:text-white p-2 rounded-md">
+                <i data-lucide="menu" class="w-6 h-6"></i>
+            </button>
+        </div>
+
+        <!-- Mobile Menu (Hidden by default) -->
+        <div id="mobile-menu" class="hidden md:hidden border-t border-gray-800">
+            <nav class="px-2 pt-2 pb-3 space-y-1 sm:px-3 flex flex-col">
+                <a href="#about" class="text-gray-300 hover:bg-gray-800 hover:text-white block px-3 py-2 rounded-md text-base font-medium">About</a>
+                <a href="#services" class="text-gray-300 hover:bg-gray-800 hover:text-white block px-3 py-2 rounded-md text-base font-medium">Services</a>
+                <a href="#portfolio" class="text-gray-300 hover:bg-gray-800 hover:text-white block px-3 py-2 rounded-md text-base font-medium">Portfolio</a>
+                <a href="#contact" class="text-gray-300 hover:bg-gray-800 hover:text-white block px-3 py-2 rounded-md text-base font-medium">Contact</a>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <!-- 1. Hero Section -->
+        <section id="hero" class="relative overflow-hidden py-32 md:py-48 grid-background border-b border-gray-800">
+            <!-- Sparkles (JS controlled) -->
+            <div id="sparkle-container"></div>
+            
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
+                <h1 class="text-5xl md:text-7xl font-extrabold mb-4 leading-tight">
+                    <span class="gradient-text block">Crafting Intelligence,</span>
+                    <span class="block text-white">Building Solutions.</span>
+                </h1>
+                <p class="text-xl md:text-2xl text-gray-400 mb-10 max-w-3xl mx-auto">
+                    Custom **AI-powered tools** and **full-stack web applications** that drive efficiency and innovation for your business.
+                </p>
+                <div class="flex flex-col sm:flex-row justify-center space-y-4 sm:space-y-0 sm:space-x-6">
+                    <a href="#contact" class="bg-gradient-to-r from-purple-600 to-orange-500 text-white font-semibold py-3 px-8 rounded-full shadow-lg hover:opacity-90 transition-opacity duration-300 transform hover:scale-105">
+                        Start a Project
                     </a>
-                    <div class="hidden md:flex items-center gap-2 border border-gray-700 bg-black/30 backdrop-blur-sm rounded-full px-3 py-2">
-                        <a href="index.html" class="px-4 py-1 rounded-full bg-gray-700/50">Home</a>
-                        <a href="#projects" class="px-4 py-1 rounded-full hover:bg-gray-700 transition-colors duration-300">Projects</a>
-                        <a href="about.html" class="px-4 py-1 rounded-full hover:bg-gray-700 transition-colors duration-300">About</a>
-                        <a href="#contact" class="px-4 py-1 rounded-full hover:bg-gray-700 transition-colors duration-300">Contact</a>
-                    </div>
-                    <a href="#contact" class="hidden md:flex items-center gap-2 bg-gray-100 text-gray-900 font-semibold px-5 py-2.5 rounded-full hover:bg-gray-300 transition-colors duration-300">
-                        <span>Hire Me</span>
-                        <i data-lucide="arrow-right" class="w-4 h-4"></i>
-                    </a>
-                    <button class="md:hidden focus:outline-none p-2 rounded-full hover:bg-gray-800">
-                        <i data-lucide="menu" class="w-6 h-6"></i>
+                    <button id="open-ai-modal-btn" class="bg-gray-700/50 border border-gray-600 text-white font-semibold py-3 px-8 rounded-full shadow-lg hover:bg-gray-600/50 transition-colors duration-300 flex items-center justify-center gap-2 transform hover:scale-105">
+                        <i data-lucide="zap" class="w-5 h-5"></i>
+                        AI Project Idea Generator
                     </button>
-                </nav>
-            </header>
-
-            <main id="home" class="flex-grow flex items-center justify-center text-center">
-                <div class="fade-in">
-                    <h1 class="text-4xl md:text-6xl lg:text-7xl font-bold tracking-tighter mb-4">AI-powered tools and web solutions crafted for your business.</h1>
-                    <p class="max-w-2xl mx-auto text-lg text-gray-300 mb-10">I blend creative design, robust code, and AI expertise to deliver intelligent solutions that help businesses grow and operate more efficiently.</p>
-                    <div class="flex flex-wrap justify-center items-center gap-4">
-                        <a href="#contact" class="bg-gradient-to-r from-purple-600 to-orange-500 text-white font-semibold py-3 px-6 rounded-full shadow-lg hover:opacity-90 transition-opacity duration-300">Get In Touch</a>
-                        <a href="#projects" class="bg-gray-800/50 border border-gray-700 text-white font-semibold py-3 px-6 rounded-full shadow-lg hover:bg-gray-700 transition-colors duration-300">View Projects</a>
-                        <button id="open-ai-modal-btn" class="bg-gray-100 text-gray-900 font-semibold py-3 px-6 rounded-full shadow-lg hover:bg-gray-300 transition-colors duration-300 flex items-center gap-2">
-                            <span>✨ AI Project Spark</span>
-                        </button>
-                    </div>
                 </div>
-            </main>
-        </div>
-    </div>
-
-    <div class="tech-stack-container">
-        <div class="tech-stack-glass-bar">
-            <span class="tech-item">HTML</span><span class="tech-separator">*</span>
-            <span class="tech-item">CSS</span><span class="tech-separator">*</span>
-            <span class="tech-item">Tailwind CSS</span><span class="tech-separator">*</span>
-            <span class="tech-item">JavaScript</span><span class="tech-separator">*</span>
-            <span class="tech-item">React</span><span class="tech-separator">*</span>
-            <span class="tech-item">Node.js</span><span class="tech-separator">*</span>
-            <span class="tech-item">Python</span><span class="tech-separator">*</span>
-            <span class="tech-item">SQL</span><span class="tech-separator">*</span>
-            <span class="tech-item">APIs</span><span class="tech-separator">*</span>
-            <span class="tech-item">Docker</span><span class="tech-separator">*</span>
-            <span class="tech-item">AWS</span><span class="tech-separator">*</span>
-            <span class="tech-item">AI Models</span>
-        </div>
-    </div>
-
-    <section id="projects" class="py-20 sm:py-32 bg-[#111111]">
-        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center mb-12">
-                <h2 class="text-3xl md:text-4xl font-bold tracking-tight inline-flex items-center gap-3">Featured Projects<span class="gradient-text text-4xl">*</span></h2>
-                <p class="mt-4 text-lg text-gray-400 max-w-2xl mx-auto">Here are a few examples of my work, blending design with AI and web technologies.</p>
             </div>
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <div class="project-card flex flex-col">
-                    <div class="h-48 rounded-t-xl overflow-hidden"><img src="images/ScraperDiagram.drawio.png" alt="E-Commerce Price Scraper Project" class="w-full h-full object-cover"></div>
-                    <div class="p-6 flex flex-col flex-grow">
-                        <h3 class="text-xl font-bold mb-2">E-Commerce Price Scraper</h3>
-                        <p class="text-gray-400 mb-4">An automated web scraping tool built with Python to collect product prices from over 250 URLs across nine European countries.</p>
-                        <div class="flex flex-wrap gap-2 mb-4"><span class="tech-tag">Python</span><span class="tech-tag">Selenium</span><span class="tech-tag">Pandas</span></div>
-                        <a href="https://github.com/bellecoding/Automated-Price-Scraper" target="_blank" class="project-button mt-auto"><span>View on GitHub</span><i data-lucide="arrow-right" class="w-4 h-4"></i></a>
+        </section>
+
+        <!-- 2. About Section -->
+        <section id="about" class="py-20 md:py-32 border-b border-gray-800">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <h2 class="text-4xl md:text-5xl font-bold text-center mb-16">
+                    <span class="gradient-text">About Isabella</span>
+                </h2>
+                
+                <div class="flex flex-col lg:flex-row items-center gap-12">
+                    <!-- Image Placeholder -->
+                    <div class="lg:w-1/3 w-full flex justify-center">
+                        <img src="https://placehold.co/400x400/333/fff?text=Developer+Profile" 
+                             alt="Isabella AI Developer Profile" 
+                             class="rounded-full object-cover border-4 border-purple-600 shadow-2xl shadow-purple-900/40 w-64 h-64 md:w-80 md:h-80 transition-transform duration-500 hover:rotate-3">
                     </div>
-                </div>
-                <div class="project-card flex flex-col">
-                    <div class="h-48 rounded-t-xl overflow-hidden"><img src="images/weatherapp.png" alt="Weather App Project" class="w-full h-full object-cover"></div>
-                    <div class="p-6 flex flex-col flex-grow">
-                        <h3 class="text-xl font-bold mb-2">Weather App</h3>
-                        <p class="text-gray-400 mb-4">Beautiful weather app using real API data. Responsive, fast, and accurate.</p>
-                        <div class="flex flex-wrap gap-2 mb-4"><span class="tech-tag">API</span><span class="tech-tag">React</span><span class="tech-tag">Responsive</span></div>
-                        <a href="https://isabellasweatherapp.netlify.app/" target="_blank" class="project-button mt-auto"><span>Launch Weather App</span><i data-lucide="arrow-right" class="w-4 h-4"></i></a>
-                    </div>
-                </div>
-                <div class="project-card flex flex-col">
-                    <div class="h-48 rounded-t-xl overflow-hidden"><img src="images/clock.png" alt="World Clock App Project" class="w-full h-full object-cover"></div>
-                    <div class="p-6 flex flex-col flex-grow">
-                        <h3 class="text-xl font-bold mb-2">World Clock App</h3>
-                        <p class="text-gray-400 mb-4">Live world clock for major cities. Fully responsive and informative.</p>
-                        <div class="flex flex-wrap gap-2 mb-4"><span class="tech-tag">JavaScript</span><span class="tech-tag">API</span><span class="tech-tag">HTML/CSS</span></div>
-                        <a href="https://worldclockprojectbyisa.netlify.app/" target="_blank" class="project-button mt-auto"><span>Launch Clock App</span><i data-lucide="arrow-right" class="w-4 h-4"></i></a>
+
+                    <!-- Text Content -->
+                    <div class="lg:w-2/3 w-full text-lg space-y-6">
+                        <p>
+                            Hi, I'm Isabella—a full-stack developer obsessed with the power of **Artificial Intelligence**. I specialize in bridging the gap between cutting-edge LLMs and practical business applications.
+                        </p>
+                        <p>
+                            My mission is to deliver **intelligent, efficient, and elegant web solutions** built primarily on **Python** for backend logic and **JavaScript/React** for dynamic frontends. I don't just write code; I design systems that solve real problems, automate complex workflows, and provide a delightful user experience.
+                        </p>
+                        <p class="font-semibold text-purple-400">
+                            Let's transform your ideas into a fully functional, AI-enhanced reality.
+                        </p>
+                        <a href="about.html" class="inline-flex items-center text-orange-500 font-semibold hover:text-orange-400 transition-colors group">
+                            Read My Full Story 
+                            <i data-lucide="arrow-right" class="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform"></i>
+                        </a>
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <section id="about" class="py-20 sm:py-32 bg-[#161616] border-t border-b border-gray-800">
-        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
-                <div class="about-image-container">
-                    <img src="images/isabellalogo.png" alt="Isabella AI Solutions Logo" class="rounded-full p-4">
-                </div>
-                <div>
-                    <h2 class="text-3xl md:text-4xl font-bold tracking-tight mb-6">From Idea to Launch<span class="gradient-text">*</span></h2>
-                    <p class="text-lg text-gray-300 mb-4">My approach blends creative design, solid code, and AI expertise to deliver solutions that stand out. I help businesses unlock the power of AI and automation, even if they’re starting from scratch.</p>
-                    <p class="text-lg text-gray-300 mb-4">Whether you need a modern website, an AI assistant, or a custom tool, I build it from the ground up, ensuring it's not only functional but also intuitive and efficient.</p>
-                    <a href="about.html" class="font-semibold text-lg text-purple-400 hover:text-purple-300 transition-colors">Learn more about my story &rarr;</a>
+        <!-- 3. Services Section -->
+        <section id="services" class="py-20 md:py-32 bg-[#161616] border-b border-gray-800">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <h2 class="text-4xl md:text-5xl font-bold text-center mb-16">
+                    <span class="gradient-text">What I Build</span>
+                </h2>
+
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    
+                    <!-- Service Card 1: Custom AI Tools -->
+                    <div class="p-8 bg-gray-800/30 rounded-xl border border-gray-700 hover:border-purple-600 transition-all duration-300 space-y-4">
+                        <i data-lucide="brain" class="w-10 h-10 text-purple-500 mb-3"></i>
+                        <h3 class="text-2xl font-semibold text-white">Custom AI Solutions</h3>
+                        <p class="text-gray-400">
+                            Integrating large language models (LLMs), vision, and grounding techniques to create bespoke tools for data analysis, content generation, and intelligent automation.
+                        </p>
+                        <div class="text-sm font-medium text-orange-400">Python, Gemini API, AI Agents</div>
+                    </div>
+
+                    <!-- Service Card 2: Full-Stack Web Apps -->
+                    <div class="p-8 bg-gray-800/30 rounded-xl border border-gray-700 hover:border-purple-600 transition-all duration-300 space-y-4">
+                        <i data-lucide="layout-grid" class="w-10 h-10 text-purple-500 mb-3"></i>
+                        <h3 class="text-2xl font-semibold text-white">Full-Stack Development</h3>
+                        <p class="text-gray-400">
+                            Building responsive, fast, and scalable web applications from the ground up, covering everything from the database to the user interface.
+                        </p>
+                        <div class="text-sm font-medium text-orange-400">React, TypeScript, Firebase, Node.js</div>
+                    </div>
+
+                    <!-- Service Card 3: Automation & APIs -->
+                    <div class="p-8 bg-gray-800/30 rounded-xl border border-gray-700 hover:border-purple-600 transition-all duration-300 space-y-4">
+                        <i data-lucide="bot" class="w-10 h-10 text-purple-500 mb-3"></i>
+                        <h3 class="text-2xl font-semibold text-white">Workflow Automation</h3>
+                        <p class="text-gray-400">
+                            Developing powerful backend services, RESTful APIs, and scripts to automate internal processes and connect disparate business systems seamlessly.
+                        </p>
+                        <div class="text-sm font-medium text-orange-400">Python, Flask/Django, Data Pipelines</div>
+                    </div>
+
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <section id="contact" class="py-20 sm:py-32 text-center bg-[#111111]">
-        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
-            <h2 class="text-4xl md:text-5xl font-bold tracking-tight">Have a project idea?</h2>
-            <h3 class="text-4xl md:text-5xl font-bold tracking-tight gradient-text mb-8">Let’s bring it to life.</h3>
-            <p class="max-w-xl mx-auto text-lg text-gray-400 mb-10">I'm currently available for freelance work. If you're looking for a developer to build a custom AI solution or website, I'd love to hear from you.</p>
-            <a href="mailto:your-email@example.com" class="bg-gradient-to-r from-purple-600 to-orange-500 text-white font-semibold py-4 px-8 rounded-full shadow-lg hover:opacity-90 transition-opacity duration-300 text-lg">Contact Me Today</a>
-        </div>
-    </section>
+        <!-- 4. Technology Stack -->
+        <section id="tech-stack" class="py-20 md:py-32 border-b border-gray-800">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <h2 class="text-4xl md:text-5xl font-bold text-center mb-16">
+                    <span class="gradient-text">My Stack</span>
+                </h2>
 
-    <footer class="bg-[#161616] border-t border-gray-800">
-        <div class="container mx-auto px-4 sm:px-6 lg:px-8 py-8 flex flex-col sm:flex-row justify-between items-center">
-            <div class="text-gray-400 mb-4 sm:mb-0">&copy; 2024 Isabella AI Solutions. All rights reserved.</div>
-            <div class="flex space-x-6">
+                <div class="flex justify-center items-center flex-wrap gap-8 md:gap-12">
+                    <!-- Python -->
+                    <div class="tech-icon-container text-center">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/c/c3/Python-logo-notext.svg" alt="Python" class="w-12 h-12 mx-auto filter grayscale hover:grayscale-0 transition-all duration-300">
+                        <p class="text-sm mt-2 text-gray-400 hover:text-white">Python</p>
+                    </div>
+                    <!-- JavaScript -->
+                    <div class="tech-icon-container text-center">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/6/6a/JavaScript-logo.png" alt="JavaScript" class="w-12 h-12 mx-auto filter grayscale hover:grayscale-0 transition-all duration-300">
+                        <p class="text-sm mt-2 text-gray-400 hover:text-white">JavaScript</p>
+                    </div>
+                    <!-- React -->
+                    <div class="tech-icon-container text-center">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/a/a7/React-icon.svg" alt="React" class="w-12 h-12 mx-auto filter grayscale hover:grayscale-0 transition-all duration-300">
+                        <p class="text-sm mt-2 text-gray-400 hover:text-white">React</p>
+                    </div>
+                    <!-- Tailwind CSS -->
+                    <div class="tech-icon-container text-center">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/d/d5/Tailwind_CSS_Logo.svg" alt="Tailwind CSS" class="w-12 h-12 mx-auto filter grayscale hover:grayscale-0 transition-all duration-300">
+                        <p class="text-sm mt-2 text-gray-400 hover:text-white">Tailwind</p>
+                    </div>
+                    <!-- Firebase -->
+                    <div class="tech-icon-container text-center">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/4/46/Firebase_Logo.svg" alt="Firebase" class="w-12 h-12 mx-auto filter grayscale hover:grayscale-0 transition-all duration-300">
+                        <p class="text-sm mt-2 text-gray-400 hover:text-white">Firebase</p>
+                    </div>
+                    <!-- Gemini API -->
+                    <div class="tech-icon-container text-center">
+                        <i data-lucide="sparkles" class="w-12 h-12 mx-auto text-orange-500 hover:text-orange-400 transition-all duration-300"></i>
+                        <p class="text-sm mt-2 text-gray-400 hover:text-white">Gemini API</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+        <!-- 5. Portfolio Section -->
+        <section id="portfolio" class="py-20 md:py-32 bg-[#161616] border-b border-gray-800">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <h2 class="text-4xl md:text-5xl font-bold text-center mb-16">
+                    <span class="gradient-text">Featured Projects</span>
+                </h2>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
+                    
+                    <!-- Project Card 1: AI Assistant App -->
+                    <div class="project-card bg-[#161616] border border-gray-800 rounded-xl overflow-hidden shadow-xl">
+                        <img src="https://placehold.co/600x400/222/ddd?text=AI+Chat+App" 
+                             alt="AI Assistant Project" 
+                             class="w-full h-48 object-cover transition-transform duration-500 hover:scale-105">
+                        <div class="p-6 space-y-4">
+                            <h3 class="text-2xl font-semibold text-white">Intelligent Assistant Platform</h3>
+                            <p class="text-gray-400 text-sm">A custom application leveraging Gemini's conversational and grounding abilities to provide instant, context-aware business insights.</p>
+                            <div class="flex flex-wrap gap-2 pt-2">
+                                <span class="tech-tag bg-gray-800 text-gray-400 text-xs font-medium px-2.5 py-1 rounded-full">Python</span>
+                                <span class="tech-tag bg-gray-800 text-gray-400 text-xs font-medium px-2.5 py-1 rounded-full">Flask</span>
+                                <span class="tech-tag bg-gray-800 text-gray-400 text-xs font-medium px-2.5 py-1 rounded-full">Gemini API</span>
+                            </div>
+                            <a href="#" class="mt-4 inline-flex items-center justify-center gap-2 w-full text-center font-semibold bg-gray-700/50 border border-gray-600 text-white py-2.5 px-5 rounded-full hover:bg-gray-600/50 transition-colors duration-300">
+                                <i data-lucide="eye" class="w-5 h-5"></i> View Details
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Project Card 2: Custom React Dashboard -->
+                    <div class="project-card bg-[#161616] border border-gray-800 rounded-xl overflow-hidden shadow-xl">
+                        <img src="https://placehold.co/600x400/222/ddd?text=React+Dashboard" 
+                             alt="React Weather Forecast Project" 
+                             class="w-full h-48 object-cover transition-transform duration-500 hover:scale-105">
+                        <div class="p-6 space-y-4">
+                            <h3 class="text-2xl font-semibold text-white">Real-time Data Dashboard</h3>
+                            <p class="text-gray-400 text-sm">A responsive, single-page application built with React to visualize and manage large datasets with custom charts and interactive components.</p>
+                            <div class="flex flex-wrap gap-2 pt-2">
+                                <span class="tech-tag bg-gray-800 text-gray-400 text-xs font-medium px-2.5 py-1 rounded-full">React</span>
+                                <span class="tech-tag bg-gray-800 text-gray-400 text-xs font-medium px-2.5 py-1 rounded-full">TypeScript</span>
+                                <span class="tech-tag bg-gray-800 text-gray-400 text-xs font-medium px-2.5 py-1 rounded-full">Tailwind CSS</span>
+                            </div>
+                            <a href="#" class="mt-4 inline-flex items-center justify-center gap-2 w-full text-center font-semibold bg-gray-700/50 border border-gray-600 text-white py-2.5 px-5 rounded-full hover:bg-gray-600/50 transition-colors duration-300">
+                                <i data-lucide="eye" class="w-5 h-5"></i> View Details
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Project Card 3: E-commerce Backend -->
+                    <div class="project-card bg-[#161616] border border-gray-800 rounded-xl overflow-hidden shadow-xl">
+                        <img src="https://placehold.co/600x400/222/ddd?text=E-commerce+Backend" 
+                             alt="E-commerce Backend Project" 
+                             class="w-full h-48 object-cover transition-transform duration-500 hover:scale-105">
+                        <div class="p-6 space-y-4">
+                            <h3 class="text-2xl font-semibold text-white">Scalable E-commerce API</h3>
+                            <p class="text-gray-400 text-sm">Developed a robust, highly-available backend API for an e-commerce platform, handling user authentication, product catalog, and order processing.</p>
+                            <div class="flex flex-wrap gap-2 pt-2">
+                                <span class="tech-tag bg-gray-800 text-gray-400 text-xs font-medium px-2.5 py-1 rounded-full">Node.js</span>
+                                <span class="tech-tag bg-gray-800 text-gray-400 text-xs font-medium px-2.5 py-1 rounded-full">Express.js</span>
+                                <span class="tech-tag bg-gray-800 text-gray-400 text-xs font-medium px-2.5 py-1 rounded-full">MongoDB</span>
+                            </div>
+                            <a href="#" class="mt-4 inline-flex items-center justify-center gap-2 w-full text-center font-semibold bg-gray-700/50 border border-gray-600 text-white py-2.5 px-5 rounded-full hover:bg-gray-600/50 transition-colors duration-300">
+                                <i data-lucide="eye" class="w-5 h-5"></i> View Details
+                            </a>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- 6. Contact Section -->
+        <section id="contact" class="py-20 md:py-32">
+            <div class="max-w-xl mx-auto px-4 sm:px-6 lg:px-8">
+                <h2 class="text-4xl md:text-5xl font-bold text-center mb-6">
+                    <span class="gradient-text">Let's Connect</span>
+                </h2>
+                <p class="text-center text-gray-400 mb-12 text-lg">
+                    Have a project in mind or just want to chat about AI? Fill out the form below or connect with me on social media.
+                </p>
+
+                <div class="bg-gray-900/50 border border-gray-800 p-8 md:p-10 rounded-xl shadow-2xl">
+                    <form id="contact-form" action="javascript:void(0);" class="space-y-6">
+                        <div>
+                            <label for="name" class="block text-sm font-medium text-gray-300 mb-2">Name</label>
+                            <input type="text" id="name" name="name" required class="w-full bg-gray-800 border border-gray-600 rounded-lg p-3 text-white placeholder-gray-500 focus:ring-2 focus:ring-purple-500 focus:outline-none">
+                        </div>
+                        <div>
+                            <label for="email" class="block text-sm font-medium text-gray-300 mb-2">Email</label>
+                            <input type="email" id="email" name="email" required class="w-full bg-gray-800 border border-gray-600 rounded-lg p-3 text-white placeholder-gray-500 focus:ring-2 focus:ring-purple-500 focus:outline-none">
+                        </div>
+                        <div>
+                            <label for="subject" class="block text-sm font-medium text-gray-300 mb-2">Subject</label>
+                            <input type="text" id="subject" name="subject" required class="w-full bg-gray-800 border border-gray-600 rounded-lg p-3 text-white placeholder-gray-500 focus:ring-2 focus:ring-purple-500 focus:outline-none">
+                        </div>
+                        <div>
+                            <label for="message" class="block text-sm font-medium text-gray-300 mb-2">Message</label>
+                            <textarea id="message" name="message" rows="4" required class="w-full bg-gray-800 border border-gray-600 rounded-lg p-3 text-white placeholder-gray-500 focus:ring-2 focus:ring-purple-500 focus:outline-none"></textarea>
+                        </div>
+                        <div class="text-center">
+                            <button type="submit" class="w-full md:w-auto bg-gradient-to-r from-purple-600 to-orange-500 text-white font-semibold py-3 px-12 rounded-full shadow-lg hover:opacity-90 transition-opacity duration-300">
+                                Send Message
+                            </button>
+                        </div>
+                        <!-- NEW: Error message container (hidden by default) -->
+                        <p id="contact-error" class="text-center text-red-400 text-sm mt-4 hidden"></p>
+                    </form>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-[#0c0c0c] border-t border-gray-800 py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <div class="mb-6">
+                <a href="index.html" class="text-2xl font-bold gradient-text">Isabella AI Solutions</a>
+            </div>
+            
+            <!-- Social Media Links -->
+            <div class="flex justify-center space-x-6 mb-8">
+                <!-- Using placeholder links and icons -->
                 <a href="https://github.com/bellecoding" target="_blank" class="text-gray-400 hover:text-white transition-colors"><i data-lucide="github" class="w-6 h-6"></i></a>
                 <a href="#" target="_blank" class="text-gray-400 hover:text-white transition-colors"><i data-lucide="linkedin" class="w-6 h-6"></i></a>
                 <a href="#" target="_blank" class="text-gray-400 hover:text-white transition-colors"><i data-lucide="instagram" class="w-6 h-6"></i></a>
-                <a href="#" target="_blank" class="text-gray-400 hover:text-white transition-colors">
-                    <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="currentColor" viewBox="0 0 16 16">
-                        <path d="M12.93,3.952h-2.438c-0.314,0-0.568,0.256-0.568,0.568v5.483c0,0.314,0.254,0.568,0.568,0.568h2.438c0.312,0,0.568-0.254,0.568-0.568V4.52C13.498,4.208,13.242,3.952,12.93,3.952z M5.682,3.952H3.244c-0.314,0-0.568,0.256-0.568,0.568v8.489c0,0.312,0.254,0.568,0.568,0.568h2.438c0.312,0,0.568-0.256,0.568-0.568V4.52C6.25,4.208,5.994,3.952,5.682,3.952z M9.318,8.527H6.88c-0.312,0-0.568,0.256-0.568,0.568v3.942c0,0.312,0.256,0.568,0.568,0.568h2.438c0.312,0,0.568-0.256,0.568-0.568V9.095C9.886,8.783,9.63,8.527,9.318,8.527z"/>
-                    </svg>
-                </a>
             </div>
+
+            <nav class="flex justify-center space-x-6 text-sm mb-6">
+                <a href="#about" class="text-gray-400 hover:text-white transition-colors">About</a>
+                <a href="#services" class="text-gray-400 hover:text-white transition-colors">Services</a>
+                <a href="#portfolio" class="text-gray-400 hover:text-white transition-colors">Portfolio</a>
+                <a href="#contact" class="text-gray-400 hover:text-white transition-colors">Contact</a>
+            </nav>
+
+            <p class="text-gray-500 text-sm">
+                &copy; 2025 Isabella AI Solutions. All rights reserved.
+            </p>
         </div>
     </footer>
 
-    <div id="ai-modal" class="modal-backdrop fixed inset-0 bg-black bg-opacity-70 z-50 flex items-center justify-center p-4 hidden opacity-0">
-        <div id="ai-modal-content" class="modal-content bg-[#161616] border border-gray-700 rounded-2xl shadow-2xl w-full max-w-2xl max-h-[90vh] flex flex-col transform scale-95 opacity-0">
-            <div class="flex justify-between items-center p-5 border-b border-gray-700"><h3 class="text-xl font-semibold flex items-center gap-2"><span class="gradient-text">✨</span><span>AI Project Idea Spark</span></h3><button id="close-ai-modal-btn" class="text-gray-400 hover:text-white"><i data-lucide="x" class="w-6 h-6"></i></button></div>
+    <!-- AI Project Idea Generator Modal (Hidden by default) -->
+    <div id="ai-modal" class="fixed inset-0 z-[100] hidden items-center justify-center modal-backdrop transition-opacity duration-300">
+        <div class="bg-gray-900 w-full max-w-lg md:max-w-xl lg:max-w-2xl h-full md:h-auto md:max-h-[90vh] rounded-xl shadow-2xl flex flex-col transform transition-transform duration-300">
+            <div class="flex justify-between items-center p-6 border-b border-gray-700">
+                <h3 class="text-xl font-bold gradient-text flex items-center gap-2"><i data-lucide="zap" class="w-5 h-5"></i> AI Project Idea Generator</h3>
+                <button id="close-ai-modal-btn" class="text-gray-400 hover:text-white"><i data-lucide="x" class="w-6 h-6"></i></button>
+            </div>
             <div class="p-6 flex-grow overflow-y-auto">
-                <div id="ai-form-container"><p class="text-gray-400 mb-4">Have a business problem or an idea? Describe it below, and my AI assistant will draft a project plan for you.</p><textarea id="problem-input" class="w-full bg-gray-800 border border-gray-600 rounded-lg p-3 text-white placeholder-gray-500 focus:ring-2 focus:ring-purple-500 focus:outline-none" rows="4" placeholder="e.g., 'My team wastes hours scheduling meetings' or 'I want a better way to track my personal book collection'"></textarea><button id="generate-idea-btn" class="mt-4 w-full bg-gradient-to-r from-purple-600 to-orange-500 text-white font-semibold py-3 px-6 rounded-full shadow-lg hover:opacity-90 transition-opacity duration-300 flex items-center justify-center gap-2"><span>Generate Idea</span><i data-lucide="zap" class="w-5 h-5"></i></button></div>
-                <div id="ai-results-container" class="hidden"><div id="ai-loading" class="text-center py-8 hidden"><div class="loader mx-auto"></div><p class="mt-4 text-gray-400">AI is thinking...</p></div><div id="ai-error" class="text-center py-8 hidden"><p class="text-red-400">Sorry, something went wrong. Please try again.</p></div><div id="ai-generated-content"></div></div>
+                <!-- AI Input Form -->
+                <div id="ai-form-container">
+                    <p class="text-gray-400 mb-4">Have a business problem or an idea? Describe it below, and my AI assistant will draft a project plan for you.</p>
+                    <textarea id="problem-input" class="w-full bg-gray-800 border border-gray-600 rounded-lg p-3 text-white placeholder-gray-500 focus:ring-2 focus:ring-purple-500 focus:outline-none" rows="4" placeholder="e.g., 'My team wastes hours scheduling meetings' or 'I want a better way to track my personal book collection'"></textarea>
+                    <button id="generate-idea-btn" class="mt-4 w-full bg-gradient-to-r from-purple-600 to-orange-500 text-white font-semibold py-3 px-6 rounded-full shadow-lg hover:opacity-90 transition-opacity duration-300 flex items-center justify-center gap-2">
+                        <span>Generate Idea</span>
+                        <i data-lucide="zap" class="w-5 h-5"></i>
+                    </button>
+                </div>
+                
+                <!-- AI Results and Loading -->
+                <div id="ai-results-container" class="hidden">
+                    <div id="ai-loading" class="text-center py-8 hidden">
+                        <div class="loader mx-auto"></div>
+                        <p class="mt-4 text-gray-400">AI drafting solution...</p>
+                    </div>
+                    <div id="ai-output" class="prose prose-invert max-w-none text-gray-300 space-y-4">
+                        <!-- AI response will be injected here -->
+                    </div>
+                    <button id="ai-reset-btn" class="mt-8 w-full bg-gray-700/50 border border-gray-600 text-white font-semibold py-3 px-6 rounded-full shadow-lg hover:bg-gray-600/50 transition-colors duration-300 flex items-center justify-center gap-2">
+                        New Idea
+                    </button>
+                </div>
             </div>
         </div>
     </div>
 
-    <script src="script.js" defer></script>
+
+    <!-- JavaScript Section -->
+    <script>
+        // Initialize Lucide Icons
+        lucide.createIcons();
+
+        // Constants for the Gemini API call
+        const API_KEY = ""; // Placeholder, key will be handled by the environment
+        const API_URL = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash-preview-09-2025:generateContent?key=${API_KEY}`;
+        const SYSTEM_INSTRUCTION = "You are a world-class creative technologist and AI solution architect. Your task is to take a user's problem or idea and transform it into a professional, compelling, and concise project plan. The plan must be formatted entirely in markdown and contain the following sections with headings: 'Project Title', 'The Problem', 'Proposed AI Solution (using Gemini API or similar technology)', and 'Key Features'. Do not use any introductory or concluding conversational text outside of the plan itself.";
+
+
+        // Utility to handle API calls with exponential backoff
+        async function fetchWithBackoff(url, options, retries = 3, delay = 1000) {
+            for (let i = 0; i < retries; i++) {
+                try {
+                    const response = await fetch(url, options);
+                    if (!response.ok) {
+                        throw new Error(`HTTP error! status: ${response.status}`);
+                    }
+                    return response;
+                } catch (error) {
+                    if (i === retries - 1) {
+                        throw error;
+                    }
+                    await new Promise(resolve => setTimeout(resolve, delay * (2 ** i)));
+                }
+            }
+        }
+
+
+        // Function to create and manage the sparkling effect
+        function createSparkles(containerId, count) {
+            const container = document.getElementById(containerId);
+            if (!container) return;
+
+            for (let i = 0; i < count; i++) {
+                const sparkle = document.createElement('div');
+                sparkle.className = 'sparkle';
+                
+                // Random position within the container bounds
+                const x = Math.random() * 100; // %
+                const y = Math.random() * 100; // %
+                
+                // Random size and animation delay
+                const size = Math.random() * 5 + 3; // 3px to 8px
+                const delay = Math.random() * 5; // 0s to 5s delay
+
+                sparkle.style.left = `${x}%`;
+                sparkle.style.top = `${y}%`;
+                sparkle.style.width = `${size}px`;
+                sparkle.style.height = `${size}px`;
+                sparkle.style.animationDelay = `${delay}s`;
+
+                container.appendChild(sparkle);
+            }
+        }
+
+        // Main Script Execution
+        document.addEventListener('DOMContentLoaded', function () {
+            // 1. Sparkle Initialization
+            createSparkles('sparkle-container', 30); // Create 30 sparkles in the hero section
+
+            // 2. Mobile Menu Toggle
+            const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+            const mobileMenu = document.getElementById('mobile-menu');
+
+            if (mobileMenuBtn && mobileMenu) {
+                mobileMenuBtn.addEventListener('click', function() {
+                    mobileMenu.classList.toggle('hidden');
+                    const icon = mobileMenuBtn.querySelector('i');
+                    if (mobileMenu.classList.contains('hidden')) {
+                        icon.setAttribute('data-lucide', 'menu');
+                    } else {
+                        icon.setAttribute('data-lucide', 'x');
+                    }
+                    lucide.createIcons(); // Re-create icons after changing attributes
+                });
+
+                // Close menu when a link is clicked
+                document.querySelectorAll('#mobile-menu a').forEach(link => {
+                    link.addEventListener('click', () => {
+                        mobileMenu.classList.add('hidden');
+                        mobileMenuBtn.querySelector('i').setAttribute('data-lucide', 'menu');
+                        lucide.createIcons();
+                    });
+                });
+            }
+
+            // 3. AI Modal Logic
+            const aiModal = document.getElementById('ai-modal');
+            const openAiModalBtn = document.getElementById('open-ai-modal-btn');
+            const closeAiModalBtn = document.getElementById('close-ai-modal-btn');
+            const generateIdeaBtn = document.getElementById('generate-idea-btn');
+            const aiResetBtn = document.getElementById('ai-reset-btn');
+            const problemInput = document.getElementById('problem-input');
+            const aiFormContainer = document.getElementById('ai-form-container');
+            const aiResultsContainer = document.getElementById('ai-results-container');
+            const aiLoading = document.getElementById('ai-loading');
+            const aiOutput = document.getElementById('ai-output');
+            
+            // Open Modal
+            if (openAiModalBtn) {
+                openAiModalBtn.addEventListener('click', () => {
+                    aiModal.classList.remove('hidden');
+                    aiModal.classList.add('flex');
+                    document.body.classList.add('overflow-hidden');
+                });
+            }
+
+            // Close Modal
+            if (closeAiModalBtn) {
+                closeAiModalBtn.addEventListener('click', () => {
+                    aiModal.classList.add('hidden');
+                    aiModal.classList.remove('flex');
+                    document.body.classList.remove('overflow-hidden');
+                });
+            }
+
+            // Reset Modal View
+            if (aiResetBtn) {
+                aiResetBtn.addEventListener('click', () => {
+                    aiFormContainer.classList.remove('hidden');
+                    aiResultsContainer.classList.add('hidden');
+                    problemInput.value = '';
+                    aiOutput.innerHTML = '';
+                });
+            }
+
+            // Generate Idea Logic
+            if (generateIdeaBtn) {
+                generateIdeaBtn.addEventListener('click', async () => {
+                    const userQuery = problemInput.value.trim();
+                    if (!userQuery) {
+                        problemInput.placeholder = "Please enter a problem or idea!";
+                        return;
+                    }
+
+                    // Show loading and hide form
+                    aiFormContainer.classList.add('hidden');
+                    aiResultsContainer.classList.remove('hidden');
+                    aiLoading.classList.remove('hidden');
+                    aiOutput.innerHTML = '';
+                    
+                    const payload = {
+                        contents: [{ parts: [{ text: userQuery }] }],
+                        tools: [{ "google_search": {} }],
+                        systemInstruction: {
+                            parts: [{ text: SYSTEM_INSTRUCTION }]
+                        },
+                    };
+                    
+                    const options = {
+                        method: 'POST',
+                        headers: { 'Content-Type': 'application/json' },
+                        body: JSON.stringify(payload)
+                    };
+
+                    try {
+                        const response = await fetchWithBackoff(API_URL, options);
+                        const result = await response.json();
+                        const candidate = result.candidates?.[0];
+                        
+                        if (candidate && candidate.content?.parts?.[0]?.text) {
+                            let text = candidate.content.parts[0].text;
+                            
+                            // Convert Markdown to simple HTML for display
+                            text = text.replace(/^#+\s*(.*)$/gm, '<h3>$1</h3>'); // Convert MD headings to H3
+                            text = text.replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>'); // Bold text
+
+                            // Simple paragraph handling (assuming line breaks mean new paragraphs)
+                            text = text.split('\n').filter(line => line.trim() !== '').map(line => `<p>${line}</p>`).join('');
+
+                            aiOutput.innerHTML = text;
+                        } else {
+                            aiOutput.innerHTML = "<p class='text-red-400'>Sorry, I couldn't generate a plan. Please try a different prompt.</p>";
+                        }
+                    } catch (error) {
+                        console.error("Gemini API Error:", error);
+                        aiOutput.innerHTML = "<p class='text-red-400'>A network error occurred. Please check your connection or try again later.</p>";
+                    } finally {
+                        aiLoading.classList.add('hidden');
+                    }
+                });
+            }
+
+            // 4. Contact Form Logic (Fix for line 528)
+            const contactForm = document.getElementById('contact-form');
+            const contactError = document.getElementById('contact-error'); // Get error message element
+
+            if (contactForm) {
+                contactForm.addEventListener('submit', function(e) {
+                    e.preventDefault();
+
+                    const name = document.getElementById('name').value;
+                    const email = document.getElementById('email').value;
+                    const subject = document.getElementById('subject').value;
+                    const message = document.getElementById('message').value;
+
+                    // URL-encode subject and body for the mailto link
+                    const subjectEncoded = encodeURIComponent(subject);
+                    const body = encodeURIComponent(
+                        `Hello Isabella,\n\n${message}\n\nFrom:\n${name}\n${email}`
+                    );
+
+                    const mailtoLink = `mailto:info@isabellaaisolutions.com?subject=${subjectEncoded}&body=${body}`;
+                    
+                    // Hide previous error message
+                    contactError.classList.add('hidden');
+
+                    // Open the user's default email client
+                    try {
+                        window.location.href = mailtoLink;
+                        
+                        // Optional: Clear form only if email client opens successfully (though users often hit back/cancel)
+                        // This timeout provides a better user experience for immediate form clear
+                        setTimeout(() => {
+                            contactForm.reset();
+                        }, 100); 
+
+                    } catch (e) {
+                        console.error("Could not open mailto link: ", e);
+                        // Display error message to the user on the screen
+                        contactError.textContent = "Could not open email client. Please send your message directly to info@isabellaaisolutions.com";
+                        contactError.classList.remove('hidden');
+                    }
+                });
+            }
+        });
+    </script>
 </body>
 </html>
