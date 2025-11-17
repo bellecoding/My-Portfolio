@@ -18,7 +18,10 @@
     <!-- Load Tailwind CSS -->
    <link rel="stylesheet" href="output.css">
 
-    <style>
+    <style> 
+        html, body {
+            background-color: #111111;
+        }
         .image-gallery .gallery-image {
             position: absolute;
             inset: 0;
@@ -73,7 +76,7 @@
     </header>
 
     <!-- Main Content - Projects Grid -->
-    <main class="flex-grow pt-10 pb-20 grid-background">
+     <main class="flex-grow pt-10 pb-20 bg-[#111111]">
         <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             
             <header class="text-center mb-16">
@@ -95,9 +98,9 @@
                             <span class="tech-tag">Prompt Engineering</span>
                         </div>
                         <h3 class="text-2xl font-bold text-white">Advanced AI Assistant</h3>
-                        <p class="text-gray-400 text-sm">An intelligent virtual assistant optimized for complex business planning and strategic brainstorming, powered by the Gemini API.</p>
-                        <a href="index.html" class="project-button bg-purple-600 hover:bg-purple-700">
-                            <i data-lucide="zap" class="w-5 h-5"></i> View on Home Page
+                        <p class="text-gray-400 text-sm">An AI-driven assistant helps customers configure complex products and get instant, accurate quotes across multiple countries. It walks users through technical choices, respects local rules, and ensures every required component is included. Integrated with Magento, it keeps data consistent across regions, supports multiple languages around the clock, cuts manual workload, and boosts conversions.</p>
+                        <a href="index.html" >
+                           <i data-lucide="external-link" class="w-5 h-5"></i>View on Home Page
                         </a>
                     </div>
                 </div>
@@ -113,8 +116,8 @@
                         </div>
                         <h3 class="text-2xl font-bold text-white">Custom AI Web App</h3>
                         <p class="text-gray-400 text-sm">A full-stack React application designed for rapid deployment of custom AI-powered microservices and tools.</p>
-                        <a href="index.html" class="project-button bg-purple-600 hover:bg-purple-700">
-                            <i data-lucide="zap" class="w-5 h-5"></i> View on Home Page
+                        <a href="index.html">
+                            <i data-lucide="external-link" class="w-5 h-5"></i> View on Home Page
                         </a>
                     </div>
                 </div>
@@ -130,7 +133,7 @@
                         </div>
                         <h3 class="text-2xl font-bold text-white">Interactive Weather Forecast</h3>
                         <p class="text-gray-400 text-sm">Displays real-time and future weather conditions for any location using a modern, state-managed React interface.</p>
-                        <a href="https://weather-react-project-shecodes.netlify.app/" target="_blank" class="project-button bg-purple-600 hover:bg-purple-700">
+                        <a href="https://weather-react-project-shecodes.netlify.app/" target="_blank">
                             <i data-lucide="external-link" class="w-5 h-5"></i> View Live Project
                         </a>
                     </div>
@@ -138,7 +141,7 @@
                 
                 <!-- 4. World Clock Project (New) -->
                 <div class="project-card">
-                    <img src="images/image_646b66.png" alt="World Clock Project" class="w-full h-48 object-cover object-top rounded-t-xl" onerror="this.onerror=null;this.src='https://placehold.co/600x400/222222/cccccc?text=World+Clock';">
+                    <img src="images/clock.png" alt="World Clock Project" class="w-full h-48 object-cover object-top rounded-t-xl" onerror="this.onerror=null;this.src='https://placehold.co/600x400/222222/cccccc?text=World+Clock';">
                     <div class="p-6 space-y-4">
                         <div class="flex flex-wrap gap-2">
                             <span class="tech-tag">HTML</span>
@@ -173,7 +176,7 @@
                             <span class="tech-tag">CSS3</span>
                             <span class="tech-tag">Responsive Design</span>
                         </div>
-                        <h3 class="text-2xl font-bold text-white">Belle's Travel Landing Page</h3>
+                        <h3 class="text-2xl font-bold text-white">Travel Landing Page</h3>
                         <p class="text-gray-400 text-sm">A responsive and visually engaging landing page designed to promote travel destinations and services.</p>
                         <a href="https://bellestravelproject.netlify.app/" target="_blank" class="project-button">
                             <i data-lucide="external-link" class="w-5 h-5"></i> View Live Project
@@ -184,7 +187,7 @@
                 <!-- 6. Dictionary Project React (New) -->
                 <div class="project-card">
                      <div class="image-gallery relative h-48 rounded-t-xl overflow-hidden bg-gray-900">
-                        <img src="images/image_64766a.png" alt="Dictionary Project React" class="gallery-image object-cover object-top" onerror="this.onerror=null;this.src='https://placehold.co/600x400/222222/cccccc?text=Dictionary+App';">
+                        <img src="images/dictionary-1.png" alt="Dictionary Project React" class="gallery-image object-cover object-top w-full h-56" onerror="this.onerror=null;this.src='https://placehold.co/600x400/222222/cccccc?text=Dictionary+App';">
                         <img src="images/dictionary-2.png" alt="Dictionary Project React Additional Screen" class="gallery-image object-cover object-top" onerror="this.onerror=null;this.src='https://placehold.co/600x400/222222/cccccc?text=Dictionary+App+2';">
                         <button class="prev-btn absolute left-3 top-1/2 -translate-y-1/2 bg-black/60 hover:bg-black/75 border border-white/10 text-white p-2 rounded-full backdrop-blur-sm transition" aria-label="Previous image">
                             <i data-lucide="chevron-left" class="w-4 h-4"></i>
@@ -210,7 +213,7 @@
                 
                 <!-- 7. Weather React Project (New) - Separated for unique card appearance -->
                 <div class="project-card">
-                    <img src="images/image_646b45.png" alt="Weather React Project" class="w-full h-48 object-cover object-top rounded-t-xl" onerror="this.onerror=null;this.src='https://placehold.co/600x400/222222/cccccc?text=Weather+App+2';">
+                    <img src="images/weatherapp.png" alt="Weather React Project" class="w-full h-48 object-cover object-top rounded-t-xl" >
                     <div class="p-6 space-y-4">
                         <div class="flex flex-wrap gap-2">
                             <span class="tech-tag">React</span>
@@ -219,7 +222,7 @@
                         </div>
                         <h3 class="text-2xl font-bold text-white">Simple React Weather</h3>
                         <p class="text-gray-400 text-sm">A lightweight weather application focused on clean UI and efficient data fetching using React functional components.</p>
-                        <a href="https://weather-react-project-shecodes.netlify.app/" target="_blank" class="project-button">
+                        <a href="https://react-project-shecodes.netlify.app/" target="_blank" class="project-button">
                             <i data-lucide="external-link" class="w-5 h-5"></i> View Live Project
                         </a>
                     </div>
@@ -227,7 +230,7 @@
                 
                 <!-- 8. Web Scrapper Project (The one that needs the image from the path) -->
                 <div class="project-card">
-                    <img src="images/licensed-image.jpg" alt="Web Scrapper Project" class="w-full h-48 object-cover object-top rounded-t-xl" onerror="this.onerror=null;this.src='https://placehold.co/600x400/222222/cccccc?text=Web+Scrapper+Tool';">
+                    <img src="images/scraper.jpg" alt="Web Scrapper Project" class="w-full h-45 object-cover object-top rounded-t-xl" >
                     <div class="p-6 space-y-4">
                         <div class="flex flex-wrap gap-2">
                             <span class="tech-tag">Python</span>
@@ -236,8 +239,10 @@
                         </div>
                         <h3 class="text-2xl font-bold text-white">Automated Web Scrapper</h3>
                         <p class="text-gray-400 text-sm">A powerful utility built in Python for extracting, cleaning, and structuring data from dynamic websites.</p>
-                        <a href="#" class="project-button opacity-70 cursor-not-allowed">
-                            <i data-lucide="lock" class="w-5 h-5"></i> Private Tool
+                    <br/>
+                    <br/>
+                        <a href="https://github.com/bellecoding/Automated-Price-Scraper" class="project-button opacity-70 ">
+                            <i data-lucide="external-link" class="w-5 h-5"></i> View Live Project
                         </a>
                     </div>
                 </div>
