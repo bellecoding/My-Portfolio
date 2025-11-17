@@ -16,7 +16,29 @@
     <meta property="og:type" content="website">
 
     <!-- Load Tailwind CSS -->
-    <link rel="stylesheet" href="output.css"> 
+   <link rel="stylesheet" href="output.css">
+
+    <style>
+        .image-gallery .gallery-image {
+            position: absolute;
+            inset: 0;
+            opacity: 0;
+            transition: opacity 300ms ease;
+        }
+        .image-gallery .dot {
+            width: 10px;
+            height: 10px;
+            border-radius: 9999px;
+            background: rgba(255, 255, 255, 0.35);
+            transition: transform 200ms ease, opacity 200ms ease;
+            opacity: 0.7;
+        }
+        .image-gallery .dot.active {
+            background: linear-gradient(90deg, #a855f7, #f97316);
+            opacity: 1;
+            transform: scale(1.05);
+        }
+    </style>
   
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -133,7 +155,18 @@
 
                 <!-- 5. Belle's Travel Project (New) -->
                 <div class="project-card">
-                    <img src="images/image_646e2b.png" alt="Belle's Travel Project" class="w-full h-48 object-cover object-top rounded-t-xl" onerror="this.onerror=null;this.src='https://placehold.co/600x400/222222/cccccc?text=Travel+Site';">
+                    <div class="image-gallery relative h-48 rounded-t-xl overflow-hidden bg-gray-900">
+                        <img src="images/travel-1.png" alt="Belle's Travel Project" class="gallery-image object-cover object-top" onerror="this.onerror=null;this.src='https://placehold.co/600x400/222222/cccccc?text=Travel+Site';">
+                        <img src="images/travel-2.png" alt="Belle's Travel Project Alternate" class="gallery-image object-cover object-top" onerror="this.onerror=null;this.src='https://placehold.co/600x400/222222/cccccc?text=Travel+Site+2';">
+                        <img src="images/travel-3.png" alt="Belle's Travel Project Mobile" class="gallery-image object-cover object-top" onerror="this.onerror=null;this.src='https://placehold.co/600x400/222222/cccccc?text=Travel+Site+3';">
+                        <button class="prev-btn absolute left-3 top-1/2 -translate-y-1/2 bg-black/60 hover:bg-black/75 border border-white/10 text-white p-2 rounded-full backdrop-blur-sm transition" aria-label="Previous image">
+                            <i data-lucide="chevron-left" class="w-4 h-4"></i>
+                        </button>
+                        <button class="next-btn absolute right-3 top-1/2 -translate-y-1/2 bg-black/60 hover:bg-black/75 border border-white/10 text-white p-2 rounded-full backdrop-blur-sm transition" aria-label="Next image">
+                            <i data-lucide="chevron-right" class="w-4 h-4"></i>
+                        </button>
+                        <div class="gallery-pagination absolute bottom-3 inset-x-0 flex justify-center gap-2"></div>
+                    </div>
                     <div class="p-6 space-y-4">
                         <div class="flex flex-wrap gap-2">
                             <span class="tech-tag">HTML5</span>
@@ -150,7 +183,17 @@
 
                 <!-- 6. Dictionary Project React (New) -->
                 <div class="project-card">
-                    <img src="images/image_64766a.png" alt="Dictionary Project React" class="w-full h-48 object-cover object-top rounded-t-xl" onerror="this.onerror=null;this.src='https://placehold.co/600x400/222222/cccccc?text=Dictionary+App';">
+                     <div class="image-gallery relative h-48 rounded-t-xl overflow-hidden bg-gray-900">
+                        <img src="images/image_64766a.png" alt="Dictionary Project React" class="gallery-image object-cover object-top" onerror="this.onerror=null;this.src='https://placehold.co/600x400/222222/cccccc?text=Dictionary+App';">
+                        <img src="images/dictionary-2.png" alt="Dictionary Project React Additional Screen" class="gallery-image object-cover object-top" onerror="this.onerror=null;this.src='https://placehold.co/600x400/222222/cccccc?text=Dictionary+App+2';">
+                        <button class="prev-btn absolute left-3 top-1/2 -translate-y-1/2 bg-black/60 hover:bg-black/75 border border-white/10 text-white p-2 rounded-full backdrop-blur-sm transition" aria-label="Previous image">
+                            <i data-lucide="chevron-left" class="w-4 h-4"></i>
+                        </button>
+                        <button class="next-btn absolute right-3 top-1/2 -translate-y-1/2 bg-black/60 hover:bg-black/75 border border-white/10 text-white p-2 rounded-full backdrop-blur-sm transition" aria-label="Next image">
+                            <i data-lucide="chevron-right" class="w-4 h-4"></i>
+                        </button>
+                        <div class="gallery-pagination absolute bottom-3 inset-x-0 flex justify-center gap-2"></div>
+                    </div>
                     <div class="p-6 space-y-4">
                         <div class="flex flex-wrap gap-2">
                             <span class="tech-tag">React</span>
@@ -222,6 +265,7 @@
     </footer>
 
     <!-- Scripts -->
+     <script src="script.js"></script>
     <script>
         document.getElementById('current-year').textContent = new Date().getFullYear();
         lucide.createIcons();

@@ -187,8 +187,8 @@
                     </a>
                     <div class="hidden md:flex items-center gap-2 border border-gray-700 bg-black/30 backdrop-blur-sm rounded-full px-3 py-2">
                         <a href="index.html" class="px-4 py-1 rounded-full bg-gray-700/50">Home</a>
-                        <a href="#projects" class="px-4 py-1 rounded-full hover:bg-gray-700 transition-colors duration-300">Projects</a>
-                        <a href="about.html" class="px-4 py-1 rounded-full hover:bg-gray-700 transition-colors duration-300">About</a>
+                        <a href="projects.html" class="px-4 py-1 rounded-full hover:bg-gray-700 transition-colors duration-300">Projects</a>
+                        <a href="#about" class="px-4 py-1 rounded-full hover:bg-gray-700 transition-colors duration-300">About</a>
                         <a href="#contact" class="px-4 py-1 rounded-full hover:bg-gray-700 transition-colors duration-300">Contact</a>
                     </div>
                     <a href="#contact" class="hidden md:flex items-center gap-2 bg-gray-100 text-gray-900 font-semibold px-5 py-2.5 rounded-full hover:bg-gray-300 transition-colors duration-300">
@@ -208,7 +208,7 @@
                     <p class="max-w-2xl mx-auto text-lg text-gray-300 mb-10">I blend creative design, robust code, and AI expertise to deliver intelligent solutions that help businesses grow and operate more efficiently.</p>
                     <div class="flex flex-wrap justify-center items-center gap-4">
                         <a href="#contact" class="bg-gradient-to-r from-purple-600 to-orange-500 text-white font-semibold py-3 px-6 rounded-full shadow-lg hover:opacity-90 transition-opacity duration-300">Get In Touch</a>
-                        <a href="#projects" class="bg-gray-800/50 border border-gray-700 text-white font-semibold py-3 px-6 rounded-full shadow-lg hover:bg-gray-700 transition-colors duration-300">View Projects</a>
+                        <a href="projects.html" class="bg-gray-800/50 border border-gray-700 text-white font-semibold py-3 px-6 rounded-full shadow-lg hover:bg-gray-700 transition-colors duration-300">View Projects</a>
                         <button id="open-ai-modal-btn" class="bg-gray-100 text-gray-900 font-semibold py-3 px-6 rounded-full shadow-lg hover:bg-gray-300 transition-colors duration-300 flex items-center gap-2">
                             <span>✨ AI Project Spark</span>
                         </button>
@@ -249,48 +249,119 @@
             <span class="tech-item">AI Models</span>
         </div>
     </div>
+         <!-- What I Build Section -->
+    <section id="services" class="py-24 bg-[#0f0f0f] border-t border-b border-gray-800">
+        <div class="container mx-auto px-6">
+            <div class="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-10 mb-12">
+                <div class="max-w-2xl space-y-4">
+                    <p class="text-sm uppercase tracking-[0.3em] text-gray-400">Services</p>
+                    <h2 class="text-4xl md:text-5xl font-extrabold text-white">What I Build</h2>
+                    <p class="text-lg text-gray-300">Product-ready AI experiences, purposeful web apps, and automation that keeps your business moving while you sleep.</p>
+                </div>
+                <div class="flex items-center gap-3 text-gray-400">
+                    <span class="w-2 h-2 rounded-full bg-purple-500"></span>
+                    <span>Done-for-you strategy, build, and launch</span>
+                </div>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-8">
+                <div class="project-card border border-purple-900/40 bg-gradient-to-b from-[#1a0f26] via-[#161616] to-[#0f0f0f]">
+                    <div class="p-6 flex flex-col gap-4 h-full">
+                        <div class="flex items-center justify-between">
+                            <div class="text-sm font-semibold text-purple-300 bg-purple-900/30 px-3 py-1 rounded-full">AI Systems</div>
+                            <i data-lucide="sparkles" class="w-6 h-6 text-purple-300"></i>
+                        </div>
+                        <h3 class="text-2xl font-bold text-white">Custom AI Assistants</h3>
+                        <p class="text-gray-300">Conversational flows, retrieval pipelines, and automation built on modern models so your team and customers get answers fast.</p>
+                        <ul class="text-gray-400 space-y-2 text-sm">
+                            <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-purple-400"></i>Knowledge-grounded chatbots</li>
+                            <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-purple-400"></i>Process automation & handoffs</li>
+                            <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-purple-400"></i>Multi-channel deployment</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="project-card border border-orange-900/40 bg-gradient-to-b from-[#231408] via-[#161616] to-[#0f0f0f]">
+                    <div class="p-6 flex flex-col gap-4 h-full">
+                        <div class="flex items-center justify-between">
+                            <div class="text-sm font-semibold text-orange-200 bg-orange-900/30 px-3 py-1 rounded-full">Web Apps</div>
+                            <i data-lucide="layout-grid" class="w-6 h-6 text-orange-300"></i>
+                        </div>
+                        <h3 class="text-2xl font-bold text-white">Product-Ready Frontends</h3>
+                        <p class="text-gray-300">Elegant, responsive interfaces with clear calls to action so visitors understand your value and convert.</p>
+                        <ul class="text-gray-400 space-y-2 text-sm">
+                            <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-orange-400"></i>Landing pages & dashboards</li>
+                            <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-orange-400"></i>Component-driven builds</li>
+                            <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-orange-400"></i>SEO & accessibility aware</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="project-card border border-gray-800 bg-gradient-to-b from-[#0f172a] via-[#161616] to-[#0f0f0f]">
+                    <div class="p-6 flex flex-col gap-4 h-full">
+                        <div class="flex items-center justify-between">
+                            <div class="text-sm font-semibold text-blue-200 bg-blue-900/30 px-3 py-1 rounded-full">Automation</div>
+                            <i data-lucide="workflow" class="w-6 h-6 text-blue-300"></i>
+                        </div>
+                        <h3 class="text-2xl font-bold text-white">Data & Ops Pipelines</h3>
+                        <p class="text-gray-300">Scrapers, ETL jobs, and monitoring that keep data fresh and teams focused on action instead of manual busywork.</p>
+                        <ul class="text-gray-400 space-y-2 text-sm">
+                            <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-blue-400"></i>Price + market tracking</li>
+                            <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-blue-400"></i>Alerting & health dashboards</li>
+                            <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-blue-400"></i>API + database integrations</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
     <!-- Projects Section (Updated) -->
         <!-- Projects Section (Updated) -->
         <section id="projects" class="py-24 bg-[#0a0a0a]">
             <div class="container mx-auto px-6">
-                <h2 class="text-4xl font-extrabold text-white text-center mb-16 relative">
+                <h2 class="text-4xl font-extrabold text-white text-center mb-8 relative">
                     Featured <span class="gradient-text">Projects</span>
                 </h2>
+                <div class="flex justify-center mb-10">
+                    <a href="projects.html" class="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-gradient-to-r from-purple-600 to-orange-500 text-white font-semibold shadow-lg hover:opacity-90 transition-opacity">
+                        View all projects
+                        <i data-lucide="arrow-right" class="w-4 h-4"></i>
+                    </a>
+                </div>
 
                 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
                     
-                    <!-- Project Card 1: AI Assistant (AI Project Idea Generator) -->
+                    <!-- Project Card 1: AI Expert Assistant for E-commerce -->
                     <div class="project-card">
-                        <img src="images/ai-assistant.png" alt="AI Project Idea Generator Screenshot" class="w-full h-48 object-cover">
+                        <img src="images/ai-assistant.png" alt="AI Expert Assistant for E-commerce" class="w-full h-48 object-cover">
                         <div class="p-6">
-                            <h3 class="text-xl font-bold text-white mb-3">AI-Powered Project Idea Generator</h3>
+                            <h3 class="text-xl font-bold text-white mb-3">AI Expert Assistant for E-commerce</h3>
                             <div class="flex flex-wrap gap-2 mb-4">
-                                <span class="tech-tag">Gemini API</span>
-                                <span class="tech-tag">JavaScript</span>
-                                <span class="tech-tag">HTML</span>
-                                <span class="tech-tag">Tailwind CSS</span>
+                                <span class="tech-tag">AI Orchestration</span>
+                                <span class="tech-tag">Python</span>
+                                <span class="tech-tag">Magento</span>
+                                <span class="tech-tag">Multi-Region Support</span>
                             </div>
-                            <p class="text-gray-400 mb-6">An integrated AI assistant tool utilizing the **Gemini API** to rapidly generate detailed project plans, feature lists, and suggested tech stacks from a simple user problem statement.</p>
-                            <a href="#ai-modal" class="project-button js-open-ai-modal" role="button">
-                                View Demo <i data-lucide="arrow-right" class="w-5 h-5"></i>
+                            <p class="text-gray-400 mb-6">An AI-powered assistant built to automate complex product configuration and quotation processes for a multi-country e-commerce business. It guides customers through technical selections in real time, adapts to local regulations, and generates accurate quotes with all required components.</p>
+                            <a href="#contact" class="project-button">
+                                View Case Study <i data-lucide="arrow-right" class="w-5 h-5"></i>
+                            </a>
+                            <p class="text-gray-400 mt-4">Integrates with Magento to centralize data across regional stores, ensuring consistent guidance, legal compliance, and 24/7 multilingual support while reducing manual work and boosting conversions.</p>
                             </a>
                         </div>
                     </div>
 
-                    <!-- Project Card 2: Price Scrapper (Advanced Price Monitoring Scraper) -->
+                    <!-- Project Card 2: Advanced Price Monitoring Scraper -->
                     <div class="project-card">
-                        <img src="images/image_6221c9.png" alt="E-commerce Price Scraper Screenshot" class="w-full h-48 object-cover">
+                        <img src="images/ScraperDiagram.drawio.png" alt="Advanced price monitoring scraper diagram" class="w-full h-48 object-cover">
                         <div class="p-6">
                             <h3 class="text-xl font-bold text-white mb-3">Advanced Price Monitoring Scraper</h3>
                             <div class="flex flex-wrap gap-2 mb-4">
                                 <span class="tech-tag">Python</span>
                                 <span class="tech-tag">Scrapy</span>
                                 <span class="tech-tag">BeautifulSoup</span>
-                                <span class="tech-tag">MongoDB</span>
+                                <span class="tech-tag">NoSQL Database</span>
                             </div>
-                            <p class="text-gray-400 mb-6">A robust Python-based web scraper built with **Scrapy** and **BeautifulSoup** for high-volume, real-time price monitoring across e-commerce platforms, storing data in a NoSQL database for analysis.</p>
-                            <a href="https://github.com/bellecoding/price-scraper" target="_blank" class="project-button">
+                            <p class="text-gray-400 mb-6">A robust Python-based web scraper built with <strong>Scrapy</strong> and <strong>BeautifulSoup</strong> for high-volume, real-time price monitoring across e-commerce platforms, storing data in a NoSQL database for analysis.</p>
+                            <a href="https://github.com/bellecoding/Automated-Price-Scraper" target="_blank" class="project-button">
                                 View Code <i data-lucide="github" class="w-5 h-5"></i>
                             </a>
                         </div>
@@ -313,34 +384,75 @@
                             </a>
                         </div>
                     </div>
-    </section>
+                 </div>
+            </div>
+        </section>
 
-    <!-- About Me Section (Original, preferred layout) -->
-    <section id="about" class="py-20 sm:py-32 bg-[#161616] border-t border-b border-gray-800">
+    <!-- About Me Section (Updated for Design #2) -->
+    <section id="about" class="py-24 sm:py-32 bg-[#161616] border-t border-b border-gray-800">
         <div class="container mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
-                <div class="flex justify-center md:justify-start">
-                    <!-- Note: Ensure 'images/isabellalogo.png' is available -->
-                    <img src="images/isabellalogo.png" alt="Isabella AI Solutions Logo" class="rounded-full w-48 h-48 object-cover p-4 ring-4 ring-purple-600/50 shadow-xl">
+           <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                <div class="flex justify-center lg:justify-start">
+                    <div class="relative">
+                        <div class="absolute inset-0 blur-3xl bg-gradient-to-br from-purple-600/30 via-orange-500/30 to-transparent rounded-full"></div>
+                        <div class="relative w-72 h-72 sm:w-80 sm:h-80 rounded-full bg-gradient-to-br from-[#1f102d] via-[#120a1a] to-[#0c0c0c] border border-purple-900/50 shadow-2xl flex items-center justify-center">
+                            <img src="images/isabellalogo.png" alt="Isabella AI Solutions Logo" class="w-52 h-52 sm:w-60 sm:h-60 object-contain drop-shadow-lg">
+                        </div>
+                    </div>
                 </div>
-                <div>
-                    <h2 class="text-3xl md:text-4xl font-bold tracking-tight mb-6">From Idea to Launch<span class="gradient-text">*</span></h2>
-                    <p class="text-lg text-gray-300 mb-4">My approach blends creative design, solid code, and AI expertise to deliver solutions that stand out. I help businesses unlock the power of AI and automation, even if they’re starting from scratch.</p>
-                    <p class="text-lg text-gray-300 mb-4">Whether you need a modern website, an AI assistant, or a custom tool, I build it from the ground up, ensuring it's not only functional but also intuitive and efficient.</p>
-                    <a href="about.html" class="font-semibold text-lg text-purple-400 hover:text-purple-300 transition-colors">Learn more about my story &rarr;</a>
-                </div>
+                <div class="space-y-4">
+                    <p class="text-sm uppercase tracking-[0.25em] text-gray-400">About</p>
+                    <h2 class="text-3xl sm:text-4xl font-bold tracking-tight text-white">Creative code + AI intuition for purposeful products.</h2>
+                    <p class="text-lg text-gray-300">I blend playful design instincts with rigorous engineering to ship experiences that feel polished and intentional. From idea to launch, I’m hands-on with strategy, UX, and the systems that keep everything running.</p>
+                    <p class="text-lg text-gray-300">The result: AI assistants that actually know your business, dashboards that surface what matters, and websites that communicate your value clearly. Every build is tailored, transparent, and optimized for real-world impact.</p>
+                    <div class="flex flex-wrap gap-3 pt-2">
+                        <span class="tech-tag">AI Assistants</span>
+                        <span class="tech-tag">Automation</span>
+                        <span class="tech-tag">Product UI</span>
+                        <span class="tech-tag">Data Integrations</span>
+                    </div>
             </div>
         </div>
     </section>
 
     <!-- Contact Section -->
-    <section id="contact" class="py-20 sm:py-32 text-center bg-[#111111]">
-        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
-            <h2 class="text-4xl md:text-5xl font-bold tracking-tight">Have a project idea?</h2>
-            <h3 class="text-4xl md:text-5xl font-bold tracking-tight gradient-text mb-8">Let’s bring it to life.</h3>
-            <p class="max-w-xl mx-auto text-lg text-gray-400 mb-10">I'm currently available for freelance work. If you're looking for a developer to build a custom AI solution or website, I'd love to hear from you.</p>
-            <a href="mailto:your-email@example.com" class="bg-gradient-to-r from-purple-600 to-orange-500 text-white font-semibold py-4 px-8 rounded-full shadow-lg hover:opacity-90 transition-opacity duration-300 text-lg">Contact Me Today</a>
-        </div>
+   <section id="contact" class="py-24 sm:py-32 bg-[#0f0f0f]">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8 max-w-5xl">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
+                <div class="space-y-4">
+                    <p class="text-sm uppercase tracking-[0.25em] text-gray-400">Let’s Connect</p>
+                    <h2 class="text-4xl md:text-5xl font-extrabold text-white leading-tight">Tell me about your idea.</h2>
+                    <p class="text-lg text-gray-300">Share what you’re building, what’s blocking you, or the outcome you want. I’ll respond with a plan, timelines, and next steps.</p>
+                    <div class="flex items-center gap-3 text-gray-400">
+                        <span class="w-2 h-2 rounded-full bg-orange-500"></span>
+                        <span>Response within 1 business day</span>
+                    </div>
+                    <div class="grid grid-cols-2 gap-3 text-sm text-gray-300">
+                        <div class="flex items-center gap-2"><i data-lucide="clock-3" class="w-4 h-4 text-purple-400"></i>Project scoping</div>
+                        <div class="flex items-center gap-2"><i data-lucide="hand-heart" class="w-4 h-4 text-purple-400"></i>Collaborative build</div>
+                        <div class="flex items-center gap-2"><i data-lucide="shield-check" class="w-4 h-4 text-purple-400"></i>Secure deployments</div>
+                        <div class="flex items-center gap-2"><i data-lucide="line-chart" class="w-4 h-4 text-purple-400"></i>Launch support</div>
+                    </div>
+                </div>
+                <form class="project-card border border-gray-800 bg-[#111111] p-6 sm:p-8 space-y-6 shadow-xl">
+                    <div class="space-y-2">
+                        <label for="name" class="block text-sm font-semibold text-white">Name</label>
+                        <input id="name" type="text" placeholder="Your name" class="w-full bg-gray-900 border border-gray-700 rounded-lg p-3 text-white placeholder-gray-500 focus:ring-2 focus:ring-purple-500 focus:outline-none">
+                    </div>
+                    <div class="space-y-2">
+                        <label for="email" class="block text-sm font-semibold text-white">Email</label>
+                        <input id="email" type="email" placeholder="you@example.com" class="w-full bg-gray-900 border border-gray-700 rounded-lg p-3 text-white placeholder-gray-500 focus:ring-2 focus:ring-purple-500 focus:outline-none">
+                    </div>
+                    <div class="space-y-2">
+                        <label for="message" class="block text-sm font-semibold text-white">Project details</label>
+                        <textarea id="message" rows="5" placeholder="Share your goals, features, and timeline" class="w-full bg-gray-900 border border-gray-700 rounded-lg p-3 text-white placeholder-gray-500 focus:ring-2 focus:ring-purple-500 focus:outline-none"></textarea>
+                    </div>
+                    <button type="submit" class="w-full bg-gradient-to-r from-purple-600 to-orange-500 text-white font-semibold py-3 px-6 rounded-full shadow-lg hover:opacity-90 transition-opacity duration-300 flex items-center justify-center gap-2">
+                        <span>Send Message</span>
+                        <i data-lucide="send" class="w-5 h-5"></i>
+                    </button>
+                </form>
+            </div>
     </section>
 
     <!-- Footer -->
