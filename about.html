@@ -5,150 +5,180 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>About Me - Isabella AI Solutions</title>
     
-    <!-- Meta Tags -->
+    <!-- Meta Tags for SEO -->
     <meta name="description" content="Learn more about Isabella, the AI-focused developer and creative tech builder behind Isabella AI Solutions. Discover her story, development philosophy, and passion for creating smart, elegant web solutions.">
     <meta name="keywords" content="Isabella AI Solutions, AI developer, full-stack developer, web solutions, creative technologist, Python, JavaScript, React, portfolio, about me">
     <meta name="author" content="Isabella AI Solutions">
 
+    <!-- Open Graph/Social Sharing -->
     <meta property="og:title" content="About Me | Isabella AI Solutions">
     <meta property="og:description" content="Discover the story and philosophy behind Isabella AI Solutions.">
-    <meta property="og:image" content="isabellalogo.png"> <!-- Updated path -->
+    <meta property="og:image" content="images/isabellalogo.png"> 
     <meta property="og:url" content="your-website-url/about.html">
     <meta property="og:type" content="website">
 
-    <!-- Styles & Fonts -->
-    <link rel="stylesheet" href="output.css">
+    <!-- Stylesheets and Fonts -->
+    <!-- Note: This assumes output.css is generated via Tailwind build process -->
+    <link rel="stylesheet" href="output.css"> 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
     
-    <!-- Scripts -->
-    <script src="https://unpkg.com/lucide-react@0.292.0/dist/umd/lucide.min.js"></script>
-
-    <!-- Custom CSS from style.css -->
-    <style>
-        html { scroll-behavior: smooth; }
-        body { font-family: 'Inter', sans-serif; background-color: #111111; }
-        .grid-background {
-            background-image:
-                linear-gradient(to right, rgba(255, 255, 255, 0.05) 1px, transparent 1px),
-                linear-gradient(to bottom, rgba(255, 255, 255, 0.05) 1px, transparent 1px);
-            background-size: 4rem 4rem;
-            background-position: center center;
-        }
-        .gradient-text {
-            background: linear-gradient(90deg, #a855f7, #f97316);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-        }
-        .glassmorphic-card {
-            background: rgba(22, 22, 22, 0.5);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            border-radius: 1rem;
-            backdrop-filter: blur(10px);
-            -webkit-backdrop-filter: blur(10px);
-        }
-    </style>
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
 </head>
-<body class="text-gray-300">
+<body class="bg-[#111111] text-gray-300 font-inter">
 
-    <!-- Header -->
-    <header class="fixed top-0 left-0 right-0 z-50">
-        <div class="container mx-auto px-6 py-4">
-            <nav class="flex justify-between items-center glassmorphic-card px-6 py-3 rounded-full shadow-lg">
-                <a href="index.html" class="flex items-center gap-2">
-                    <img src="isabellalogo.png" alt="Isabella AI Solutions Logo" class="w-8 h-8 rounded-full"> <!-- Updated path -->
-                    <span class="font-bold text-lg text-white hidden sm:block">Isabella AI Solutions</span>
-                </a>
-                <div class="flex items-center gap-6">
-                    <a href="index.html" class="text-gray-300 hover:text-white transition-colors">Home</a>
-                    <a href="about.html" class="text-gray-300 hover:text-white transition-colors">About</a>
-                    <a href="projects.html" class="text-gray-300 hover:text-white transition-colors">Projects</a> <!-- New Link -->
-                    <a href="index.html#contact" class="text-gray-300 hover:text-white transition-colors">Contact</a>
-                </div>
-            </nav>
+    <!-- Sparkle Background -->
+    <div class="fixed top-0 left-0 w-full h-full -z-10 grid-background">
+        <!-- Sparkle elements will be added by JS in a real environment -->
+    </div>
+    
+    <!-- Navigation Bar -->
+    <nav class="fixed top-0 left-0 w-full bg-[#111111]/90 backdrop-blur-sm z-50 shadow-lg border-b border-gray-800">
+        <div class="container mx-auto px-4 md:px-8 py-4 flex justify-between items-center">
+            <!-- Logo/Name -->
+            <a href="index.html" class="flex items-center space-x-2">
+                <img src="https://placehold.co/40x40/5b21b6/ffffff?text=I" alt="Isabella AI Solutions Logo" class="w-8 h-8 rounded-full border-2 border-purple-500">
+                <span class="text-xl font-bold text-white tracking-wider">Isabella AI Solutions</span>
+            </a>
+            
+            <!-- Navigation Links -->
+            <div class="hidden md:flex space-x-6 text-lg">
+                <a href="index.html#projects" class="text-gray-400 hover:text-purple-400 transition-colors">Projects</a>
+                <a href="about.html" class="text-purple-500 font-semibold border-b-2 border-purple-500 pb-1">About</a>
+                <a href="index.html#contact" class="text-gray-400 hover:text-purple-400 transition-colors">Contact</a>
+            </div>
+
+            <!-- AI Assistant Button (Desktop) -->
+            <button id="open-ai-modal-btn" class="hidden md:flex items-center bg-gradient-to-r from-purple-600 to-orange-500 text-white font-semibold py-2 px-4 rounded-full shadow-lg hover:opacity-90 transition-opacity duration-300">
+                <i data-lucide="sparkles" class="w-5 h-5 mr-2"></i>
+                AI Assistant
+            </button>
+
+            <!-- Mobile Menu Button -->
+            <button id="mobile-menu-btn" class="md:hidden text-white">
+                <i data-lucide="menu" class="w-7 h-7"></i>
+            </button>
         </div>
-    </header>
+
+        <!-- Mobile Menu (Hidden by default) -->
+        <div id="mobile-menu" class="hidden md:hidden px-4 pt-2 pb-4 space-y-2 border-t border-gray-800">
+            <a href="index.html#projects" class="block text-gray-400 hover:text-purple-400 transition-colors">Projects</a>
+            <a href="about.html" class="block text-purple-500 font-semibold border-b-2 border-purple-500 pb-1 w-fit">About</a>
+            <a href="index.html#contact" class="block text-gray-400 hover:text-purple-400 transition-colors">Contact</a>
+            <button id="open-ai-modal-btn-mobile" class="w-full text-left flex items-center bg-gradient-to-r from-purple-600 to-orange-500 text-white font-semibold py-2 px-4 rounded-full shadow-lg hover:opacity-90 transition-opacity duration-300 mt-2">
+                <i data-lucide="sparkles" class="w-5 h-5 mr-2"></i>
+                AI Assistant
+            </button>
+        </div>
+    </nav>
 
     <!-- Main Content -->
-    <main class="grid-background relative overflow-hidden pt-32 pb-20">
+    <main class="relative z-10 text-white min-h-screen pt-20">
         
-        <div class="container mx-auto px-6 z-10 relative">
-            <div class="glassmorphic-card p-8 md:p-12 max-w-4xl mx-auto">
-                <h1 class="text-4xl md:text-5xl font-bold text-white text-center mb-6">
-                    About <span class="gradient-text">Me</span>
-                </h1>
-                
-                <div class="flex flex-col md:flex-row items-center gap-8 md:gap-12 mb-12">
-                    <div class="md:w-1/3 text-center">
-                        <img src="isabellalogo.png" alt="Profile" class="rounded-full w-48 h-48 md:w-64 md:h-64 mx-auto border-4 border-purple-500 shadow-lg object-cover"> <!-- Updated path -->
-                    </div>
-                    <div class="md:w-2/3">
-                        <h2 class="text-2xl font-semibold text-white mb-4">Hi, I'm Isabella.</h2>
-                        <p class="text-lg text-gray-300 mb-4">
-                            I'm a creative technologist and AI developer with a passion for building applications that are not just functional, but also smart, intuitive, and beautiful.
-                        </p>
-                        <p class="text-gray-400">
-                            My journey in tech started with a curiosity for how things work, and it's evolved into a career dedicated to using code to solve complex problems. Whether it's developing a custom AI-powered tool for a business or crafting a pixel-perfect front-end experience, I thrive on the challenge of bringing ideas to life.
-                        </p>
-                    </div>
+        <!-- Hero/Title Section -->
+        <header class="text-center max-w-4xl mx-auto py-16 px-4">
+            <h1 class="text-5xl md:text-7xl font-extrabold mb-4 gradient-text">About Me</h1>
+            <p class="text-xl text-gray-400 max-w-3xl mx-auto">The Story, The Philosophy, and The Developer Behind Isabella AI Solutions.</p>
+        </header>
+
+        <!-- Main Content Grid -->
+        <div class="container mx-auto px-4 md:px-8 lg:px-12 pb-24 max-w-6xl space-y-16">
+            
+            <!-- Section: My Story -->
+            <div>
+                <h2 class="text-3xl font-bold mb-6 border-b border-gray-700/50 pb-2">My Story</h2>
+                <div class="text-lg text-gray-300 space-y-6">
+                    <p>I started coding out of curiosity — fascinated by how websites and apps were built. What began as simple **HTML and CSS** experiments quickly turned into a deep passion for development. Over time, I expanded into JavaScript and Python, eventually discovering the powerful potential of **AI**.</p>
+                    <p>Now, I create **AI-powered tools and web solutions** that help businesses work smarter. From intelligent assistants to web scrapers and custom dashboards, I love turning complex problems into elegant, functional results.</p>
                 </div>
+            </div>
 
-                <div class_="space-y-8">
-                    <div>
-                        <h3 class="text-2xl font-semibold text-white mb-4 border-b border-gray-700 pb-2">My Philosophy</h3>
-                        <p class="text-gray-400">
-                            I believe in a human-centric approach to technology. The best tools are the ones that feel like an extension of ourselves—effortless and empowering. My development philosophy is centered around:
-                        </p>
-                        <ul class="list-disc list-inside text-gray-300 mt-4 space-y-2">
-                            <li><strong class="text-white">Clean & Scalable Code:</strong> Writing code that is maintainable and ready to grow with your needs.</li>
-                            <li><strong class="text-white">Design-Driven Development:</strong> Ensuring that the final product is not only powerful but also a joy to use.</li>
-                            <li><strong class="text-white">AI Integration:</strong> Leveraging the power of artificial intelligence to create smarter, more efficient, and personalized user experiences.</li>
-                        </ul>
-                    </div>
-
-                    <div>
-                        <h3 class="text-2xl font-semibold text-white mb-4 mt-8 border-b border-gray-700 pb-2">Let's Connect</h3>
-                        <p class="text-gray-400 mb-6">
-                            I'm always open to new challenges and collaborations. If you have an idea you'd like to discuss or just want to chat about tech, feel free to reach out!
-                        </p>
-                        <a href="index.html#contact" class="bg-gradient-to-r from-purple-600 to-orange-500 text-white font-semibold py-3 px-8 rounded-full shadow-lg hover:opacity-90 transition-opacity duration-300">
-                            Get in Touch
-                        </a>
-                    </div>
+            <!-- Section: My Philosophy -->
+            <div>
+                <h2 class="text-3xl font-bold mb-6 border-b border-gray-700/50 pb-2">My Philosophy</h2>
+                <div class="text-lg text-gray-300 space-y-6">
+                    <p>When I build something, I care about three things: **clean code, seamless experience, and practical impact**. Whether it’s a full-stack web app, an AI assistant, or a background automation script, I focus on solving real problems — not just writing code that runs.</p>
+                    <p>Good design isn’t just visual — it’s about how intuitive something feels, how fast it responds, and how clearly it helps people get things done. I value systems that are efficient under the hood and **effortless to use** (when there’s a UI). My goal is always the same: create tools that save time, reduce friction, and actually make a difference.</p>
                 </div>
+            </div>
 
+            <!-- Section: When I’m Not Coding... -->
+            <div>
+                <h2 class="text-3xl font-bold mb-6 border-b border-gray-700/50 pb-2">When I'm Not Coding...</h2>
+                <div class="text-lg text-gray-300 space-y-6">
+                    <p>I’m usually gaming, drawing, or playing with my two cats (and yes — I talk to them like coworkers). I also love creating cozy desk setups and exploring new tools that help me work more efficiently.</p>
+                    <p>Fun fact? I speak multiple languages and currently live in Germany — but I bring a bit of **Brazilian creativity** into everything I do 💜</p>
+                </div>
             </div>
         </div>
-
     </main>
 
     <!-- Footer -->
-    <footer class="bg-[#161616] py-12 relative z-10">
-        <div class="container mx-auto px-6 text-center text-gray-400">
-            <div class="flex justify-center items-center gap-2 mb-6">
-                <img src="isabellalogo.png" alt="Isabella AI Solutions Logo" class="w-8 h-8 rounded-full"> <!-- Updated path -->
-                <span class="font-bold text-lg text-white">Isabella AI Solutions</span>
-            </div>
+    <footer class="bg-[#111111] border-t border-gray-800 py-10">
+        <div class="container mx-auto px-4 md:px-8 text-center text-gray-500">
             <div class="flex justify-center space-x-6 mb-6">
                 <a href="https://github.com/bellecoding" target="_blank" class="text-gray-400 hover:text-white transition-colors"><i data-lucide="github" class="w-6 h-6"></i></a>
                 <a href="#" target="_blank" class="text-gray-400 hover:text-white transition-colors"><i data-lucide="linkedin" class="w-6 h-6"></i></a>
                 <a href="#" target="_blank" class="text-gray-400 hover:text-white transition-colors"><i data-lucide="instagram" class="w-6 h-6"></i></a>
                 <a href="#" target="_blank" class="text-gray-400 hover:text-white transition-colors">
                     <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="currentColor" viewBox="0 0 16 16">
-                        <path d="M12.93,3.952h-2.438c-0.314,0-0.568,0.256-0.568,0.568v5.483c0,0.314,0.254,0.568,0.568,0.568h2.438c0.312,0,0.568-0.254,0.568-0.568V4.52C13.498,4.208,13.242,3.952,12.93,3.952 M10.203,8.385v0.844h1.884V8.385H10.203z M10.203,6.864v0.844h1.884V6.864H10.203z M10.203,5.342v0.844h1.884V5.342H10.203z M3.896,10.158H2.438c-0.314,0-0.568-0.254-0.568-0.568V4.52c0-0.312,0.254-0.568,0.568-0.568h1.458c1.07,0,1.938,0.868,1.938,1.938v2.33C5.833,9.29,4.965,10.158,3.896,10.158 M3.604,5.342H3.062v0.844h0.541c0.15,0,0.271-0.121,0.271-0.271v-0.302C3.875,5.464,3.754,5.342,3.604,5.342 M3.604,6.864H3.062v0.844h0.541c0.15,0,0.271-0.121,0.271-0.271v-0.302C3.875,6.985,3.754,6.864,3.604,6.864 M3.604,8.385H3.062v0.844h0.541c0.15,0,0.271-0.121,0.271-0.271v-0.302C3.875,8.506,3.754,8.385,3.604,8.385"></path>
-                        <path d="M16,8.194c0,4.411-3.589,8-8,8s-8-3.589-8-8c0-4.411,3.589-8,8-8S16,3.783,16,8.194 M8,1.194c-3.866,0-7,3.134-7,7c0,3.866,3.134,7,7,7s7-3.134,7-7C15,4.328,11.866,1.194,8,1.194"></path>
+                        <path d="M12.93,3.952h-2.438c-0.314,0-0.568,0.256-0.568,0.568v5.483c0,0.314,0.254,0.568,0.568,0.568h2.438c0.312,0,0.568-0.254,0.568-0.568V4.52C13.498,4.208,13.242,3.952,12.93,3.952z M3.07,3.952H0.632c-0.314,0-0.568,0.256-0.568,0.568v5.483c0,0.314,0.254,0.568,0.568,0.568h2.438c0.312,0,0.568-0.254,0.568-0.568V4.52C3.638,4.208,3.382,3.952,3.07,3.952z M8,12.048c-0.21,0-0.419-0.076-0.575-0.231l-4.102-4.113c-0.315-0.315-0.315-0.827,0-1.142c0.314-0.314,0.828-0.314,1.141,0l3.056,3.064l3.056-3.064c0.314-0.314,0.828-0.314,1.141,0c0.315,0.315,0.315,0.827,0,1.142l-4.102,4.113C8.419,11.972,8.21,12.048,8,12.048z"/>
                     </svg>
                 </a>
             </div>
-            <p>&copy; 2024 Isabella AI Solutions. All Rights Reserved.</p>
+            <p>&copy; 2024 Isabella AI Solutions. All rights reserved.</p>
+            <p class="text-xs mt-2">Built with passion and a lot of caffeine ☕</p>
         </div>
     </footer>
-    
-    <!-- Script -->
+
+    <!-- AI Assistant Modal (Hidden by default, will be controlled by script.js) -->
+    <div id="ai-modal" class="fixed inset-0 bg-black bg-opacity-70 backdrop-blur-sm z-50 flex items-center justify-center opacity-0 transition-opacity duration-300 hidden">
+        <div id="ai-modal-content" class="bg-gray-900 border border-gray-700 rounded-xl w-full max-w-xl mx-4 transform transition-all duration-300 opacity-0 scale-95 flex flex-col max-h-[80vh]">
+            <div class="flex justify-between items-center p-6 border-b border-gray-700">
+                <h3 class="text-2xl font-bold gradient-text">AI Assistant</h3>
+                <button id="close-ai-modal-btn" class="text-gray-400 hover:text-white"><i data-lucide="x" class="w-6 h-6"></i></button>
+            </div>
+            <div class="p-6 flex-grow overflow-y-auto">
+                <div id="ai-form-container">
+                    <p class="text-gray-400 mb-4">Have a business problem or an idea? Describe it below, and my AI assistant will draft a project plan for you.</p>
+                    <textarea id="problem-input" class="w-full bg-gray-800 border border-gray-600 rounded-lg p-3 text-white placeholder-gray-500 focus:ring-2 focus:ring-purple-500 focus:outline-none" rows="4" placeholder="e.g., 'My team wastes hours scheduling meetings' or 'I want a better way to track my personal book collection'"></textarea>
+                    <button id="generate-idea-btn" class="mt-4 w-full bg-gradient-to-r from-purple-600 to-orange-500 text-white font-semibold py-3 px-6 rounded-full shadow-lg hover:opacity-90 transition-opacity duration-300 flex items-center justify-center gap-2">
+                        <span>Generate Idea</span>
+                        <i data-lucide="zap" class="w-5 h-5"></i>
+                    </button>
+                </div>
+                <div id="ai-results-container" class="hidden">
+                    <div id="ai-loading" class="text-center py-8 hidden">
+                        <div class="loader mx-auto"></div>
+                        <p class="mt-4 text-gray-400">AI is thinking up the perfect solution...</p>
+                    </div>
+                    <div id="ai-error" class="text-center py-8 text-red-400 hidden">
+                        <p>Sorry, there was an error generating the idea. Please try again!</p>
+                    </div>
+                    <div id="ai-generated-content" class="text-white text-base">
+                        <!-- AI content will be injected here -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
     <script>
-        lucide.createIcons();
+        // Initialize Lucide icons
+        document.addEventListener('DOMContentLoaded', () => {
+            lucide.createIcons();
+        });
+
+        // Mobile Menu Toggler
+        document.getElementById('mobile-menu-btn').addEventListener('click', () => {
+            document.getElementById('mobile-menu').classList.toggle('hidden');
+        });
     </script>
+    <!-- Link to external script.js for AI Modal logic -->
+    <script src="script.js"></script>
+
 </body>
 </html>

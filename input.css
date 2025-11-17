@@ -39,45 +39,11 @@ body {
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
-    text-fill-color: transparent;
+    text-shadow: 0 0 5px rgba(249, 115, 22, 0.3);
 }
 
-.fade-in {
-    animation: fadeIn 1.5s ease-out forwards;
-    opacity: 0;
-}
-@keyframes fadeIn {
-    to { opacity: 1; }
-}
-
-.modal-backdrop {
-    transition: opacity 0.3s ease-in-out;
-}
-.modal-content {
-    transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
-}
-
-.loader {
-    border: 4px solid #f3f3f3;
-    border-top: 4px solid #a855f7;
-    border-radius: 50%;
-    width: 40px;
-    height: 40px;
-    animation: spin 1s linear infinite;
-}
-@keyframes spin {
-    0% { transform: rotate(0deg); }
-    100% { transform: rotate(360deg); }
-}
-
-
-.tech-stack-container {
-    @apply py-10;
-}
-
-.tech-stack-glass-bar {
-    @apply container mx-auto flex justify-center items-center flex-wrap gap-x-6 gap-y-4 p-6;
-    background: rgba(22, 22, 22, 0.5);
+.frosted-card {
+    background-color: rgba(22, 22, 22, 0.5);
     border: 1px solid rgba(255, 255, 255, 0.1);
     border-radius: 1rem;
     backdrop-filter: blur(10px);
@@ -111,25 +77,32 @@ body {
 }
 
 .project-button {
-    @apply inline-flex items-center justify-center gap-2 w-full text-center font-semibold bg-gray-800/50 border border-gray-700 text-white py-2.5 px-5 rounded-full hover:bg-gray-700 transition-colors duration-300;
+    @apply font-semibold py-2 px-4 rounded-full transition-colors duration-300;
 }
 
-
-.about-image-container {
-    position: relative;
-    padding: 1rem;
+/* CAROUSEL/GALLERY STYLES */
+.image-gallery {
+    @apply relative overflow-hidden;
+    height: 13rem; /* Fixed height for image area (208px = h-52) */
 }
 
-.about-image-container::before {
-    content: '';
-    position: absolute;
-    inset: 0;
-    border-radius: 9999px;
-    padding: 2px; 
-    background: linear-gradient(45deg, #a855f7, #f97316); 
-    -webkit-mask: 
-        linear-gradient(#fff 0 0) content-box, 
-        linear-gradient(#fff 0 0);
-    -webkit-mask-composite: xor;
-          mask-composite: exclude; 
+.gallery-image {
+    @apply absolute top-0 left-0 w-full h-full object-cover transition-opacity duration-500;
+}
+
+.gallery-btn {
+    @apply absolute top-1/2 -translate-y-1/2 p-2 rounded-full bg-black/50 text-white/80 hover:bg-black/80 transition-colors z-20;
+}
+
+.gallery-btn:disabled {
+    @apply opacity-30 cursor-not-allowed;
+}
+.gallery-pagination {
+    @apply absolute bottom-2 left-1/2 transform -translate-x-1/2 flex space-x-2 z-20;
+}
+.dot {
+    @apply w-2 h-2 rounded-full bg-white/50 transition-colors duration-300;
+}
+.dot.active {
+    @apply bg-orange-500;
 }

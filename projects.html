@@ -5,510 +5,234 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Projects - Isabella AI Solutions</title>
     
-    <!-- Meta Tags -->
-    <meta name="description" content="Explore the portfolio of Isabella AI Solutions, showcasing custom AI-powered tools, web applications, and creative tech projects.">
-    <meta name="keywords" content="Isabella AI Solutions, portfolio, projects, AI developer, full-stack developer, web solutions, React, Python, JavaScript">
+    <meta name="description" content="A comprehensive portfolio of projects developed by Isabella AI Solutions, including AI tools, web applications, and creative coding experiments.">
+    <meta name="keywords" content="Isabella AI Solutions, AI developer, portfolio, projects, web applications, React, Python, JavaScript, World Clock, Dictionary, Weather App">
     <meta name="author" content="Isabella AI Solutions">
 
     <meta property="og:title" content="Projects | Isabella AI Solutions">
-    <meta property="og:description" content="Explore the portfolio of Isabella AI Solutions.">
-    <meta property="og:image" content="isabellalogo.png"> <!-- Updated path -->
+    <meta property="og:description" content="View all of Isabella's development projects.">
+    <meta property="og:image" content="images/isabellalogo.png">
     <meta property="og:url" content="your-website-url/projects.html">
     <meta property="og:type" content="website">
 
-    <!-- Styles & Fonts -->
-    <link rel="stylesheet" href="output.css">
+    <!-- Load Tailwind CSS -->
+    <link rel="stylesheet" href="output.css"> 
+  
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-    
-    <!-- Scripts -->
-    <script src="https://unpkg.com/lucide-react@0.292.0/dist/umd/lucide.min.js"></script>
-
-    <!-- Custom CSS from style.css -->
-    <style>
-        html { scroll-behavior: smooth; }
-        body { font-family: 'Inter', sans-serif; background-color: #111111; }
-        .grid-background {
-            background-image:
-                linear-gradient(to right, rgba(255, 255, 255, 0.05) 1px, transparent 1px),
-                linear-gradient(to bottom, rgba(255, 255, 255, 0.05) 1px, transparent 1px);
-            background-size: 4rem 4rem;
-            background-position: center center;
-        }
-        .gradient-text {
-            background: linear-gradient(90deg, #a855f7, #f97316);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-            color: transparent; /* Standard property */
-        }
-        .glassmorphic-card {
-            background: rgba(22, 22, 22, 0.5);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            border-radius: 1rem;
-            backdrop-filter: blur(10px);
-            -webkit-backdrop-filter: blur(10px);
-        }
-        .project-card {
-            background-color: #161616;
-            border: 1px solid rgb(38 38 38);
-            border-radius: 0.75rem;
-            overflow: hidden;
-            transition-property: all;
-            transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-            transition-duration: 300ms;
-        }
-        .project-card:hover {
-            transform: translateY(-0.5rem);
-            box-shadow: 0 25px 50px -12px rgba(168, 85, 247, 0.1);
-            border-color: rgba(107, 33, 168, 0.5);
-        }
-        .tech-tag {
-            background-color: rgb(31 41 55);
-            color: rgb(209 213 219);
-            font-size: 0.75rem;
-            font-weight: 500;
-            padding: 0.25rem 0.625rem;
-            border-radius: 9999px;
-        }
-        .project-button {
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            gap: 0.5rem;
-            width: 100%;
-            text-align: center;
-            font-weight: 600;
-            background-color: rgba(55, 65, 81, 0.5);
-            border: 1px solid rgb(55 65 81);
-            color: white;
-            padding: 0.625rem 1.25rem;
-            border-radius: 9999px;
-            transition-property: all;
-            transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-            transition-duration: 200ms;
-        }
-        .project-button:hover {
-            background-color: rgb(55 65 81);
-            border-color: rgb(75 85 99);
-        }
-        .gallery-button {
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            gap: 0.5rem;
-            width: 100%;
-            text-align: center;
-            font-weight: 600;
-            background-color: rgba(168, 85, 247, 0.2);
-            border: 1px solid rgba(168, 85, 247, 0.5);
-            color: white;
-            padding: 0.625rem 1.25rem;
-            border-radius: 9999px;
-            transition-property: all;
-            transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-            transition-duration: 200ms;
-        }
-        .gallery-button:hover {
-            background-color: rgba(168, 85, 247, 0.4);
-            border-color: rgba(168, 85, 247, 0.7);
-        }
-        
-        /* Gallery Modal Styles */
-        #gallery-modal {
-            transition: opacity 0.3s ease;
-        }
-        #gallery-modal-content {
-            transition: transform 0.3s ease;
-            transform: scale(0.95);
-        }
-        #gallery-modal.hidden {
-            pointer-events: none;
-            opacity: 0;
-        }
-        #gallery-modal:not(.hidden) #gallery-modal-content {
-            transform: scale(1);
-        }
-
-        /* Case Study Modal Styles */
-        #case-study-modal {
-            transition: opacity 0.3s ease;
-        }
-        #case-study-modal-content {
-            transition: transform 0.3s ease;
-            transform: scale(0.95);
-        }
-        #case-study-modal.hidden {
-            pointer-events: none;
-            opacity: 0;
-        }
-        #case-study-modal:not(.hidden) #case-study-modal-content {
-            transform: scale(1);
-        }
-        #case-study-details h3 {
-            @apply text-xl font-semibold text-purple-300 mt-6 mb-2;
-        }
-        #case-study-details p {
-            @apply text-gray-300 mb-4;
-        }
-        #case-study-details ul {
-            @apply list-disc list-inside text-gray-300 mb-4 space-y-1;
-        }
-        #case-study-details li {
-            @apply ml-4;
-        }
-        #case-study-details strong {
-            @apply text-gray-100;
-        }
-    </style>
+    <script src="https://unpkg.com/lucide@latest"></script>
 </head>
-<body class="text-gray-300">
+<body class="bg-[#111111] text-white min-h-screen flex flex-col pt-20">
 
-    <!-- Header -->
-    <header class="fixed top-0 left-0 right-0 z-50">
-        <div class="container mx-auto px-6 py-4">
-            <nav class="flex justify-between items-center glassmorphic-card px-6 py-3 rounded-full shadow-lg">
-                <a href="index.html" class="flex items-center gap-2">
-                    <img src="isabellalogo.png" alt="Isabella AI Solutions Logo" class="w-8 h-8 rounded-full"> <!-- Updated path -->
-                    <span class="font-bold text-lg text-white hidden sm:block">Isabella AI Solutions</span>
+    <!-- Header / Navigation Bar -->
+    <header class="fixed top-0 left-0 w-full z-50 backdrop-blur-md bg-black/50 border-b border-gray-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-16">
+                <!-- Logo/Brand -->
+                <a href="index.html" class="flex items-center space-x-2">
+                    <img src="images/isabellalogo.png" alt="Isabella AI Solutions Logo" class="h-8 w-auto rounded-full shadow-lg shadow-purple-500/30">
+                    <span class="text-xl font-bold gradient-text hidden sm:block">Isabella AI Solutions</span>
                 </a>
-                <div class="flex items-center gap-6">
-                    <a href="index.html" class="text-gray-300 hover:text-white transition-colors">Home</a>
-                    <a href="about.html" class="text-gray-300 hover:text-white transition-colors">About</a>
-                    <a href="projects.html" class="text-gray-300 hover:text-white transition-colors">Projects</a>
-                    <a href="index.html#contact" class="text-gray-300 hover:text-white transition-colors">Contact</a>
-                </div>
-            </nav>
+                
+                <!-- Navigation Links -->
+                <nav class="flex space-x-4 md:space-x-8">
+                    <a href="index.html" class="text-gray-400 hover:text-white transition-colors text-sm md:text-base">Home</a>
+                    <a href="about.html" class="text-gray-400 hover:text-white transition-colors text-sm md:text-base">About</a>
+                    <a href="projects.html" class="text-white font-semibold border-b-2 border-purple-500 text-sm md:text-base">Projects</a>
+                    <!-- AI Idea Button - Placeholder for mobile/simplicity on projects page -->
+                    <button id="open-ai-modal-btn" class="bg-gradient-to-r from-purple-600 to-orange-500 text-white text-sm font-semibold py-1.5 px-4 rounded-full shadow-lg shadow-purple-500/20 hover:opacity-90 transition-opacity flex items-center gap-1">
+                        <i data-lucide="zap" class="w-4 h-4"></i>
+                        <span class="hidden sm:inline">AI Idea</span>
+                    </button>
+                </nav>
+            </div>
         </div>
     </header>
 
-    <!-- Main Content -->
-    <main class="grid-background relative overflow-hidden pt-32 pb-20">
-        
-        <div class="container mx-auto px-6 z-10 relative">
-            <h1 class="text-4xl md:text-5xl font-bold text-white text-center mb-6">
-                My <span class="gradient-text">Projects</span>
-            </h1>
-            <p class="text-lg text-gray-400 text-center max-w-2xl mx-auto mb-16">
-                Here's a collection of my work. I'm passionate about building smart,
-                efficient, and beautiful applications.
-            </p>
+    <!-- Main Content - Projects Grid -->
+    <main class="flex-grow pt-10 pb-20 grid-background">
+        <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            
+            <header class="text-center mb-16">
+                <h1 class="text-5xl md:text-7xl font-extrabold mb-4">
+                    <span class="gradient-text">All Projects</span>
+                </h1>
+                <p class="text-xl text-gray-400 max-w-3xl mx-auto">A collection of creative solutions, from powerful AI tools to responsive web applications.</p>
+            </header>
 
-            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-                
-                <!-- Project 1: AI Assistant for E-Commerce (NEW) -->
-                <div class="project-card flex flex-col">
-                    <img src="image_613831.jpg" alt="AI Assistant for E-Commerce" class="w-full h-48 object-cover">
-                    <div class="p-6 flex flex-col flex-grow">
-                        <h3 class="text-xl font-semibold text-white mb-3">AI Assistant for E-Commerce</h3>
-                        <p class="text-gray-400 mb-4 text-sm flex-grow">
-                            A custom AI assistant to guide e-commerce customers through complex product configuration and quotation.
-                        </p>
-                        <div class="flex flex-wrap gap-2 mb-6">
-                            <span class="tech-tag">React</span>
-                            <span class="tech-tag">TypeScript</span>
-                            <span class="tech-tag">Node.js</span>
-                            <span class="tech-tag">OpenAI API</span>
-                            <span class="tech-tag">PDFKit</span>
-                            <span class="tech-tag">Supabase</span>
-                            <span class="tech-tag">Magento API</span>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+
+                <!-- 1. AI Assistant (Featured) -->
+                <div class="project-card">
+                    <img src="images/ai-assistant.png" alt="AI Assistant Project" class="w-full h-48 object-cover object-top rounded-t-xl" onerror="this.onerror=null;this.src='https://placehold.co/600x400/1e293b/cbd5e1?text=AI+Assistant';">
+                    <div class="p-6 space-y-4">
+                        <div class="flex flex-wrap gap-2">
+                            <span class="tech-tag">Python</span>
+                            <span class="tech-tag">Gemini API</span>
+                            <span class="tech-tag">Prompt Engineering</span>
                         </div>
-                        <div class="space-y-3 mt-auto">
-                            <a href="#" class="project-button opacity-70 cursor-not-allowed" aria-disabled="true">
-                                <span>Project (Private)</span>
-                                <i data-lucide="lock" class="w-4 h-4"></i>
-                            </a>
-                            <button class="gallery-button" data-case-study-id="ecommerce-assistant">
-                                <span>View Case Study</span>
-                                <i data-lucide="book-open" class="w-4 h-4"></i>
-                            </button>
-                        </div>
+                        <h3 class="text-2xl font-bold text-white">Advanced AI Assistant</h3>
+                        <p class="text-gray-400 text-sm">An intelligent virtual assistant optimized for complex business planning and strategic brainstorming, powered by the Gemini API.</p>
+                        <a href="index.html" class="project-button bg-purple-600 hover:bg-purple-700">
+                            <i data-lucide="zap" class="w-5 h-5"></i> View on Home Page
+                        </a>
                     </div>
                 </div>
 
-                <!-- Project 2: AI Travel Planner (with Gallery) -->
-                <div class="project-card flex flex-col">
-                    <img src="aiapp.png" alt="AI Travel Planner App" class="w-full h-48 object-cover"> <!-- Updated path -->
-                    <div class="p-6 flex flex-col flex-grow">
-                        <h3 class="text-xl font-semibold text-white mb-3">Responsive Travel Website</h3> <!-- Updated Title -->
-                        <p class="text-gray-400 mb-4 text-sm flex-grow">
-                            A responsive travel website prototype built to demonstrate front-end skills, featuring a clean search interface and a modern, engaging layout. <!-- UPDATED DESCRIPTION -->
-                        </p>
-                        <div class="flex flex-wrap gap-2 mb-6">
+                <!-- 2. AI App (Featured) -->
+                <div class="project-card">
+                    <img src="images/aiapp.png" alt="AI App Project" class="w-full h-48 object-cover object-top rounded-t-xl" onerror="this.onerror=null;this.src='https://placehold.co/600x400/1e293b/cbd5e1?text=AI+App';">
+                    <div class="p-6 space-y-4">
+                        <div class="flex flex-wrap gap-2">
+                            <span class="tech-tag">React</span>
                             <span class="tech-tag">JavaScript</span>
-                            <span class="tech-tag">API</span>
+                            <span class="tech-tag">Gemini API</span>
+                        </div>
+                        <h3 class="text-2xl font-bold text-white">Custom AI Web App</h3>
+                        <p class="text-gray-400 text-sm">A full-stack React application designed for rapid deployment of custom AI-powered microservices and tools.</p>
+                        <a href="index.html" class="project-button bg-purple-600 hover:bg-purple-700">
+                            <i data-lucide="zap" class="w-5 h-5"></i> View on Home Page
+                        </a>
+                    </div>
+                </div>
+
+                <!-- 3. React Weather Forecast (Featured) -->
+                <div class="project-card">
+                    <img src="images/react-weather-forecast.png" alt="React Weather Forecast Project" class="w-full h-48 object-cover object-top rounded-t-xl" onerror="this.onerror=null;this.src='https://placehold.co/600x400/1e293b/cbd5e1?text=Weather+App';">
+                    <div class="p-6 space-y-4">
+                        <div class="flex flex-wrap gap-2">
+                            <span class="tech-tag">React</span>
+                            <span class="tech-tag">API Integration</span>
+                            <span class="tech-tag">Axios</span>
+                        </div>
+                        <h3 class="text-2xl font-bold text-white">Interactive Weather Forecast</h3>
+                        <p class="text-gray-400 text-sm">Displays real-time and future weather conditions for any location using a modern, state-managed React interface.</p>
+                        <a href="https://weather-react-project-shecodes.netlify.app/" target="_blank" class="project-button bg-purple-600 hover:bg-purple-700">
+                            <i data-lucide="external-link" class="w-5 h-5"></i> View Live Project
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- 4. World Clock Project (New) -->
+                <div class="project-card">
+                    <img src="images/image_646b66.png" alt="World Clock Project" class="w-full h-48 object-cover object-top rounded-t-xl" onerror="this.onerror=null;this.src='https://placehold.co/600x400/222222/cccccc?text=World+Clock';">
+                    <div class="p-6 space-y-4">
+                        <div class="flex flex-wrap gap-2">
                             <span class="tech-tag">HTML</span>
                             <span class="tech-tag">CSS</span>
-                        </div>
-                        <div class="space-y-3 mt-auto">
-                            <a href="https://bellestravelproject.netlify.app/" target="_blank" rel="noopener noreferrer" class="project-button">
-                                <span>View Project</span>
-                                <i data-lucide="external-link" class="w-4 h-4"></i>
-                            </a>
-                            <button class="gallery-button" data-gallery-id="travel-gallery">
-                                <span>View Gallery</span>
-                                <i data-lucide="image" class="w-4 h-4"></i>
-                            </button>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Project 3: React Weather Forecast -->
-                <div class="project-card flex flex-col">
-                    <img src="react-weather-forecast.png" alt="React Weather App" class="w-full h-48 object-cover"> <!-- Updated path -->
-                    <div class="p-6 flex flex-col flex-grow">
-                        <h3 class="text-xl font-semibold text-white mb-3">React Weather Forecast</h3>
-                        <p class="text-gray-400 mb-4 text-sm flex-grow">
-                            A clean, responsive weather application built with React, featuring a 5-day forecast.
-                        </p>
-                        <div class="flex flex-wrap gap-2 mb-6">
-                            <span class="tech-tag">React</span>
-                            <span class="tech-tag">API</span>
-                            <span class="tech-tag">CSS</span>
                             <span class="tech-tag">JavaScript</span>
                         </div>
-                        <div class="mt-auto">
-                            <a href="https://weather-react-project-shecodes.netlify.app/" target="_blank" rel="noopener noreferrer" class="project-button">
-                                <span>View Project</span>
-                                <i data-lucide="external-link" class="w-4 h-4"></i>
-                            </a>
-                        </div>
+                        <h3 class="text-2xl font-bold text-white">Dynamic World Clock</h3>
+                        <p class="text-gray-400 text-sm">A simple yet elegant application to track current time across multiple global cities and timezones.</p>
+                        <a href="https://worldclockprojectbyisa.netlify.app/" target="_blank" class="project-button">
+                            <i data-lucide="external-link" class="w-5 h-5"></i> View Live Project
+                        </a>
                     </div>
                 </div>
 
-                <!-- Project 4: Personal AI Assistant -->
-                <div class="project-card flex flex-col">
-                    <img src="ai-assistant.png" alt="AI Assistant" class="w-full h-48 object-cover"> <!-- Updated path -->
-                    <div class="p-6 flex flex-col flex-grow">
-                        <h3 class="text-xl font-semibold text-white mb-3">Personal AI Assistant</h3>
-                        <p class="text-gray-400 mb-4 text-sm flex-grow">
-                            A concept for a voice-activated AI personal assistant with a unique visual interface.
-                        </p>
-                        <div class="flex flex-wrap gap-2 mb-6">
-                            <span class="tech-tag">UI/UX</span>
-                            <span class="tech-tag">Figma</span>
-                            <span class="tech-tag">AI</span>
-                            <span class="tech-tag">Concept</span>
+                <!-- 5. Belle's Travel Project (New) -->
+                <div class="project-card">
+                    <img src="images/image_646e2b.png" alt="Belle's Travel Project" class="w-full h-48 object-cover object-top rounded-t-xl" onerror="this.onerror=null;this.src='https://placehold.co/600x400/222222/cccccc?text=Travel+Site';">
+                    <div class="p-6 space-y-4">
+                        <div class="flex flex-wrap gap-2">
+                            <span class="tech-tag">HTML5</span>
+                            <span class="tech-tag">CSS3</span>
+                            <span class="tech-tag">Responsive Design</span>
                         </div>
-                        <div class="mt-auto">
-                            <a href="#" class="project-button opacity-70 cursor-not-allowed" aria-disabled="true">
-                                <span>View Project</span>
-                                <i data-lucide="external-link" class="w-4 h-4"></i>
-                            </a>
+                        <h3 class="text-2xl font-bold text-white">Belle's Travel Landing Page</h3>
+                        <p class="text-gray-400 text-sm">A responsive and visually engaging landing page designed to promote travel destinations and services.</p>
+                        <a href="https://bellestravelproject.netlify.app/" target="_blank" class="project-button">
+                            <i data-lucide="external-link" class="w-5 h-5"></i> View Live Project
+                        </a>
+                    </div>
+                </div>
+
+                <!-- 6. Dictionary Project React (New) -->
+                <div class="project-card">
+                    <img src="images/image_64766a.png" alt="Dictionary Project React" class="w-full h-48 object-cover object-top rounded-t-xl" onerror="this.onerror=null;this.src='https://placehold.co/600x400/222222/cccccc?text=Dictionary+App';">
+                    <div class="p-6 space-y-4">
+                        <div class="flex flex-wrap gap-2">
+                            <span class="tech-tag">React</span>
+                            <span class="tech-tag">API Integration</span>
+                            <span class="tech-tag">Hooks</span>
                         </div>
+                        <h3 class="text-2xl font-bold text-white">React Dictionary App</h3>
+                        <p class="text-gray-400 text-sm">A search-driven dictionary application that fetches definitions and audio pronunciations from a public API.</p>
+                        <a href="https://dictionaryprojectreact.netlify.app/" target="_blank" class="project-button">
+                            <i data-lucide="external-link" class="w-5 h-5"></i> View Live Project
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- 7. Weather React Project (New) - Separated for unique card appearance -->
+                <div class="project-card">
+                    <img src="images/image_646b45.png" alt="Weather React Project" class="w-full h-48 object-cover object-top rounded-t-xl" onerror="this.onerror=null;this.src='https://placehold.co/600x400/222222/cccccc?text=Weather+App+2';">
+                    <div class="p-6 space-y-4">
+                        <div class="flex flex-wrap gap-2">
+                            <span class="tech-tag">React</span>
+                            <span class="tech-tag">State Management</span>
+                            <span class="tech-tag">API</span>
+                        </div>
+                        <h3 class="text-2xl font-bold text-white">Simple React Weather</h3>
+                        <p class="text-gray-400 text-sm">A lightweight weather application focused on clean UI and efficient data fetching using React functional components.</p>
+                        <a href="https://weather-react-project-shecodes.netlify.app/" target="_blank" class="project-button">
+                            <i data-lucide="external-link" class="w-5 h-5"></i> View Live Project
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- 8. Web Scrapper Project (The one that needs the image from the path) -->
+                <div class="project-card">
+                    <img src="images/licensed-image.jpg" alt="Web Scrapper Project" class="w-full h-48 object-cover object-top rounded-t-xl" onerror="this.onerror=null;this.src='https://placehold.co/600x400/222222/cccccc?text=Web+Scrapper+Tool';">
+                    <div class="p-6 space-y-4">
+                        <div class="flex flex-wrap gap-2">
+                            <span class="tech-tag">Python</span>
+                            <span class="tech-tag">BeautifulSoup</span>
+                            <span class="tech-tag">Data Analysis</span>
+                        </div>
+                        <h3 class="text-2xl font-bold text-white">Automated Web Scrapper</h3>
+                        <p class="text-gray-400 text-sm">A powerful utility built in Python for extracting, cleaning, and structuring data from dynamic websites.</p>
+                        <a href="#" class="project-button opacity-70 cursor-not-allowed">
+                            <i data-lucide="lock" class="w-5 h-5"></i> Private Tool
+                        </a>
                     </div>
                 </div>
 
             </div>
-        </div>
+
+        </section>
     </main>
 
     <!-- Footer -->
-    <footer class="bg-[#161616] py-12 relative z-10 mt-auto">
-        <div class="container mx-auto px-6 text-center text-gray-400">
-            <div class="flex justify-center items-center gap-2 mb-6">
-                <img src="isabellalogo.png" alt="Isabella AI Solutions Logo" class="w-8 h-8 rounded-full"> <!-- Updated path -->
-                <span class="font-bold text-lg text-white">Isabella AI Solutions</span>
-            </div>
+    <footer class="bg-black/50 border-t border-gray-800 backdrop-blur-sm mt-12 py-8">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
             <div class="flex justify-center space-x-6 mb-6">
                 <a href="https://github.com/bellecoding" target="_blank" class="text-gray-400 hover:text-white transition-colors"><i data-lucide="github" class="w-6 h-6"></i></a>
                 <a href="#" target="_blank" class="text-gray-400 hover:text-white transition-colors"><i data-lucide="linkedin" class="w-6 h-6"></i></a>
                 <a href="#" target="_blank" class="text-gray-400 hover:text-white transition-colors"><i data-lucide="instagram" class="w-6 h-6"></i></a>
                 <a href="#" target="_blank" class="text-gray-400 hover:text-white transition-colors">
                     <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="currentColor" viewBox="0 0 16 16">
-                        <path d="M12.93,3.952h-2.438c-0.314,0-0.568,0.256-0.568,0.568v5.483c0,0.314,0.254,0.568,0.568,0.568h2.438c0.312,0,0.568-0.254,0.568-0.568V4.52C13.498,4.208,13.242,3.952,12.93,3.952 M10.203,8.385v0.844h1.884V8.385H10.203z M10.203,6.864v0.844h1.884V6.864H10.203z M10.203,5.342v0.844h1.884V5.342H10.203z M3.896,10.158H2.438c-0.314,0-0.568-0.254-0.568-0.568V4.52c0-0.312,0.254-0.568,0.568-0.568h1.458c1.07,0,1.938,0.868,1.938,1.938v2.33C5.833,9.29,4.965,10.158,3.896,10.158 M3.604,5.342H3.062v0.844h0.541c0.15,0,0.271-0.121,0.271-0.271v-0.302C3.875,5.464,3.754,5.342,3.604,5.342 M3.604,6.864H3.062v0.844h0.541c0.15,0,0.271-0.121,0.271-0.271v-0.302C3.875,6.985,3.754,6.864,3.604,6.864 M3.604,8.385H3.062v0.844h0.541c0.15,0,0.271-0.121,0.271-0.271v-0.302C3.875,8.506,3.754,8.385,3.604,8.385"></path>
-                        <path d="M16,8.194c0,4.411-3.589,8-8,8s-8-3.589-8-8c0-4.411,3.589-8,8-8S16,3.783,16,8.194 M8,1.194c-3.866,0-7,3.134-7,7c0,3.866,3.134,7,7,7s7-3.134,7-7C15,4.328,11.866,1.194,8,1.194"></path>
+                        <path d="M12.93,3.952h-2.438c-0.314,0-0.568,0.256-0.568,0.568v5.483c0,0.314,0.254,0.568,0.568,0.568h2.438c0.312,0,0.568-0.254,0.568-0.568V4.52C13.498,4.208,13.242,3.952,12.93,3.952 M12.93,2.812c0.95,0,1.722,0.772,1.722,1.722v5.483c0,0.95-0.772,1.722-1.722,1.722h-2.438c-0.95,0-1.722-0.772-1.722-1.722V4.534c0-0.95,0.772-1.722,1.722-1.722H12.93 M8,2.812c0.95,0,1.722,0.772,1.722,1.722v5.483c0,0.95-0.772,1.722-1.722,1.722H5.562c-0.95,0-1.722-0.772-1.722-1.722V4.534c0-0.95,0.772-1.722,1.722-1.722H8 M8,2.812c0.95,0,1.722,0.772,1.722,1.722v5.483c0,0.95-0.772,1.722-1.722,1.722H5.562c-0.95,0-1.722-0.772-1.722-1.722V4.534c0-0.95,0.772-1.722,1.722-1.722H8 M8,1.672c-1.58,0-2.862,1.282-2.862,2.862v5.483c0,1.58,1.282,2.862,2.862,2.862h2.438c1.58,0,2.862-1.282,2.862-2.862V4.534c0-1.58-1.282-2.862-2.862-2.862H8 M5.562,1.672c-1.58,0-2.862,1.282-2.862,2.862v5.483c0,1.58,1.282,2.862,2.862,2.862H8c1.58,0,2.862-1.282,2.862-2.862V4.534c0-1.58-1.282-2.862-2.862-2.862H5.562 M11.838,13.788H4.162c-2.31,0-4.188-1.878-4.188-4.188V4.162c0-2.31,1.878-4.188,4.188-4.188h7.675c2.31,0,4.188,1.878,4.188,4.188v5.438C16.026,11.91,14.148,13.788,11.838,13.788 M11.838,0C14.71,0,17.008,2.298,17.008,5.17v5.438c0,2.872-2.298,5.17-5.17,5.17H4.162C1.29,15.778-1,13.48-1,10.608V5.17C-1,2.298,1.29,0,4.162,0H11.838Z" transform="translate(-1.008 -0.008)"/>
                     </svg>
                 </a>
             </div>
-            <p>&copy; 2024 Isabella AI Solutions. All Rights Reserved.</p>
+            <p class="text-sm text-gray-500">&copy; <span id="current-year"></span> Isabella AI Solutions. Crafted with ⚡ &amp; Code.</p>
         </div>
     </footer>
-    
-    <!-- Gallery Modal -->
-    <div id="gallery-modal" class="hidden fixed inset-0 bg-black bg-opacity-70 z-[60] flex items-center justify-center p-4">
-        <div id="gallery-modal-content" class="glassmorphic-card w-full max-w-3xl max-h-[90vh] flex flex-col shadow-2xl shadow-purple-900/30">
-            <!-- Header -->
-            <div class="flex justify-between items-center p-4 border-b border-gray-700">
-                <h3 id="gallery-title" class="text-lg font-semibold text-white">Project Gallery</h3>
-                <button id="close-gallery-modal-btn" class="text-gray-400 hover:text-white"><i data-lucide="x" class="w-6 h-6"></i></button>
-            </div>
-            <!-- Image -->
-            <div class="p-4 flex-grow relative flex items-center justify-center">
-                <img id="gallery-image" src="aiapp.png" alt="Gallery Image" class="max-w-full max-h-[65vh] h-auto w-auto object-contain rounded-lg">
-                
-                <!-- Nav Buttons -->
-                <button id="gallery-prev" class="absolute left-6 top-1/2 -translate-y-1/2 bg-gray-800 bg-opacity-70 text-white p-2 rounded-full hover:bg-opacity-100 transition-all">
-                    <i data-lucide="chevron-left" class="w-6 h-6"></i>
-                </button>
-                <button id="gallery-next" class="absolute right-6 top-1/2 -translate-y-1/2 bg-gray-800 bg-opacity-70 text-white p-2 rounded-full hover:bg-opacity-100 transition-all">
-                    <i data-lucide="chevron-right" class="w-6 h-6"></i>
-                </button>
-            </div>
-            <!-- Counter -->
-            <div class="p-4 text-center text-gray-400 text-sm border-t border-gray-700">
-                <span id="gallery-counter">1 / 3</span>
-            </div>
-        </div>
-    </div>
 
-    <!-- Case Study Modal (NEW) -->
-    <div id="case-study-modal" class="hidden fixed inset-0 bg-black bg-opacity-70 z-[60] flex items-center justify-center p-4">
-        <div id="case-study-modal-content" class="glassmorphic-card w-full max-w-3xl max-h-[90vh] flex flex-col shadow-2xl shadow-purple-900/30">
-            <!-- Header -->
-            <div class="flex justify-between items-center p-4 border-b border-gray-700">
-                <h3 id="case-study-title" class="text-lg font-semibold text-white">Case Study</h3>
-                <button id="close-case-study-modal-btn" class="text-gray-400 hover:text-white"><i data-lucide="x" class="w-6 h-6"></i></button>
-            </div>
-            <!-- Content -->
-            <div id="case-study-details" class="p-6 flex-grow overflow-y-auto text-gray-300">
-                <!-- Content will be injected here by JS -->
-            </div>
-        </div>
-    </div>
-
-    <!-- Case Study Hidden Content -->
-    <div id="ecommerce-assistant-content" class="hidden">
-        <p class="text-lg text-gray-200 mb-4">I developed a custom AI assistant designed to guide customers through complex product configuration and quotation processes for an international e-commerce company specializing in technical systems.</p>
-        
-        <h3>Role & Stack</h3>
-        <ul class="!list-none !ml-0 !p-0 mb-4">
-            <li><strong>Role:</strong> Lead Developer & AI Engineer</li>
-            <li><strong>Stack:</strong> React, TypeScript, Node.js, OpenAI API, PDFKit, Supabase, Magento API</li>
-        </ul>
-
-        <h3>Project Overview</h3>
-        <p>The assistant functions as an intelligent product advisor that interacts with users through a conversational interface. It collects key installation parameters (measurements, environment type, and product preferences), applies reasoning logic to determine compatible components, and automatically generates detailed quotations in both PDF and JSON formats.</p>
-        <p>On the backend, I built a Node.js API that connects the assistant with the company’s ERP and e-commerce infrastructure, enabling the system to send structured product data, generate quotes dynamically, and deliver AI-written emails with attached PDFs directly to customers. The solution includes a conversation history database, quote tracking, and automatic Magento SKU integration.</p>
-
-        <h3>Key Features</h3>
-        <ul>
-            <li>Guided conversational flow powered by GPT-4-Turbo for step-by-step system configuration.</li>
-            <li>Automated quotation builder generating PDFs and JSON payloads for backend processing.</li>
-            <li>Magento API integration for SKU tracking, add-to-cart links, and email automation.</li>
-            <li>Real-time knowledge base linking, embedding relevant articles and resources.</li>
-            <li>Vision prototype allowing users to upload photos or sketches for AI-assisted form completion.</li>
-            <li>Frontend chat widget in React/TypeScript, auto-updated via Netlify with a single HTML snippet.</li>
-        </ul>
-
-        <h3>Impact</h3>
-        <p>This project transformed a manual quoting workflow into a scalable, automated solution that operates across multiple regional websites, reducing support workload by over 60% and enabling instant, AI-driven customer responses 24/7.</p>
-    </div>
-
-
-    <!-- Script -->
+    <!-- Scripts -->
     <script>
+        document.getElementById('current-year').textContent = new Date().getFullYear();
         lucide.createIcons();
 
-        document.addEventListener('DOMContentLoaded', () => {
-            // --- Gallery Modal Logic ---
-            const galleryModal = document.getElementById('gallery-modal');
-            const closeGalleryModalBtn = document.getElementById('close-gallery-modal-btn');
-            const galleryOpenBtns = document.querySelectorAll('[data-gallery-id]');
-            const galleryImage = document.getElementById('gallery-image');
-            const galleryCounter = document.getElementById('gallery-counter');
-            const galleryTitle = document.getElementById('gallery-title');
-            const galleryPrev = document.getElementById('gallery-prev');
-            const galleryNext = document.getElementById('gallery-next');
-
-            const galleries = {
-                'travel-gallery': {
-                    title: 'Responsive Travel Website',
-                    images: [
-                        'aiapp.png', 
-                        'travel-2.jpg',
-                        'travel-3.jpg'
-                    ]
-                }
-            };
-            let currentGallery = [];
-            let currentIndex = 0;
-
-            function updateGalleryView() {
-                galleryImage.src = currentGallery.images[currentIndex];
-                galleryCounter.textContent = `${currentIndex + 1} / ${currentGallery.images.length}`;
-            }
-            function openGallery(galleryId) {
-                if (!galleries[galleryId]) return;
-                currentGallery = galleries[galleryId];
-                currentIndex = 0;
-                galleryTitle.textContent = currentGallery.title;
-                updateGalleryView();
-                galleryModal.classList.remove('hidden');
-                document.body.style.overflow = 'hidden'; 
-            }
-            function closeGallery() {
-                galleryModal.classList.add('hidden');
-                document.body.style.overflow = 'auto';
-            }
-            function showPrev() {
-                currentIndex = (currentIndex > 0) ? currentIndex - 1 : currentGallery.images.length - 1;
-                updateGalleryView();
-            }
-            function showNext() {
-                currentIndex = (currentIndex < currentGallery.images.length - 1) ? currentIndex + 1 : 0;
-                updateGalleryView();
-            }
-            galleryOpenBtns.forEach(btn => {
-                btn.addEventListener('click', () => openGallery(btn.dataset.galleryId));
+        // Placeholder logic for AI modal (copied from index.html for consistency)
+        const openModalBtn = document.getElementById("open-ai-modal-btn");
+        if (openModalBtn) {
+            openModalBtn.addEventListener('click', () => {
+                alert("The AI Idea Generator is accessible on the Home page (index.html).");
             });
-            closeGalleryModalBtn.addEventListener('click', closeGallery);
-            galleryModal.addEventListener('click', (e) => {
-                if (e.target === galleryModal) closeGallery();
-            });
-            galleryPrev.addEventListener('click', showPrev);
-            galleryNext.addEventListener('click', showNext);
-
-            // --- Case Study Modal Logic (NEW) ---
-            const caseStudyModal = document.getElementById('case-study-modal');
-            const closeCaseStudyModalBtn = document.getElementById('close-case-study-modal-btn');
-            const caseStudyOpenBtns = document.querySelectorAll('[data-case-study-id]');
-            const caseStudyTitle = document.getElementById('case-study-title');
-            const caseStudyDetails = document.getElementById('case-study-details');
-
-            function openCaseStudy(caseStudyId) {
-                const contentEl = document.getElementById(`${caseStudyId}-content`);
-                const card = document.querySelector(`[data-case-study-id="${caseStudyId}"]`).closest('.project-card');
-                const title = card.querySelector('h3').textContent;
-
-                if (!contentEl) return;
-
-                caseStudyTitle.textContent = title;
-                caseStudyDetails.innerHTML = contentEl.innerHTML;
-
-                caseStudyModal.classList.remove('hidden');
-                document.body.style.overflow = 'hidden';
-            }
-
-            function closeCaseStudy() {
-                caseStudyModal.classList.add('hidden');
-                document.body.style.overflow = 'auto';
-            }
-
-            caseStudyOpenBtns.forEach(btn => {
-                btn.addEventListener('click', () => openCaseStudy(btn.dataset.caseStudyId));
-            });
-            
-            closeCaseStudyModalBtn.addEventListener('click', closeCaseStudy);
-            caseStudyModal.addEventListener('click', (e) => {
-                if (e.target === caseStudyModal) closeCaseStudy();
-            });
-
-            // --- Keyboard Nav for both Modals ---
-            document.addEventListener('keydown', (e) => {
-                // Gallery Nav
-                if (!galleryModal.classList.contains('hidden')) {
-                    if (e.key === 'Escape') closeGallery();
-                    if (e.key === 'ArrowLeft') showPrev();
-                    if (e.key === 'ArrowRight') showNext();
-                }
-                // Case Study Nav
-                if (!caseStudyModal.classList.contains('hidden')) {
-                    if (e.key === 'Escape') closeCaseStudy();
-                }
-            });
-        });
+        }
     </script>
 </body>
 </html>
