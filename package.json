@@ -1,31 +1,17 @@
 {
   "name": "my-portfolio",
   "version": "1.0.0",
+  "description": "My professional portfolio website.",
+  "main": "index.js",
   "scripts": {
-  "build": "npx tailwindcss -i ./src/input.css -o ./dist/output.css && cpx \"*.html\" dist && cpx script.js dist && cpx \"images/**/*\" dist/images",
-  "watch": "npx tailwindcss -i ./src/input.css -o ./dist/output.css --watch"
-},
-  "devDependencies": {
-    "autoprefixer": "^10.4.19",
-    "cpx": "^1.5.0",
-    "postcss": "^8.4.38",
-    "serve": "^14.2.4",
-    "tailwindcss": "^3.4.3"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/codesandbox-app/static-template.git"
+    "build": "npx tailwindcss -i ./input.css -o ./dist/output.css && cpx \"*.html\" dist && cpx script.js dist && cpx \"images/**/*\" dist/images",
+    "watch": "npx tailwindcss -i ./input.css -o ./dist/output.css --watch"
   },
   "keywords": [],
-  "author": "Ives van Hoorne",
-  "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/codesandbox-app/static-template/issues"
-  },
-  "homepage": "https://github.com/codesandbox-app/static-template#readme",
+  "author": "",
+  "license": "ISC",
   "dependencies": {
-    "autoprefixer": "^10.4.21",
-    "postcss": "^8.5.6",
-    "tailwindcss": "^4.1.11"
+    "cpx": "^1.5.0",
+    "tailwindcss": "^3.4.4"
   }
 }
