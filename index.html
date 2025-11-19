@@ -162,6 +162,11 @@
             0% { transform: rotate(0deg); }
             100% { transform: rotate(360deg); }
         }
+               #backToTop {
+        opacity: 0;
+        transition: opacity 0.3s ease;
+    }
+
     </style>
 </head>
 <body class="text-gray-200">
@@ -175,31 +180,70 @@
 
         <div class="relative z-10 flex flex-col min-h-screen px-4 sm:px-6 lg:px-8">
             <!-- Header/Navigation -->
-            <header class="py-6">
-                <nav class="w-full max-w-7xl mx-auto flex justify-between items-center">
-                    <a href="index.html" class="text-xl font-bold flex items-center gap-2">
-                        <!-- Custom Logo SVG -->
-                        <svg width="24" height="24" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M50 0L100 28.87V86.6L50 115.47L0 86.6V28.87L50 0Z" fill="url(#paint0_linear_101_3)"/>
-                            <defs><linearGradient id="paint0_linear_101_3" x1="0" y1="0" x2="100" y2="100" gradientUnits="userSpaceOnUse"><stop stop-color="#a855f7"/><stop offset="1" stop-color="#f97316"/></linearGradient></defs>
-                        </svg>
-                        Isabella AI Solutions
-                    </a>
-                    <div class="hidden md:flex items-center gap-2 border border-gray-700 bg-black/30 backdrop-blur-sm rounded-full px-3 py-2">
-                        <a href="index.html" class="px-4 py-1 rounded-full bg-gray-700/50">Home</a>
-                       <a href="#projects" class="px-4 py-1 rounded-full hover:bg-gray-700 transition-colors duration-300">Projects</a>
-                        <a href="#about" class="px-4 py-1 rounded-full hover:bg-gray-700 transition-colors duration-300">About</a>
-                        <a href="#contact" class="px-4 py-1 rounded-full hover:bg-gray-700 transition-colors duration-300">Contact</a>
-                    </div>
-                    <a href="#contact" class="hidden md:flex items-center gap-2 bg-gray-100 text-gray-900 font-semibold px-5 py-2.5 rounded-full hover:bg-gray-300 transition-colors duration-300">
-                        <span>Hire Me</span>
-                        <i data-lucide="arrow-right" class="w-4 h-4"></i>
-                    </a>
-                    <button class="md:hidden focus:outline-none p-2 rounded-full hover:bg-gray-800">
-                        <i data-lucide="menu" class="w-6 h-6"></i>
-                    </button>
-                </nav>
-            </header>
+<header class="py-6">
+    <nav class="w-full max-w-7xl mx-auto flex justify-between items-center">
+
+        <!-- Logo -->
+        <a href="index.html" class="text-xl font-bold flex items-center gap-2">
+            <svg width="24" height="24" viewBox="0 0 100 100" fill="none">
+                <path d="M50 0L100 28.87V86.6L50 115.47L0 86.6V28.87L50 0Z"
+                      fill="url(#grad)" />
+                <defs>
+                    <linearGradient id="grad" x1="0" y1="0" x2="100" y2="100">
+                        <stop stop-color="#a855f7"/>
+                        <stop offset="1" stop-color="#f97316"/>
+                    </linearGradient>
+                </defs>
+            </svg>
+            Isabella AI Solutions
+        </a>
+
+        <!-- NAV MENU (the rounded pill bar) -->
+        <div class="hidden md:flex items-center gap-2 
+                    border border-purple-500/40 
+                    bg-black/30 backdrop-blur-sm
+                    rounded-full px-3 py-2">
+
+            <!-- ACTIVE (Home example) -->
+            <a href="index.html"
+               class="px-4 py-1 rounded-full 
+                      bg-purple-500/20 text-white font-semibold
+                      border border-purple-400/60
+                      shadow-[0_0_12px_rgba(168,85,247,0.55)]">
+                Home
+            </a>
+
+            <!-- INACTIVE LINKS -->
+            <a href="#featured-projects"
+               class="px-4 py-1 rounded-full hover:bg-purple-500/10 transition">
+                Projects
+            </a>
+
+            <a href="#about"
+               class="px-4 py-1 rounded-full hover:bg-purple-500/10 transition">
+                About
+            </a>
+
+            <a href="#contact"
+               class="px-4 py-1 rounded-full hover:bg-purple-500/10 transition">
+                Contact
+            </a>
+        </div>
+
+        <!-- Hire Me Button (unchanged) -->
+        <a href="#contact"
+           class="hidden md:flex items-center gap-2 bg-gray-100 text-gray-900 
+                  font-semibold px-5 py-2.5 rounded-full hover:bg-gray-300 transition">
+            <span>Hire Me</span>
+            <i data-lucide="arrow-right" class="w-4 h-4"></i>
+        </a>
+
+        <!-- Mobile menu icon -->
+        <button class="md:hidden p-2 rounded-full hover:bg-gray-800">
+            <i data-lucide="menu" class="w-6 h-6"></i>
+        </button>
+    </nav>
+</header>
 
             <!-- Hero Section (Original Content) -->
             <main id="home" class="flex-grow flex items-center justify-center text-center pb-20 sm:pb-32">
@@ -207,9 +251,16 @@
                     <h1 class="text-4xl md:text-6xl lg:text-7xl font-bold tracking-tighter mb-4">AI-powered tools and web solutions crafted for your business.</h1>
                     <p class="max-w-2xl mx-auto text-lg text-gray-300 mb-10">I blend creative design, robust code, and AI expertise to deliver intelligent solutions that help businesses grow and operate more efficiently.</p>
                     <div class="flex flex-wrap justify-center items-center gap-4">
-                        <a href="about.html" class="bg-gray-800/50 border border-gray-700 text-white font-semibold py-3 px-6 rounded-full shadow-lg hover:bg-gray-700 transition-colors duration-300">Get to Know Me</a>
+                        <a href="about.html" class="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-full  border border-purple-500/60 text-purple-300 font-medium hover:bg-purple-500/10 hover:border-purple-400 transition-all duration-300 shadow-[0_0_12px_rgba(168,85,247,0.25)] backdrop-blur-sm"> Get to Know Me → </a>
                         <a href="#contact" class="bg-gradient-to-r from-purple-600 to-orange-500 text-white font-semibold py-3 px-6 rounded-full shadow-lg hover:opacity-90 transition-opacity duration-300">Get In Touch</a>
-                        <a href="projects.html" class="bg-gray-800/50 border border-gray-700 text-white font-semibold py-3 px-6 rounded-full shadow-lg hover:bg-gray-700 transition-colors duration-300">View Projects</a>
+                        <a href="#featured-projects"
+                        class="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-full
+                                border border-purple-500/60 text-purple-300 font-medium
+                                hover:bg-purple-500/10 hover:border-purple-400
+                                transition-all duration-300 shadow-[0_0_12px_rgba(168,85,247,0.25)]
+                                backdrop-blur-sm smooth-scroll">
+                            View Projects →
+                        </a>
                         <button id="open-ai-modal-btn" class="bg-gray-100 text-gray-900 font-semibold py-3 px-6 rounded-full shadow-lg hover:bg-gray-300 transition-colors duration-300 flex items-center gap-2">
                             <span>✨ AI Project Spark</span>
                         </button>
@@ -316,7 +367,7 @@
 
     <!-- Projects Section (Updated) -->
         <!-- Projects Section (Updated) -->
-        <section id="projects" class="py-24 bg-[#0a0a0a]">
+        <section id="featured-projects" class="py-24 bg-[#0a0a0a]">
             <div class="container mx-auto px-6">
                 <h2 class="text-4xl font-extrabold text-white text-center mb-8 relative">
                     Featured <span class="gradient-text">Projects</span>
@@ -342,9 +393,13 @@
             <span class="tech-tag">Multi-Region Support</span>
         </div>
         <p class="text-gray-400 mb-6">An AI-powered assistant built to automate complex product configuration and quotation processes for a multi-country e-commerce business. It guides customers through technical selections in real time, adapts to local regulations, and generates accurate quotes with all required components.</p>
-        <a href="#contact" class="project-button">
-            View Case Study <i data-lucide="arrow-right" class="w-5 h-5"></i>
-        </a>
+        <a href="#contact"
+            class="inline-flex items-center justify-center gap-2 px-6 py-3 w-full 
+          rounded-full border border-purple-500/60 text-purple-300 font-medium
+          hover:bg-purple-500/10 hover:border-purple-400
+          transition-all duration-300 shadow-[0_0_12px_rgba(168,85,247,0.25)]
+          backdrop-blur-sm">View Case Study →
+            </a>
         <p class="text-gray-400 mt-4">Integrates with Magento to centralize data across regional stores, ensuring consistent guidance, legal compliance, and 24/7 multilingual support while reducing manual work and boosting conversions.</p>
     </div>
 </div>
@@ -361,9 +416,14 @@
         </div>
         <p class="text-gray-400 mb-6">A Python-based scraper built to pull product prices in real-time across nine European markets. It uses Selenium and a stable Firefox browser pool to navigate dynamic sites, automatically handling multilingual popups and complex anti-scraping hurdles to ensure data continuity.</p>
         
-        <a href="https://github.com/bellecoding/Automated-Price-Scraper" target="_blank" class="project-button">
-            View Code <i data-lucide="github" class="w-5 h-5"></i>
-        </a>
+        <a href="https://github.com/bellecoding/Automated-Price-Scraper" target="_blank"
+        class="inline-flex items-center justify-center gap-2 px-6 py-3 w-full 
+          rounded-full border border-purple-500/60 text-purple-300 font-medium
+          hover:bg-purple-500/10 hover:border-purple-400
+          transition-all duration-300 shadow-[0_0_12px_rgba(168,85,247,0.25)]
+          backdrop-blur-sm">
+             View Code →
+            </a>        
 
         <p class="text-gray-400 mt-4">The re-engineered architecture significantly improves speed and reliability, bypassing common IP blocks. It processes vast datasets into clean, country-organized Excel reports, giving the business high-success-rate insights for competitive pricing strategies.</p>
     </div>
@@ -381,9 +441,15 @@
         </div>
         <p class="text-gray-400 mb-6">A React-powered weather interface that delivers instant real-time data and upcoming conditions for any global location. It leverages structured state management and robust API integrations to present clear, dynamic forecasts with smooth, flicker-free updates.</p>
         
-        <a href="https://weather-react-project-shecodes.netlify.app/" target="_blank" class="project-button">
-            View Code <i data-lucide="external-link" class="w-5 h-5"></i>
-        </a>
+        <a href="https://weather-react-project-shecodes.netlify.app/" target="_blank"
+        class="inline-flex items-center justify-center gap-2 px-6 py-3 w-full 
+          rounded-full border border-purple-500/60 text-purple-300 font-medium
+          hover:bg-purple-500/10 hover:border-purple-400
+          transition-all duration-300 shadow-[0_0_12px_rgba(168,85,247,0.25)]
+          backdrop-blur-sm">
+                View Code →
+            </a>
+
 
         <p class="text-gray-400 mt-4">Designed with a mobile-first approach, the interface ensures complete responsiveness across devices. It features a polished, modern UI that visualizes complex meteorological data simply, handling error states and location searching with an intuitive user experience.</p>
     </div>
@@ -438,6 +504,13 @@
                         <span class="tech-tag">Product UI</span>
                         <span class="tech-tag">Data Integrations</span>
                     </div>
+                         <a href="about.html"
+                                    class="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-full
+                                    border border-purple-500/60 text-purple-300 font-medium
+                                    hover:bg-purple-500/10 hover:border-purple-400
+                                    transition-all duration-300 shadow-[0_0_12px_rgba(168,85,247,0.25)]
+                                    backdrop-blur-sm">Get to Know Me →
+                            </a>  
                 </div>
             </div>
         </div>
@@ -462,20 +535,42 @@
                         <div class="flex items-center gap-2"><i data-lucide="line-chart" class="w-4 h-4 text-purple-400"></i>Launch support</div>
                     </div>
                 </div>
-                <form class="project-card border border-gray-800 bg-[#111111] p-6 sm:p-8 space-y-6 shadow-xl">
+                <form action="https://formsubmit.co/info@isabellaaisolutions.com" method="POST"
+                    class="project-card border border-gray-800 bg-[#111111] p-6 sm:p-8 space-y-6 shadow-xl">
+
+                    <!-- FormSubmit required hidden fields -->
+                    <input type="hidden" name="_subject" value="New Contact Form Submission">
+                    <input type="hidden" name="_captcha" value="false">
+                    <input type="hidden" name="_template" value="table">
+                    <input type="hidden" name="_next" value="https://isabellaaisolutions.com/thankyou.html">
+
                     <div class="space-y-2">
                         <label for="name" class="block text-sm font-semibold text-white">Name</label>
-                        <input id="name" type="text" placeholder="Your name" class="w-full bg-gray-900 border border-gray-700 rounded-lg p-3 text-white placeholder-gray-500 focus:ring-2 focus:ring-purple-500 focus:outline-none">
+                        <input id="name" name="name" type="text" required
+                            placeholder="Your name"
+                            class="w-full bg-gray-900 border border-gray-700 rounded-lg p-3 text-white placeholder-gray-500
+                                    focus:ring-2 focus:ring-purple-500 focus:outline-none">
                     </div>
+
                     <div class="space-y-2">
                         <label for="email" class="block text-sm font-semibold text-white">Email</label>
-                        <input id="email" type="email" placeholder="you@example.com" class="w-full bg-gray-900 border border-gray-700 rounded-lg p-3 text-white placeholder-gray-500 focus:ring-2 focus:ring-purple-500 focus:outline-none">
+                        <input id="email" name="email" type="email" required
+                            placeholder="you@example.com"
+                            class="w-full bg-gray-900 border border-gray-700 rounded-lg p-3 text-white placeholder-gray-500
+                                    focus:ring-2 focus:ring-purple-500 focus:outline-none">
                     </div>
+
                     <div class="space-y-2">
                         <label for="message" class="block text-sm font-semibold text-white">Project details</label>
-                        <textarea id="message" rows="5" placeholder="Share your goals, features, and timeline" class="w-full bg-gray-900 border border-gray-700 rounded-lg p-3 text-white placeholder-gray-500 focus:ring-2 focus:ring-purple-500 focus:outline-none"></textarea>
+                        <textarea id="message" name="message" rows="5" required
+                                placeholder="Share your goals, features, and timeline"
+                                class="w-full bg-gray-900 border border-gray-700 rounded-lg p-3 text-white placeholder-gray-500
+                                        focus:ring-2 focus:ring-purple-500 focus:outline-none"></textarea>
                     </div>
-                    <button type="submit" class="w-full bg-gradient-to-r from-purple-600 to-orange-500 text-white font-semibold py-3 px-6 rounded-full shadow-lg hover:opacity-90 transition-opacity duration-300 flex items-center justify-center gap-2">
+
+                    <button type="submit"
+                        class="w-full bg-gradient-to-r from-purple-600 to-orange-500 text-white font-semibold py-3 px-6 rounded-full shadow-lg
+                            hover:opacity-90 transition-opacity duration-300 flex items-center justify-center gap-2">
                         <span>Send Message</span>
                         <i data-lucide="send" class="w-5 h-5"></i>
                     </button>
@@ -491,13 +586,9 @@
                 <!-- Social Icons -->
                 <a href="https://github.com/bellecoding" target="_blank" class="text-gray-400 hover:text-white transition-colors"><i data-lucide="github" class="w-6 h-6"></i></a>
                 <a href="#" target="_blank" class="text-gray-400 hover:text-white transition-colors"><i data-lucide="linkedin" class="w-6 h-6"></i></a>
-                <a href="#" target="_blank" class="text-gray-400 hover:text-white transition-colors"><i data-lucide="instagram" class="w-6 h-6"></i></a>
+               
                 <!-- Custom SVG Icon (Example: Dribbble/Behance/Other) -->
-                <a href="#" target="_blank" class="text-gray-400 hover:text-white transition-colors">
-                    <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="currentColor" viewBox="0 0 16 16">
-                        <path d="M12.93,3.952h-2.438c-0.314,0-0.568,0.256-0.568,0.568v5.483c0,0.314,0.254,0.568,0.568,0.568h2.438c0.312,0,0.568-0.254,0.568-0.568V4.52C13.498,4.208,13.242,3.952,12.93,3.952z M5.682,3.952H3.244c-0.314,0-0.568,0.256-0.568,0.568v8.489c0,0.312,0.254,0.568,0.568,0.568h2.438c0.312,0,0.568-0.256,0.568-0.568V4.52C6.25,4.208,5.994,3.952,5.682,3.952z M9.318,8.527H6.88c-0.312,0-0.568,0.256-0.568,0.568v3.942c0,0.312,0.256,0.568,0.568,0.568h2.438c0.312,0,0.568-0.256,0.568-0.568V9.095C9.886,8.783,9.63,8.527,9.318,8.527z"/>
-                    </svg>
-                </a>
+            
             </div>
         </div>
     </footer>
@@ -532,7 +623,27 @@
         </div>
     </div>
 
+    <button id="backToTop"
+    class="fixed bottom-6 right-6 z-50 w-14 h-14 rounded-full bg-black/50 border border-purple-500 
+           flex items-center justify-center shadow-lg backdrop-blur-md
+           hover:bg-black/70 transition cursor-pointer">
+    <i data-lucide="arrow-up" class="w-7 h-7 text-purple-400"></i>
+</button>
     <!-- Script Block (Consolidated from script.js) -->
+     <script>
+  document.addEventListener("DOMContentLoaded", () => {
+    document.querySelectorAll('a.smooth-scroll').forEach(link => {
+      link.addEventListener('click', function(e) {
+        const target = document.querySelector(this.getAttribute('href'));
+        if (target) {
+          e.preventDefault();
+          target.scrollIntoView({ behavior: "smooth", block: "start" });
+        }
+      });
+    });
+  });
+</script>
+
     <script type="module">
         // Initialize Lucide icons on load
         document.addEventListener("DOMContentLoaded", () => {
@@ -732,7 +843,25 @@
                     problemInput.placeholder = "Please enter a problem or idea to spark a solution!";
                 }
             });
-        }
+        }   
+        // Smooth scroll to top button
+            const backToTop = document.getElementById("backToTop");
+
+            backToTop.addEventListener("click", () => {
+                window.scrollTo({
+                    top: 0,
+                    behavior: "smooth"
+                });
+            });
+            window.addEventListener("scroll", () => {
+            if (window.scrollY > 300) {
+                backToTop.style.opacity = "1";
+                backToTop.style.pointerEvents = "auto";
+            } else {
+                backToTop.style.opacity = "0";
+                backToTop.style.pointerEvents = "none";
+            }
+        });
     </script>
 </body>
 </html>
