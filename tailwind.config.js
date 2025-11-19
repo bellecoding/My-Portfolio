@@ -5,10 +5,19 @@ module.exports = {
   },
   plugins: [],
   safelist: [
-    "bg-gray-700/50",
+    // Keep nav active styles
     "border-purple-500",
-    "rounded-full",
-    "shadow-[0_0_12px_rgba(168,85,247,0.6)]",
+    "border-b-2",
     "text-white",
+    "font-semibold",
+
+    // Keep rounded styles if applied dynamically
+    "rounded-full",
+    "rounded-lg",
+
+    // Keep hover border / gradient classes
+    "hover:border-purple-500",
+    "from-purple-600",
+    "to-orange-500",
   ],
 };
