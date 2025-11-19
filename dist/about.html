@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>About Me - Isabella AI Solutions</title>
+
+
+
+    <!-- Your custom styles -->
+    <link rel="stylesheet" href="input.css">
+    <link rel="stylesheet" href="style.css">
+
+    <!-- Pixel font -->
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+    <style>
+        /* PIXEL TYPING ANIMATION */
+        .pixel-typing {
+            font-family: "Press Start 2P", monospace;
+            white-space: nowrap;
+            overflow: hidden;
+            display: inline-block;
+        }
+
+        .pixel-cursor {
+            display: inline-block;
+            width: 12px;
+            animation: blink 0.8s infinite;
+        }
+
+        @keyframes blink {
+            0%, 50% { opacity: 1; }
+            50.01%, 100% { opacity: 0; }
+        }
+
+        /* Pixel corner frame for the circular gallery */
+        .pixel-frame::before,
+        .pixel-frame::after {
+            content: "";
+            position: absolute;
+            width: 22px;
+            height: 22px;
+            border: 3px solid #a855f7;
+            z-index: 30;
+        }
+        .pixel-frame::before {
+            top: 14px;
+            left: 14px;
+            border-right: none;
+            border-bottom: none;
+        }
+        .pixel-frame::after {
+            bottom: 14px;
+            right: 14px;
+            border-left: none;
+            border-top: none;
+        }
+
+        /* Slider images */
+        .circle-img {
+            transition: opacity 0.6s ease;
+        }
+
+        .swipe-zone {
+            position: absolute;
+            inset: 0;
+        }
+    </style>
+</head>
+
+<body class="bg-[#111111] text-gray-300 font-inter">
+
+<!-- NAVIGATION (Floating Glass Nav) -->
+<header class="py-6">
+    <nav class="w-full max-w-7xl mx-auto flex justify-between items-center">
+
+        <!-- Logo -->
+        <a href="index.html" class="text-xl font-bold flex items-center gap-2">
+            <svg width="24" height="24" viewBox="0 0 100 100" fill="none">
+                <path d="M50 0L100 28.87V86.6L50 115.47L0 86.6V28.87L50 0Z"
+                      fill="url(#grad)" />
+                <defs>
+                    <linearGradient id="grad" x1="0" y1="0" x2="100" y2="100">
+                        <stop stop-color="#a855f7"/>
+                        <stop offset="1" stop-color="#f97316"/>
+                    </linearGradient>
+                </defs>
+            </svg>
+            Isabella AI Solutions
+        </a>
+
+        <!-- NAVIGATION -->
+        <div class="hidden md:flex items-center gap-2 
+                    border border-purple-500/40 bg-black/30 backdrop-blur-sm
+                    rounded-full px-3 py-2">
+
+            <a href="index.html" class="px-4 py-1 rounded-full hover:bg-purple-500/10 transition">Home</a>
+
+            <a href="projects.html" class="px-4 py-1 rounded-full hover:bg-purple-500/10 transition">Projects</a>
+
+            <!-- ACTIVE ABOUT -->
+            <a href="about.html"
+               class="px-4 py-1 rounded-full 
+                      bg-purple-500/20 text-white font-semibold
+                      border border-purple-400/60
+                      shadow-[0_0_12px_rgba(168,85,247,0.55)]">
+                About
+            </a>
+
+            <a href="index.html#contact" class="px-4 py-1 rounded-full hover:bg-purple-500/10 transition">Contact</a>
+        </div>
+
+        <!-- Hire Me -->
+        <a href="index.html#contact"
+           class="hidden md:flex items-center gap-2 bg-gray-100 text-gray-900 
+                  font-semibold px-5 py-2.5 rounded-full hover:bg-gray-300 transition">
+            <span>Hire Me</span>
+            <i data-lucide="arrow-right" class="w-4 h-4"></i>
+        </a>
+
+        <!-- Mobile -->
+        <button class="md:hidden p-2 rounded-full hover:bg-gray-800">
+            <i data-lucide="menu" class="w-6 h-6"></i>
+        </button>
+    </nav>
+</header>
+
+
+<!-- MAIN -->
+<main class="max-w-7xl mx-auto px-6 pt-32 pb-24">
+
+    <!-- Pixel typing heading -->
+    <div class="text-center mb-16">
+        <h1 id="pixelTyping" class="pixel-typing text-purple-400 text-lg md:text-xl"></h1>
+        <span class="pixel-cursor">█</span>
+
+        <h2 class="text-6xl md:text-7xl font-extrabold gradient-text mt-6">About Me</h2>
+    </div>
+
+    <!-- GRID -->
+    <section class="grid grid-cols-1 lg:grid-cols-2 gap-20 items-start">
+
+        <!-- LEFT: STICKY CIRCULAR SLIDER -->
+       <div class="flex justify-center lg:justify-start lg:sticky lg:top-32">
+    <div class="relative w-80 h-80 sm:w-96 sm:h-96">
+
+        <!-- Circle Frame -->
+        <div class="absolute inset-0 z-10">
+            <div class="absolute inset-0 blur-3xl opacity-40 bg-gradient-to-br 
+                        from-purple-600/40 via-orange-500/25 rounded-full"></div>
+
+            <div class="relative w-full h-full rounded-full bg-gradient-to-r 
+                        from-purple-600 to-orange-500 p-[3px] shadow-2xl overflow-hidden">
+
+                <!-- Image Slider -->
+                <div id="circleGallery" class="relative w-full h-full rounded-full overflow-hidden">
+                    <img src="images/me-circular.jpg" class="circle-img absolute inset-0 w-full h-70 object-cover opacity-100 transition-opacity duration-700"/>
+                    <img src="images/cat-1.jpg" class="circle-img absolute inset-0 w-full h-70 object-cover opacity-0 transition-opacity duration-700"/>
+                    <img src="images/cat-2.jpg" class="circle-img absolute inset-0 w-full h-full object-cover opacity-0 transition-opacity duration-700"/>
+                    <img src="images/cat-3.jpeg" class="circle-img absolute inset-0 w-full h-75 object-cover opacity-0 transition-opacity duration-700"/>
+                </div>
+            </div>
+        </div>
+
+        <!-- NAVIGATION ARROWS (clean + outside + centered) -->
+        <button id="circlePrev"
+                class="absolute top-1/2 -translate-y-1/2 left-[-3rem] z-50 w-10 h-10 flex items-center justify-center
+                       text-purple-400 hover:text-purple-300 transition
+                       drop-shadow-[0_0_6px_rgba(168,85,247,0.8)] cursor-pointer">
+            <svg xmlns="http://www.w3.org/2000/svg" class="w-8 h-8" viewBox="0 0 24 24" fill="none"
+                 stroke="currentColor" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M15 18l-6-6 6-6"/>
+            </svg>
+        </button>
+
+        <button id="circleNext"
+                class="absolute top-1/2 -translate-y-1/2 right-[-3rem] z-50 w-10 h-10 flex items-center justify-center
+                       text-purple-400 hover:text-purple-300 transition
+                       drop-shadow-[0_0_6px_rgba(168,85,247,0.8)] cursor-pointer">
+            <svg xmlns="http://www.w3.org/2000/svg" class="w-8 h-8" viewBox="0 0 24 24" fill="none"
+                 stroke="currentColor" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M9 6l6 6-6 6"/>
+            </svg>
+        </button>
+
+        <!-- Swipe Zone -->
+        <div id="swipeZone" class="absolute inset-0 z-40"></div>
+    </div>
+</div>
+        <!-- RIGHT TEXT -->
+        <div class="space-y-6">
+            <h3 class="text-3xl font-bold border-b border-gray-700 pb-2">My Story</h3>
+            <p class="leading-relaxed text-lg">
+                I got into coding simply because I was curious. The idea that I could build anything hooked me immediately.
+                I learned on my own for years before joining the SheCodes Bootcamp to pursue becoming a Full-Stack Developer.
+            </p>
+
+            <p class="leading-relaxed text-lg">
+                What started as playful HTML/CSS experiments quickly became a real passion. Over time I dove deeper into JavaScript,
+                Python, and eventually the fast-moving world of AI.
+            </p>
+
+            <p class="leading-relaxed text-lg">
+                Today, I create AI-powered tools and smart web solutions that help businesses work smarter, from intelligent assistants
+                to automation workflows and data pipelines.
+            </p>
+
+            <h3 class="text-3xl font-bold border-b border-gray-700 pb-2 pt-6">My Philosophy</h3>
+            <p class="leading-relaxed text-lg">
+                I care about clean architecture, clarity, speed, and building systems that genuinely help people. I love merging
+                creativity with engineering to build tools that make a real difference.
+            </p>
+            <!-- FUN FACTS -->
+        <div class="space-y-3">
+          <h3 class="text-xl font-semibold gradient-text">A Few Fun Facts</h3>
+          <ul class="space-y-2 text-gray-300">
+            <li>🎮 Competitive gamer at heart</li>
+            <li>☕ Coffee is basically my operating system</li>
+            <li>🐈 Mom of two chaotic cats, a hamster and a turtle </li>
+            <li>📸 Technology lover </li>
+            <li>✈️ Probably thinking about traveling again</li>
+          </ul>
+        </div>
+        </div>
+
+    </section>
+</main>
+
+<!-- FOOTER -->
+<footer class="py-10 border-t border-gray-800 text-center text-gray-500">
+     
+        ©  Isabella AI Solutions — Built with creativity & caffeine ☕
+</footer>
+
+<!-- SCRIPT -->
+<script>
+/* Pixel typing */
+const text = "The Story, The Philosophy, and The Developer Behind Isabella AI Solutions.";
+let i = 0;
+function type() {
+    if (i < text.length) {
+        document.getElementById("pixelTyping").textContent += text.charAt(i);
+        i++;
+        setTimeout(type, 40);
+    }
+}
+type();
+
+/* Circular gallery */
+const imgs = document.querySelectorAll(".circle-img");
+let idx = 0;
+
+function show(n) {
+    imgs.forEach((img, i) => img.style.opacity = i === n ? "1" : "0");
+}
+
+document.getElementById("circleNext").onclick = () => {
+    idx = (idx + 1) % imgs.length;
+    show(idx);
+};
+
+document.getElementById("circlePrev").onclick = () => {
+    idx = (idx - 1 + imgs.length) % imgs.length;
+    show(idx);
+};
+
+/* Auto-play */
+setInterval(() => {
+    idx = (idx + 1) % imgs.length;
+    show(idx);
+}, 4000);
+
+/* Swipe support */
+const zone = document.getElementById("swipeZone");
+let startX = 0;
+
+zone.addEventListener("touchstart", e => {
+    startX = e.touches[0].clientX;
+});
+
+zone.addEventListener("touchend", e => {
+    const endX = e.changedTouches[0].clientX;
+
+    if (endX < startX - 40) {
+        idx = (idx + 1) % imgs.length;
+        show(idx);
+    }
+    else if (endX > startX + 40) {
+        idx = (idx - 1 + imgs.length) % imgs.length;
+        show(idx);
+    }
+});
+
+</script>
+
+</body>
+</html>

@@ -1,23 +1,29 @@
 module.exports = {
-  content: ["./*.{html,js}"], // Scans all HTML and JS files in the root
-  theme: {
-    extend: {},
-  },
+  content: ["./*.{html,js}"],
+  theme: { extend: {} },
   plugins: [],
   safelist: [
-    // Keep nav active styles
-    "border-purple-500",
+    "nav-active",
+
+    // underline style
     "border-b-2",
+    "border-purple-500",
+
+    // active text/color
     "text-white",
     "font-semibold",
 
-    // Keep rounded styles if applied dynamically
+    // rounded style
     "rounded-full",
-    "rounded-lg",
+    "px-4",
+    "py-1",
 
-    // Keep hover border / gradient classes
+    // hover effects
     "hover:border-purple-500",
-    "from-purple-600",
-    "to-orange-500",
+    "hover:text-white",
+
+    // glow
+    "shadow-md",
+    "shadow-purple-500/30",
   ],
 };

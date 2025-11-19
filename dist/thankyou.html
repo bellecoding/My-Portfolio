@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Thank You – Isabella AI Solutions</title>
+
+    <!-- Tailwind -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <style>
+        body {
+            background: #0f0f0f;
+        }
+        .gradient-text {
+            background: linear-gradient(to right, #a855f7, #f97316);
+            -webkit-background-clip: text;
+            color: transparent;
+        }
+    </style>
+</head>
+
+<body class="text-white flex items-center justify-center min-h-screen px-6">
+
+    <div class="text-center space-y-8 max-w-lg">
+
+        <!-- Logo -->
+        <div class="flex justify-center">
+            <img src="images/isabellalogo.png"
+                 class="h-20 w-20 rounded-full border border-purple-500 shadow-[0_0_20px_rgba(168,85,247,0.3)]" />
+        </div>
+
+        <!-- Heading -->
+        <h1 class="text-4xl md:text-5xl font-extrabold gradient-text">
+            Thank You!
+        </h1>
+
+        <!-- Message -->
+        <p class="text-lg text-gray-300 leading-relaxed">
+            Your message has been received.  
+            <br />
+            <span class="text-purple-300 font-semibold">
+                You’ll receive a reply within 1 working day.
+            </span>
+        </p>
+
+        <!-- Button -->
+        <a href="index.html"
+           class="inline-flex items-center gap-2 bg-gradient-to-r from-purple-600 to-orange-500
+                  px-6 py-3 rounded-full font-semibold shadow-lg hover:opacity-90 transition">
+            Return Home
+            <i data-lucide="arrow-right" class="w-5 h-5"></i>
+        </a>
+
+    </div>
+
+    <script>
+        lucide.createIcons();
+    </script>
+
+</body>
+</html>
