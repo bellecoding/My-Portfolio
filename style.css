@@ -182,3 +182,99 @@ body {
 .circle-img {
     transition: opacity 0.6s ease-in-out;
 }
+
+
+.frosted-card {
+    background-color: rgba(22, 22, 22, 0.5);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 1rem;
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+}
+
+.tech-item {
+    @apply text-lg font-semibold text-gray-400 transition-all duration-300;
+}
+
+.tech-item:hover {
+    @apply text-white scale-105;
+    text-shadow: 0 0 8px rgba(255, 255, 255, 0.5);
+}
+
+.tech-separator {
+    @apply gradient-text text-2xl select-none;
+}
+
+
+
+.project-card {
+    @apply bg-[#161616] border border-gray-800 rounded-xl overflow-hidden transition-all duration-300;
+}
+.project-card:hover {
+    @apply transform -translate-y-2 shadow-2xl shadow-purple-900/20 border-purple-800/50;
+}
+
+.tech-tag {
+    @apply bg-gray-800 text-gray-400 text-xs font-medium px-2.5 py-1 rounded-full;
+}
+
+.project-button {
+    @apply font-semibold py-2 px-4 rounded-full transition-colors duration-300;
+}
+
+/* CAROUSEL/GALLERY STYLES */
+.image-gallery {
+    @apply relative overflow-hidden;
+    height: 13rem; /* Fixed height for image area (208px = h-52) */
+}
+
+.gallery-image {
+    @apply absolute top-0 left-0 w-full h-full object-cover transition-opacity duration-500;
+}
+
+.gallery-btn {
+    @apply absolute top-1/2 -translate-y-1/2 p-2 rounded-full bg-black/50 text-white/80 hover:bg-black/80 transition-colors z-20;
+}
+
+.gallery-btn:disabled {
+    @apply opacity-30 cursor-not-allowed;
+}
+.gallery-pagination {
+    @apply absolute bottom-2 left-1/2 transform -translate-x-1/2 flex space-x-2 z-20;
+}
+.dot {
+    @apply w-2 h-2 rounded-full bg-white/50 transition-colors duration-300;
+}
+.dot.active {
+    @apply bg-orange-500;
+}
+
+.pixel-intro {
+    font-family: "Press Start 2P", monospace;
+    letter-spacing: 2px;
+}
+
+.blinker {
+    display: inline-block;
+    animation: blink 1s infinite;
+}
+
+@keyframes blink {
+    0%, 50% { opacity: 1; }
+    50.01%, 100% { opacity: 0; }
+}
+.fade-reveal {
+    opacity: 0;
+    transform: translateY(10px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.fade-reveal.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+.nav-active {
+  background: rgba(168, 85, 247, 0.15);
+  border: 1px solid rgba(168, 85, 247, 0.4);
+  box-shadow: 0 0 12px rgba(168, 85, 247, 0.35);
+}
