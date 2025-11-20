@@ -537,46 +537,47 @@
                         <div class="flex items-center gap-2"><i data-lucide="line-chart" class="w-4 h-4 text-purple-400"></i>Launch support</div>
                     </div>
                 </div>
-                <form action="https://formsubmit.co/info@isabellaaisolutions.com" method="POST"
-                    class="project-card border border-gray-800 bg-[#111111] p-6 sm:p-8 space-y-6 shadow-xl">
+                <form name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field"
+    class="project-card border border-gray-800 bg-[#111111] p-6 sm:p-8 space-y-6 shadow-xl">
 
-                    <!-- FormSubmit required hidden fields -->
-                    <input type="hidden" name="_subject" value="New Contact Form Submission">
-                    <input type="hidden" name="_captcha" value="false">
-                    <input type="hidden" name="_template" value="table">
-                    <input type="hidden" name="_next" value="https://isabellaaisolutions.com/thankyou.html">
+    <!-- Required for Netlify -->
+    <input type="hidden" name="form-name" value="contact" />
+    <input type="hidden" name="redirect" value="/thankyou.html">
+    <p style="display:none;">
+        <label>Don’t fill this out: <input name="bot-field" /></label>
+    </p>
 
-                    <div class="space-y-2">
-                        <label for="name" class="block text-sm font-semibold text-white">Name</label>
-                        <input id="name" name="name" type="text" required
-                            placeholder="Your name"
-                            class="w-full bg-gray-900 border border-gray-700 rounded-lg p-3 text-white placeholder-gray-500
-                                    focus:ring-2 focus:ring-purple-500 focus:outline-none">
-                    </div>
+    <div class="space-y-2">
+        <label for="name" class="block text-sm font-semibold text-white">Name</label>
+        <input id="name" name="name" type="text" required
+            placeholder="Your name"
+            class="w-full bg-gray-900 border border-gray-700 rounded-lg p-3 text-white placeholder-gray-500
+                    focus:ring-2 focus:ring-purple-500 focus:outline-none">
+    </div>
 
-                    <div class="space-y-2">
-                        <label for="email" class="block text-sm font-semibold text-white">Email</label>
-                        <input id="email" name="email" type="email" required
-                            placeholder="you@example.com"
-                            class="w-full bg-gray-900 border border-gray-700 rounded-lg p-3 text-white placeholder-gray-500
-                                    focus:ring-2 focus:ring-purple-500 focus:outline-none">
-                    </div>
+    <div class="space-y-2">
+        <label for="email" class="block text-sm font-semibold text-white">Email</label>
+        <input id="email" name="email" type="email" required
+            placeholder="you@example.com"
+            class="w-full bg-gray-900 border border-gray-700 rounded-lg p-3 text-white placeholder-gray-500
+                    focus:ring-2 focus:ring-purple-500 focus:outline-none">
+    </div>
 
-                    <div class="space-y-2">
-                        <label for="message" class="block text-sm font-semibold text-white">Project details</label>
-                        <textarea id="message" name="message" rows="5" required
-                                placeholder="Share your goals, features, and timeline"
-                                class="w-full bg-gray-900 border border-gray-700 rounded-lg p-3 text-white placeholder-gray-500
-                                        focus:ring-2 focus:ring-purple-500 focus:outline-none"></textarea>
-                    </div>
+    <div class="space-y-2">
+        <label for="message" class="block text-sm font-semibold text-white">Project details</label>
+        <textarea id="message" name="message" rows="5" required
+                placeholder="Share your goals, features, and timeline"
+                class="w-full bg-gray-900 border border-gray-700 rounded-lg p-3 text-white placeholder-gray-500
+                        focus:ring-2 focus:ring-purple-500 focus:outline-none"></textarea>
+    </div>
 
-                    <button type="submit"
-                        class="w-full bg-gradient-to-r from-purple-600 to-orange-500 text-white font-semibold py-3 px-6 rounded-full shadow-lg
-                            hover:opacity-90 transition-opacity duration-300 flex items-center justify-center gap-2">
-                        <span>Send Message</span>
-                        <i data-lucide="send" class="w-5 h-5"></i>
-                    </button>
-                </form>
+    <button type="submit"
+        class="w-full bg-gradient-to-r from-purple-600 to-orange-500 text-white font-semibold py-3 px-6 rounded-full shadow-lg
+            hover:opacity-90 transition-opacity duration-300 flex items-center justify-center gap-2">
+        <span>Send Message</span>
+        <i data-lucide="send" class="w-5 h-5"></i>
+    </button>
+</form>
             </div>
     </section>
 
